@@ -28,6 +28,7 @@ namespace DAL
             modelBuilder.ApplyConfiguration(new UploadEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
             modelBuilder.ApplyConfiguration(new CourseEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new LessonEntityConfiguration());
         }
     }
 }
