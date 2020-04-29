@@ -7,6 +7,6 @@ namespace Web.API.Models
     public class CourseFilter : FilterBase
     {
         public string Name { get; set; }
-
+        public string Level { get; set; }
     }
 }

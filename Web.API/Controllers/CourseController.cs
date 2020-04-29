@@ -18,11 +18,11 @@ namespace Web.API.Controllers
     public class CourseController : ControllerBase
     {
         private readonly ICommandHandler _commandHandler;
-        private readonly ICourseQueries _usersQueries;
+        private readonly ICourseQueries _courseQueries;
         public CourseController(ICourseQueries courseQueries, ICommandHandler commandHandler)
         {
             _commandHandler = commandHandler;
-            _usersQueries = courseQueries;
+            _courseQueries = courseQueries;
         }
 
         [HttpPost("")]
@@ -49,7 +49,9 @@ namespace Web.API.Controllers
                 Description = x.Description,
                 Level = x.Level,
                 CourseDuration = x.CourseDuration,
-                Name = x.Name
+                Name = x.Name,
+                CreatedDate = DateTime.Now,
+                Status = Course.Statuses.Active
             };
 
         }

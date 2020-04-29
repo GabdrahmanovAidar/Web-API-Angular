@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Web.API.Models
 {
-    public class LessonModel
+    public class LessonFilter : FilterBase
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public int CourseId { get; set; }
         public string Duration { get; set; }
     }
 }

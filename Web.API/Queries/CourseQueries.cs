@@ -18,5 +18,6 @@ namespace Web.API.Queries
         {
             throw new NotImplementedException();
         }
+
     }
 }
