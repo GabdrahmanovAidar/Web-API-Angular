@@ -19,6 +19,7 @@ namespace DAL
         public DbSet<ProductHelper> ProductHelpers { get; set; }
         public DbSet<VideosUpload> VideosUpload { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Request> Requests { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -27,6 +28,7 @@ namespace DAL
             modelBuilder.ApplyConfiguration(new UploadEntityConfiguration());
             modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
             modelBuilder.ApplyConfiguration(new CourseEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new RequestEntityConfiguration());
         }
     }
 }
