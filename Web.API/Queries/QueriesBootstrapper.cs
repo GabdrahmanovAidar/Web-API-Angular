@@ -12,7 +12,8 @@ namespace Web.API.Queries
             serviceCollection.AddTransient<IUsersQueries, UsersQueries>();
             // serviceCollection.AddTransient<IVideosQueries, VideosQueries>();
             serviceCollection.AddTransient<ICourseQueries, CourseQueries>();
-            
+            serviceCollection.AddTransient<IRequestQueries, RequestQueries>();
+
         }
     }
 }
