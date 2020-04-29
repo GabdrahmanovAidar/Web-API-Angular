@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DAL.Entities;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Interfaces.Contexts
 {
-    class LessonCreateContext
+    public class LessonCreateContext : IContext
     {
+        public Lesson Lesson { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace Web.API.Controllers
         }
 
         [HttpPost("")]
-        [ProducesResponseType(typeof(UserModel), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(CourseModel), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResultCode), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post([FromBody] CourseModel model, int time_offset = 0)
         {
