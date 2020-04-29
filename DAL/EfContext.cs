@@ -20,6 +20,7 @@ namespace DAL
         public DbSet<VideosUpload> VideosUpload { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Request> Requests { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
