@@ -1,4 +1,7 @@
-﻿using Interfaces.Queries;
+﻿using DAL;
+using DAL.Entities;
+using Interfaces.Queries;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +12,53 @@ namespace Web.API.Queries
 {
     public class CourseQueries : ICourseQueries
     {
-        public Task<CourseModel> GetById(int id)
+        private readonly EfContext _db;
+
+        public CourseQueries(EfContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
+        }
+        public async Task<CourseModel> GetById(int id)
+        {
+            var query = _db.Courses.AsQueryable().Where(x => x.Id == id);
+
+            return await MapQuery(query).FirstOrDefaultAsync();
+
         }
 
-        public Task<PageResultModel<CourseModel>> GetList(CourseFilter filter)
+        public async Task<PageResultModel<CourseModel>> GetList(CourseFilter filter)
         {
-            throw new NotImplementedException();
+            var query = _db.Courses.AsQueryable();
+            if (filter.Level != null)
+            {
+                query = query.Where(x => x.Level == filter.Level);
+            }
+            query = query.OrderByDescending(x => x.Id)
+                .Skip((filter.Page - 1) * filter.Size)
+                .Take(filter.Size);
+
+            var count = await query.CountAsync();
+
+            var list = await MapQuery(query).ToListAsync();
+
+            return new PageResultModel<CourseModel>
+            {
+                Size = filter.Size,
+                Page = filter.Page,
+                TotalCount = count,
+                List = list
+            };
+        }
+        private IQueryable<CourseModel> MapQuery(IQueryable<Course> query)
+        {
+            return query.Select(x => new CourseModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description,
+                CourseDuration = x.CourseDuration,
+                Level = x.Level
+            }); ;
         }
 
     }
