@@ -8,6 +8,6 @@ namespace Interfaces.Queries
 {
     public interface ILessonQueries : IQueryBase<LessonModel, LessonFilter>
     {
-        Task<LessonModel> GetLessonByCourseId();
+        Task<LessonModel> GetLessonByCourseId(int courseId);
     }
 }
