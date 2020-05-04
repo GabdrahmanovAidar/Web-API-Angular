@@ -1,0 +1,15 @@
+.print-a4-wrap {
+  size: 7in 9.25in;
+  display: block;
+  background-color: #fff;
+  padding: 10mm 16mm 17mm 16mm;
+}
+
+@media print {
+  .db-header, .db-nav, .page-header {
+    display: none !important;
+  }
+  .db-content, .page {
+    padding: 0 !important;
+  }
+}

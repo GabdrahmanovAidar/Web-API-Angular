@@ -1,0 +1,11 @@
+<div [ngClass]="elClassNames">
+
+    <ng-content></ng-content>
+
+    <ud-animate-roll [opened]="showErrors">
+        <ud-forms-errors-list
+                [control]="control"
+                [messages]="errorMessages">
+        </ud-forms-errors-list>
+    </ud-animate-roll>
+</div>

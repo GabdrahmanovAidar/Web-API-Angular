@@ -1,0 +1,11 @@
+{
+  "name": true,
+  "phone": true,
+  "limit": true,
+  "city": true,
+  "individual_taxpayer_number": true,
+  "legal_address": true,
+  "primary_state_registration_number": true,
+  "company_name": true,
+  "email": true
+}

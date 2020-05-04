@@ -1,0 +1,121 @@
+<form [formGroup]="companyForm" (submit)="onSubmit($event)">
+  <ud-forms-controls-wrap [showErrors]="showFormErrors">
+
+    <div class="text-uppercase font-weight-bold mb-2">Основная информация</div>
+    <div class="row">
+      <div class="col-md-4 col-lg-3">
+        <ud-forms-control [control]="companyForm.get('name')" [errorMessages]="validationMessages.name">
+          <ud-forms-label [asRequired]="isRequired('name')" [attrFor]="'name'">ФИО Владельца
+          </ud-forms-label>
+          <input formControlName="name" id="name" type="text" placeholder="Введите ФИО"
+                 [disableControl]="inputDisabled"
+                 class="form-control"/>
+        </ud-forms-control>
+        <ud-forms-control [control]="companyForm.get('phone')" [errorMessages]="validationMessages.phone">
+          <ud-forms-label [asRequired]="isRequired('phone')" [attrFor]="'phone'">Номер телефона</ud-forms-label>
+          <p-inputMask styleClass="form-control" formControlName="phone" [autoClear]="false" type="text"
+                       placeholder="+7(" mask="+7 (999) 999-99-99" [disableControl]="inputDisabled"></p-inputMask>
+        </ud-forms-control>
+        <ud-forms-control [control]="companyForm.get('company_name')"
+                          [errorMessages]="validationMessages.company_name">
+          <ud-forms-label [asRequired]="isRequired('company_name')" [attrFor]="'company_name'">
+            Полное наименование компании
+          </ud-forms-label>
+          <input formControlName="company_name" id="company_name" type="text"
+                 placeholder="Наименование"
+                 [disableControl]="inputDisabled" class="form-control"/>
+        </ud-forms-control>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <ud-forms-control [control]="companyForm.get('email')" [errorMessages]="validationMessages.email">
+          <ud-forms-label [asRequired]="isRequired('email')" [attrFor]="'email'">E-mail для входа
+          </ud-forms-label>
+          <input formControlName="email" id="email" type="email" placeholder="Введите email"
+                 [disableControl]="inputDisabled"
+                 class="form-control"/>
+        </ud-forms-control>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <ud-forms-control
+                [control]="companyForm.get('description')"
+                [errorMessages]="validationMessages.description">
+          <ud-forms-label [asRequired]="isRequired('description')" [attrFor]="'title'">Описание</ud-forms-label>
+          <textarea formControlName="description"
+                    id="description"
+                    type="text"
+                    rows="9"
+                    placeholder="Описание компании"
+                    [disableControl]="inputDisabled"
+                    class="form-control"></textarea>
+        </ud-forms-control>
+
+      </div>
+    </div>
+
+    <div class="text-uppercase font-weight-bold mt-2 mb-2">Юридическая информация</div>
+    <div class="row">
+      <div class="col-md-4 col-lg-3">
+        <ud-forms-control
+                [control]="companyForm.get('individual_taxpayer_number')"
+                [errorMessages]="validationMessages.individual_taxpayer_number">
+          <ud-forms-label
+                  [asRequired]="isRequired('individual_taxpayer_number')"
+                  [attrFor]="'individual_taxpayer_number'">ИНН
+          </ud-forms-label>
+          <input formControlName="individual_taxpayer_number"
+                 id="individual_taxpayer_number"
+                 type="text"
+                 placeholder="Введите ИНН"
+                 [disableControl]="inputDisabled" class="form-control"/>
+        </ud-forms-control>
+        <ud-forms-control
+                [control]="companyForm.get('primary_state_registration_number')"
+                [errorMessages]="validationMessages.primary_state_registration_number">
+          <ud-forms-label
+                  [asRequired]="isRequired('primary_state_registration_number')"
+                  [attrFor]="'primary_state_registration_number'">ОГРН/ОГРНИП
+          </ud-forms-label>
+          <input formControlName="primary_state_registration_number"
+                 id="primary_state_registration_number"
+                 type="text"
+                 placeholder="Введите ОГРН/ОГРНИП"
+                 [disableControl]="inputDisabled" class="form-control"/>
+        </ud-forms-control>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <ud-forms-control [control]="companyForm.get('city')" [errorMessages]="validationMessages.city">
+          <ud-forms-label [asRequired]="isRequired('city')" [attrFor]="'city'">Город
+          </ud-forms-label>
+          <input formControlName="city" id="city" type="text" placeholder="Укажите город"
+                 [disableControl]="inputDisabled" class="form-control"/>
+        </ud-forms-control>
+        <ud-forms-control [control]="companyForm.get('legal_address')"
+                          [errorMessages]="validationMessages.legal_address">
+          <ud-forms-label [asRequired]="isRequired('legal_address')" [attrFor]="'legal_address'">Юр.Адрес
+          </ud-forms-label>
+          <input formControlName="legal_address" id="legal_address" type="text"
+                 placeholder="Укажите юридический адресс"
+                 [disableControl]="inputDisabled" class="form-control"/>
+        </ud-forms-control>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <ud-forms-control [control]="companyForm.get('limit')" [errorMessages]="validationMessages.limit">
+          <ud-forms-label [asRequired]="isRequired('limit')" [attrFor]="'limit'">Индивидуальный лимит
+          </ud-forms-label>
+          <input formControlName="limit"
+                 id="limit"
+                 type="number"
+                 placeholder="Укажите лимит"
+                 [disableControl]="inputDisabled"
+                 class="form-control"/>
+        </ud-forms-control>
+      </div>
+    </div>
+
+  </ud-forms-controls-wrap>
+
+  <div class="mt-5">
+    <button type="button" (click)="onCancelClicked($event)" class="btn btn-clear p-0">Отмена</button>
+    <button type="submit" class="btn btn-round btn-primary ml-4">Сохранить</button>
+  </div>
+</form>

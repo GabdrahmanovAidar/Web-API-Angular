@@ -1,0 +1,4 @@
+<label [ngStyle]="style" [ngClass]="classNames" [attr.for]="attrFor">
+  <ng-content></ng-content>
+  <span *ngIf="asRequired" class="text-danger">*</span>
+</label>

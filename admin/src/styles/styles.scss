@@ -1,0 +1,30 @@
+@import '../common-styles/variables';
+@import 'base/layout';
+
+// icons
+@import 'custom-icons/core';
+
+// components
+@import 'components/layout';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/page';
+@import 'components/dropdown';
+@import 'components/links';
+@import 'components/bubble-info';
+@import 'components/value-row';
+@import 'components/rotate-toggler';
+
+// content
+@import 'content/table';
+@import 'content/typography';
+@import 'content/helpers';
+@import 'content/print';
+
+// libs
+@import 'libs/bootstrap/core';
+@import 'libs/primeng/core';
+@import 'libs/font-awesome/core';
+@import 'libs/flatpickr/core';
+@import 'libs/nouislider/core';
+@import 'libs/cropperjs/core';

@@ -1,0 +1,7 @@
+<label [ngClass]="classNames">
+  <input [attr.accept]="acceptMimeTypes"
+         [attr.multiple]="multiple"
+         (change)="onInputChanged($event)"
+         type="file" />
+  <ng-content></ng-content>
+</label>

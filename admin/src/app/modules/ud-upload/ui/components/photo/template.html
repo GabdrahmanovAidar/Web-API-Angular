@@ -1,0 +1,30 @@
+<div *ngIf="value; else selectPhoto" class="photo"
+     [style.background-image]="'url(' + value.source + ')'"
+     [style.width]="width"
+     [style.height]="height">
+  <span (click)="onDeletePhotoClicked($event)" class="photo-delete"></span>
+</div>
+<ng-template #selectPhoto>
+  <ud-file-select
+    [accept]="acceptMimeTypes"
+    (select)="onFilesSelect($event)">
+    <div [style.width]="width"
+         [style.height]="height"
+         class="c-pointer p-relative photo-select">
+      <ud-spinner size="sm" [delayMS]="0" [show]="uploading" type="absolute"></ud-spinner>
+    </div>
+  </ud-file-select>
+</ng-template>
+
+<p-sidebar [(visible)]="showCropWindow" [fullScreen]="true" [baseZIndex]="10000">
+  <h1 style="font-weight:normal; text-align: center" class="mb-4">Выберите область изображения</h1>
+  <ud-upload-photo-crop
+    *ngIf="showCropWindow"
+    [imageUrl]="cropImageUrl"
+    [imageFile]="cropImageFile"
+    [options]="cropOptions"
+    (saveCropped)="onImageCropped($event)"
+    (cancel)="onCropCancel()">
+  </ud-upload-photo-crop>
+</p-sidebar>
+

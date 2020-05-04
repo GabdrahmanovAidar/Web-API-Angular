@@ -1,0 +1,16 @@
+<div class="page">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Новый курс</div>
+        <ud-breadcrumbs [items]="breadcrumbs"></ud-breadcrumbs>
+      </div>
+    </div>
+
+    <course-components-course-form
+            [course]="course"
+            [loading]="saving"
+            (cancel)="onCancel()"
+            (successSubmit)="onFormSuccessSubmit($event)">
+    </news-components-news-form>
+  
+  </div>

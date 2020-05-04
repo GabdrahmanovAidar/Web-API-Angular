@@ -1,0 +1,874 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$icon-advert-name: 'icon-advert';
+$icon-advert-x: 130px;
+$icon-advert-y: 85px;
+$icon-advert-offset-x: -130px;
+$icon-advert-offset-y: -85px;
+$icon-advert-width: 25px;
+$icon-advert-height: 25px;
+$icon-advert-total-width: 240px;
+$icon-advert-total-height: 233px;
+$icon-advert-image: '../images/sprites/sprite.png';
+$icon-advert: (130px, 85px, -130px, -85px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-advert', );
+$icon-albums-name: 'icon-albums';
+$icon-albums-x: 130px;
+$icon-albums-y: 120px;
+$icon-albums-offset-x: -130px;
+$icon-albums-offset-y: -120px;
+$icon-albums-width: 25px;
+$icon-albums-height: 25px;
+$icon-albums-total-width: 240px;
+$icon-albums-total-height: 233px;
+$icon-albums-image: '../images/sprites/sprite.png';
+$icon-albums: (130px, 120px, -130px, -120px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-albums', );
+$icon-carwashes-name: 'icon-carwashes';
+$icon-carwashes-x: 130px;
+$icon-carwashes-y: 155px;
+$icon-carwashes-offset-x: -130px;
+$icon-carwashes-offset-y: -155px;
+$icon-carwashes-width: 25px;
+$icon-carwashes-height: 25px;
+$icon-carwashes-total-width: 240px;
+$icon-carwashes-total-height: 233px;
+$icon-carwashes-image: '../images/sprites/sprite.png';
+$icon-carwashes: (130px, 155px, -130px, -155px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-carwashes', );
+$icon-companies-name: 'icon-companies';
+$icon-companies-x: 84px;
+$icon-companies-y: 85px;
+$icon-companies-offset-x: -84px;
+$icon-companies-offset-y: -85px;
+$icon-companies-width: 25px;
+$icon-companies-height: 25px;
+$icon-companies-total-width: 240px;
+$icon-companies-total-height: 233px;
+$icon-companies-image: '../images/sprites/sprite.png';
+$icon-companies: (84px, 85px, -84px, -85px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-companies', );
+$icon-copy-name: 'icon-copy';
+$icon-copy-x: 215px;
+$icon-copy-y: 129px;
+$icon-copy-offset-x: -215px;
+$icon-copy-offset-y: -129px;
+$icon-copy-width: 18px;
+$icon-copy-height: 20px;
+$icon-copy-total-width: 240px;
+$icon-copy-total-height: 233px;
+$icon-copy-image: '../images/sprites/sprite.png';
+$icon-copy: (215px, 129px, -215px, -129px, 18px, 20px, 240px, 233px, '../images/sprites/sprite.png', 'icon-copy', );
+$icon-dd-down-name: 'icon-dd-down';
+$icon-dd-down-x: 140px;
+$icon-dd-down-y: 196px;
+$icon-dd-down-offset-x: -140px;
+$icon-dd-down-offset-y: -196px;
+$icon-dd-down-width: 9px;
+$icon-dd-down-height: 4px;
+$icon-dd-down-total-width: 240px;
+$icon-dd-down-total-height: 233px;
+$icon-dd-down-image: '../images/sprites/sprite.png';
+$icon-dd-down: (140px, 196px, -140px, -196px, 9px, 4px, 240px, 233px, '../images/sprites/sprite.png', 'icon-dd-down', );
+$icon-dd-up-name: 'icon-dd-up';
+$icon-dd-up-x: 159px;
+$icon-dd-up-y: 196px;
+$icon-dd-up-offset-x: -159px;
+$icon-dd-up-offset-y: -196px;
+$icon-dd-up-width: 9px;
+$icon-dd-up-height: 4px;
+$icon-dd-up-total-width: 240px;
+$icon-dd-up-total-height: 233px;
+$icon-dd-up-image: '../images/sprites/sprite.png';
+$icon-dd-up: (159px, 196px, -159px, -196px, 9px, 4px, 240px, 233px, '../images/sprites/sprite.png', 'icon-dd-up', );
+$icon-del-round-name: 'icon-del-round';
+$icon-del-round-x: 215px;
+$icon-del-round-y: 70px;
+$icon-del-round-offset-x: -215px;
+$icon-del-round-offset-y: -70px;
+$icon-del-round-width: 20px;
+$icon-del-round-height: 20px;
+$icon-del-round-total-width: 240px;
+$icon-del-round-total-height: 233px;
+$icon-del-round-image: '../images/sprites/sprite.png';
+$icon-del-round: (215px, 70px, -215px, -70px, 20px, 20px, 240px, 233px, '../images/sprites/sprite.png', 'icon-del-round', );
+$icon-delete-name: 'icon-delete';
+$icon-delete-x: 27px;
+$icon-delete-y: 196px;
+$icon-delete-offset-x: -27px;
+$icon-delete-offset-y: -196px;
+$icon-delete-width: 16px;
+$icon-delete-height: 16px;
+$icon-delete-total-width: 240px;
+$icon-delete-total-height: 233px;
+$icon-delete-image: '../images/sprites/sprite.png';
+$icon-delete: (27px, 196px, -27px, -196px, 16px, 16px, 240px, 233px, '../images/sprites/sprite.png', 'icon-delete', );
+$icon-funnel-arrow-name: 'icon-funnel-arrow';
+$icon-funnel-arrow-x: 0px;
+$icon-funnel-arrow-y: 223px;
+$icon-funnel-arrow-offset-x: 0px;
+$icon-funnel-arrow-offset-y: -223px;
+$icon-funnel-arrow-width: 7px;
+$icon-funnel-arrow-height: 10px;
+$icon-funnel-arrow-total-width: 240px;
+$icon-funnel-arrow-total-height: 233px;
+$icon-funnel-arrow-image: '../images/sprites/sprite.png';
+$icon-funnel-arrow: (0px, 223px, 0px, -223px, 7px, 10px, 240px, 233px, '../images/sprites/sprite.png', 'icon-funnel-arrow', );
+$icon-genres-name: 'icon-genres';
+$icon-genres-x: 130px;
+$icon-genres-y: 50px;
+$icon-genres-offset-x: -130px;
+$icon-genres-offset-y: -50px;
+$icon-genres-width: 26px;
+$icon-genres-height: 25px;
+$icon-genres-total-width: 240px;
+$icon-genres-total-height: 233px;
+$icon-genres-image: '../images/sprites/sprite.png';
+$icon-genres: (130px, 50px, -130px, -50px, 26px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-genres', );
+$icon-ghost-image-name: 'icon-ghost-image';
+$icon-ghost-image-x: 0px;
+$icon-ghost-image-y: 0px;
+$icon-ghost-image-offset-x: 0px;
+$icon-ghost-image-offset-y: 0px;
+$icon-ghost-image-width: 120px;
+$icon-ghost-image-height: 75px;
+$icon-ghost-image-total-width: 240px;
+$icon-ghost-image-total-height: 233px;
+$icon-ghost-image-image: '../images/sprites/sprite.png';
+$icon-ghost-image: (0px, 0px, 0px, 0px, 120px, 75px, 240px, 233px, '../images/sprites/sprite.png', 'icon-ghost-image', );
+$icon-info-name: 'icon-info';
+$icon-info-x: 0px;
+$icon-info-y: 196px;
+$icon-info-offset-x: 0px;
+$icon-info-offset-y: -196px;
+$icon-info-width: 17px;
+$icon-info-height: 17px;
+$icon-info-total-width: 240px;
+$icon-info-total-height: 233px;
+$icon-info-image: '../images/sprites/sprite.png';
+$icon-info: (0px, 196px, 0px, -196px, 17px, 17px, 240px, 233px, '../images/sprites/sprite.png', 'icon-info', );
+$icon-legal-name: 'icon-legal';
+$icon-legal-x: 84px;
+$icon-legal-y: 120px;
+$icon-legal-offset-x: -84px;
+$icon-legal-offset-y: -120px;
+$icon-legal-width: 25px;
+$icon-legal-height: 25px;
+$icon-legal-total-width: 240px;
+$icon-legal-total-height: 233px;
+$icon-legal-image: '../images/sprites/sprite.png';
+$icon-legal: (84px, 120px, -84px, -120px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-legal', );
+$icon-loc-name: 'icon-loc';
+$icon-loc-x: 215px;
+$icon-loc-y: 159px;
+$icon-loc-offset-x: -215px;
+$icon-loc-offset-y: -159px;
+$icon-loc-width: 15px;
+$icon-loc-height: 21px;
+$icon-loc-total-width: 240px;
+$icon-loc-total-height: 233px;
+$icon-loc-image: '../images/sprites/sprite.png';
+$icon-loc: (215px, 159px, -215px, -159px, 15px, 21px, 240px, 233px, '../images/sprites/sprite.png', 'icon-loc', );
+$icon-logo-md-name: 'icon-logo-md';
+$icon-logo-md-x: 0px;
+$icon-logo-md-y: 85px;
+$icon-logo-md-offset-x: 0px;
+$icon-logo-md-offset-y: -85px;
+$icon-logo-md-width: 74px;
+$icon-logo-md-height: 101px;
+$icon-logo-md-total-width: 240px;
+$icon-logo-md-total-height: 233px;
+$icon-logo-md-image: '../images/sprites/sprite.png';
+$icon-logo-md: (0px, 85px, 0px, -85px, 74px, 101px, 240px, 233px, '../images/sprites/sprite.png', 'icon-logo-md', );
+$icon-logo-name: 'icon-logo';
+$icon-logo-x: 130px;
+$icon-logo-y: 0px;
+$icon-logo-offset-x: -130px;
+$icon-logo-offset-y: 0px;
+$icon-logo-width: 40px;
+$icon-logo-height: 40px;
+$icon-logo-total-width: 240px;
+$icon-logo-total-height: 233px;
+$icon-logo-image: '../images/sprites/sprite.png';
+$icon-logo: (130px, 0px, -130px, 0px, 40px, 40px, 240px, 233px, '../images/sprites/sprite.png', 'icon-logo', );
+$icon-orders-name: 'icon-orders';
+$icon-orders-x: 84px;
+$icon-orders-y: 155px;
+$icon-orders-offset-x: -84px;
+$icon-orders-offset-y: -155px;
+$icon-orders-width: 25px;
+$icon-orders-height: 25px;
+$icon-orders-total-width: 240px;
+$icon-orders-total-height: 233px;
+$icon-orders-image: '../images/sprites/sprite.png';
+$icon-orders: (84px, 155px, -84px, -155px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-orders', );
+$icon-payments-name: 'icon-payments';
+$icon-payments-x: 180px;
+$icon-payments-y: 0px;
+$icon-payments-offset-x: -180px;
+$icon-payments-offset-y: 0px;
+$icon-payments-width: 25px;
+$icon-payments-height: 25px;
+$icon-payments-total-width: 240px;
+$icon-payments-total-height: 233px;
+$icon-payments-image: '../images/sprites/sprite.png';
+$icon-payments: (180px, 0px, -180px, 0px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-payments', );
+$icon-plus-name: 'icon-plus';
+$icon-plus-x: 53px;
+$icon-plus-y: 196px;
+$icon-plus-offset-x: -53px;
+$icon-plus-offset-y: -196px;
+$icon-plus-width: 14px;
+$icon-plus-height: 14px;
+$icon-plus-total-width: 240px;
+$icon-plus-total-height: 233px;
+$icon-plus-image: '../images/sprites/sprite.png';
+$icon-plus: (53px, 196px, -53px, -196px, 14px, 14px, 240px, 233px, '../images/sprites/sprite.png', 'icon-plus', );
+$icon-reviews-name: 'icon-reviews';
+$icon-reviews-x: 180px;
+$icon-reviews-y: 35px;
+$icon-reviews-offset-x: -180px;
+$icon-reviews-offset-y: -35px;
+$icon-reviews-width: 25px;
+$icon-reviews-height: 25px;
+$icon-reviews-total-width: 240px;
+$icon-reviews-total-height: 233px;
+$icon-reviews-image: '../images/sprites/sprite.png';
+$icon-reviews: (180px, 35px, -180px, -35px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-reviews', );
+$icon-select-arrow-down-name: 'icon-select-arrow-down';
+$icon-select-arrow-down-x: 102px;
+$icon-select-arrow-down-y: 196px;
+$icon-select-arrow-down-offset-x: -102px;
+$icon-select-arrow-down-offset-y: -196px;
+$icon-select-arrow-down-width: 9px;
+$icon-select-arrow-down-height: 7px;
+$icon-select-arrow-down-total-width: 240px;
+$icon-select-arrow-down-total-height: 233px;
+$icon-select-arrow-down-image: '../images/sprites/sprite.png';
+$icon-select-arrow-down: (102px, 196px, -102px, -196px, 9px, 7px, 240px, 233px, '../images/sprites/sprite.png', 'icon-select-arrow-down', );
+$icon-select-arrow-up-name: 'icon-select-arrow-up';
+$icon-select-arrow-up-x: 121px;
+$icon-select-arrow-up-y: 196px;
+$icon-select-arrow-up-offset-x: -121px;
+$icon-select-arrow-up-offset-y: -196px;
+$icon-select-arrow-up-width: 9px;
+$icon-select-arrow-up-height: 7px;
+$icon-select-arrow-up-total-width: 240px;
+$icon-select-arrow-up-total-height: 233px;
+$icon-select-arrow-up-image: '../images/sprites/sprite.png';
+$icon-select-arrow-up: (121px, 196px, -121px, -196px, 9px, 7px, 240px, 233px, '../images/sprites/sprite.png', 'icon-select-arrow-up', );
+$icon-settings-name: 'icon-settings';
+$icon-settings-x: 180px;
+$icon-settings-y: 70px;
+$icon-settings-offset-x: -180px;
+$icon-settings-offset-y: -70px;
+$icon-settings-width: 25px;
+$icon-settings-height: 25px;
+$icon-settings-total-width: 240px;
+$icon-settings-total-height: 233px;
+$icon-settings-image: '../images/sprites/sprite.png';
+$icon-settings: (180px, 70px, -180px, -70px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-settings', );
+$icon-singers-name: 'icon-singers';
+$icon-singers-x: 180px;
+$icon-singers-y: 105px;
+$icon-singers-offset-x: -180px;
+$icon-singers-offset-y: -105px;
+$icon-singers-width: 25px;
+$icon-singers-height: 25px;
+$icon-singers-total-width: 240px;
+$icon-singers-total-height: 233px;
+$icon-singers-image: '../images/sprites/sprite.png';
+$icon-singers: (180px, 105px, -180px, -105px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-singers', );
+$icon-stat-name: 'icon-stat';
+$icon-stat-x: 180px;
+$icon-stat-y: 140px;
+$icon-stat-offset-x: -180px;
+$icon-stat-offset-y: -140px;
+$icon-stat-width: 25px;
+$icon-stat-height: 25px;
+$icon-stat-total-width: 240px;
+$icon-stat-total-height: 233px;
+$icon-stat-image: '../images/sprites/sprite.png';
+$icon-stat: (180px, 140px, -180px, -140px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-stat', );
+$icon-toggle-down-name: 'icon-toggle-down';
+$icon-toggle-down-x: 180px;
+$icon-toggle-down-y: 175px;
+$icon-toggle-down-offset-x: -180px;
+$icon-toggle-down-offset-y: -175px;
+$icon-toggle-down-width: 15px;
+$icon-toggle-down-height: 8px;
+$icon-toggle-down-total-width: 240px;
+$icon-toggle-down-total-height: 233px;
+$icon-toggle-down-image: '../images/sprites/sprite.png';
+$icon-toggle-down: (180px, 175px, -180px, -175px, 15px, 8px, 240px, 233px, '../images/sprites/sprite.png', 'icon-toggle-down', );
+$icon-toggle-up-name: 'icon-toggle-up';
+$icon-toggle-up-x: 77px;
+$icon-toggle-up-y: 196px;
+$icon-toggle-up-offset-x: -77px;
+$icon-toggle-up-offset-y: -196px;
+$icon-toggle-up-width: 15px;
+$icon-toggle-up-height: 8px;
+$icon-toggle-up-total-width: 240px;
+$icon-toggle-up-total-height: 233px;
+$icon-toggle-up-image: '../images/sprites/sprite.png';
+$icon-toggle-up: (77px, 196px, -77px, -196px, 15px, 8px, 240px, 233px, '../images/sprites/sprite.png', 'icon-toggle-up', );
+$icon-user-2-name: 'icon-user-2';
+$icon-user-2-x: 215px;
+$icon-user-2-y: 0px;
+$icon-user-2-offset-x: -215px;
+$icon-user-2-offset-y: 0px;
+$icon-user-2-width: 25px;
+$icon-user-2-height: 25px;
+$icon-user-2-total-width: 240px;
+$icon-user-2-total-height: 233px;
+$icon-user-2-image: '../images/sprites/sprite.png';
+$icon-user-2: (215px, 0px, -215px, 0px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-user-2', );
+$icon-users-name: 'icon-users';
+$icon-users-x: 215px;
+$icon-users-y: 35px;
+$icon-users-offset-x: -215px;
+$icon-users-offset-y: -35px;
+$icon-users-width: 25px;
+$icon-users-height: 25px;
+$icon-users-total-width: 240px;
+$icon-users-total-height: 233px;
+$icon-users-image: '../images/sprites/sprite.png';
+$icon-users: (215px, 35px, -215px, -35px, 25px, 25px, 240px, 233px, '../images/sprites/sprite.png', 'icon-users', );
+$icon-warning-name: 'icon-warning';
+$icon-warning-x: 215px;
+$icon-warning-y: 100px;
+$icon-warning-offset-x: -215px;
+$icon-warning-offset-y: -100px;
+$icon-warning-width: 19px;
+$icon-warning-height: 19px;
+$icon-warning-total-width: 240px;
+$icon-warning-total-height: 233px;
+$icon-warning-image: '../images/sprites/sprite.png';
+$icon-warning: (215px, 100px, -215px, -100px, 19px, 19px, 240px, 233px, '../images/sprites/sprite.png', 'icon-warning', );
+$retina-icon-advert-name: 'retina_icon-advert';
+$retina-icon-advert-x: 260px;
+$retina-icon-advert-y: 170px;
+$retina-icon-advert-offset-x: -260px;
+$retina-icon-advert-offset-y: -170px;
+$retina-icon-advert-width: 50px;
+$retina-icon-advert-height: 50px;
+$retina-icon-advert-total-width: 480px;
+$retina-icon-advert-total-height: 466px;
+$retina-icon-advert-image: '../images/sprites/sprite@2x.png';
+$retina-icon-advert: (260px, 170px, -260px, -170px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-advert', );
+$retina-icon-albums-name: 'retina_icon-albums';
+$retina-icon-albums-x: 260px;
+$retina-icon-albums-y: 240px;
+$retina-icon-albums-offset-x: -260px;
+$retina-icon-albums-offset-y: -240px;
+$retina-icon-albums-width: 50px;
+$retina-icon-albums-height: 50px;
+$retina-icon-albums-total-width: 480px;
+$retina-icon-albums-total-height: 466px;
+$retina-icon-albums-image: '../images/sprites/sprite@2x.png';
+$retina-icon-albums: (260px, 240px, -260px, -240px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-albums', );
+$retina-icon-carwashes-name: 'retina_icon-carwashes';
+$retina-icon-carwashes-x: 260px;
+$retina-icon-carwashes-y: 310px;
+$retina-icon-carwashes-offset-x: -260px;
+$retina-icon-carwashes-offset-y: -310px;
+$retina-icon-carwashes-width: 50px;
+$retina-icon-carwashes-height: 50px;
+$retina-icon-carwashes-total-width: 480px;
+$retina-icon-carwashes-total-height: 466px;
+$retina-icon-carwashes-image: '../images/sprites/sprite@2x.png';
+$retina-icon-carwashes: (260px, 310px, -260px, -310px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-carwashes', );
+$retina-icon-companies-name: 'retina_icon-companies';
+$retina-icon-companies-x: 168px;
+$retina-icon-companies-y: 170px;
+$retina-icon-companies-offset-x: -168px;
+$retina-icon-companies-offset-y: -170px;
+$retina-icon-companies-width: 50px;
+$retina-icon-companies-height: 50px;
+$retina-icon-companies-total-width: 480px;
+$retina-icon-companies-total-height: 466px;
+$retina-icon-companies-image: '../images/sprites/sprite@2x.png';
+$retina-icon-companies: (168px, 170px, -168px, -170px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-companies', );
+$retina-icon-copy-name: 'retina_icon-copy';
+$retina-icon-copy-x: 430px;
+$retina-icon-copy-y: 258px;
+$retina-icon-copy-offset-x: -430px;
+$retina-icon-copy-offset-y: -258px;
+$retina-icon-copy-width: 35px;
+$retina-icon-copy-height: 40px;
+$retina-icon-copy-total-width: 480px;
+$retina-icon-copy-total-height: 466px;
+$retina-icon-copy-image: '../images/sprites/sprite@2x.png';
+$retina-icon-copy: (430px, 258px, -430px, -258px, 35px, 40px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-copy', );
+$retina-icon-dd-down-name: 'retina_icon-dd-down';
+$retina-icon-dd-down-x: 280px;
+$retina-icon-dd-down-y: 392px;
+$retina-icon-dd-down-offset-x: -280px;
+$retina-icon-dd-down-offset-y: -392px;
+$retina-icon-dd-down-width: 18px;
+$retina-icon-dd-down-height: 8px;
+$retina-icon-dd-down-total-width: 480px;
+$retina-icon-dd-down-total-height: 466px;
+$retina-icon-dd-down-image: '../images/sprites/sprite@2x.png';
+$retina-icon-dd-down: (280px, 392px, -280px, -392px, 18px, 8px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-dd-down', );
+$retina-icon-dd-up-name: 'retina_icon-dd-up';
+$retina-icon-dd-up-x: 318px;
+$retina-icon-dd-up-y: 392px;
+$retina-icon-dd-up-offset-x: -318px;
+$retina-icon-dd-up-offset-y: -392px;
+$retina-icon-dd-up-width: 18px;
+$retina-icon-dd-up-height: 8px;
+$retina-icon-dd-up-total-width: 480px;
+$retina-icon-dd-up-total-height: 466px;
+$retina-icon-dd-up-image: '../images/sprites/sprite@2x.png';
+$retina-icon-dd-up: (318px, 392px, -318px, -392px, 18px, 8px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-dd-up', );
+$retina-icon-del-round-name: 'retina_icon-del-round';
+$retina-icon-del-round-x: 430px;
+$retina-icon-del-round-y: 140px;
+$retina-icon-del-round-offset-x: -430px;
+$retina-icon-del-round-offset-y: -140px;
+$retina-icon-del-round-width: 40px;
+$retina-icon-del-round-height: 40px;
+$retina-icon-del-round-total-width: 480px;
+$retina-icon-del-round-total-height: 466px;
+$retina-icon-del-round-image: '../images/sprites/sprite@2x.png';
+$retina-icon-del-round: (430px, 140px, -430px, -140px, 40px, 40px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-del-round', );
+$retina-icon-delete-name: 'retina_icon-delete';
+$retina-icon-delete-x: 54px;
+$retina-icon-delete-y: 392px;
+$retina-icon-delete-offset-x: -54px;
+$retina-icon-delete-offset-y: -392px;
+$retina-icon-delete-width: 32px;
+$retina-icon-delete-height: 32px;
+$retina-icon-delete-total-width: 480px;
+$retina-icon-delete-total-height: 466px;
+$retina-icon-delete-image: '../images/sprites/sprite@2x.png';
+$retina-icon-delete: (54px, 392px, -54px, -392px, 32px, 32px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-delete', );
+$retina-icon-funnel-arrow-name: 'retina_icon-funnel-arrow';
+$retina-icon-funnel-arrow-x: 0px;
+$retina-icon-funnel-arrow-y: 446px;
+$retina-icon-funnel-arrow-offset-x: 0px;
+$retina-icon-funnel-arrow-offset-y: -446px;
+$retina-icon-funnel-arrow-width: 14px;
+$retina-icon-funnel-arrow-height: 20px;
+$retina-icon-funnel-arrow-total-width: 480px;
+$retina-icon-funnel-arrow-total-height: 466px;
+$retina-icon-funnel-arrow-image: '../images/sprites/sprite@2x.png';
+$retina-icon-funnel-arrow: (0px, 446px, 0px, -446px, 14px, 20px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-funnel-arrow', );
+$retina-icon-genres-name: 'retina_icon-genres';
+$retina-icon-genres-x: 260px;
+$retina-icon-genres-y: 100px;
+$retina-icon-genres-offset-x: -260px;
+$retina-icon-genres-offset-y: -100px;
+$retina-icon-genres-width: 52px;
+$retina-icon-genres-height: 50px;
+$retina-icon-genres-total-width: 480px;
+$retina-icon-genres-total-height: 466px;
+$retina-icon-genres-image: '../images/sprites/sprite@2x.png';
+$retina-icon-genres: (260px, 100px, -260px, -100px, 52px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-genres', );
+$retina-icon-ghost-image-name: 'retina_icon-ghost-image';
+$retina-icon-ghost-image-x: 0px;
+$retina-icon-ghost-image-y: 0px;
+$retina-icon-ghost-image-offset-x: 0px;
+$retina-icon-ghost-image-offset-y: 0px;
+$retina-icon-ghost-image-width: 240px;
+$retina-icon-ghost-image-height: 150px;
+$retina-icon-ghost-image-total-width: 480px;
+$retina-icon-ghost-image-total-height: 466px;
+$retina-icon-ghost-image-image: '../images/sprites/sprite@2x.png';
+$retina-icon-ghost-image: (0px, 0px, 0px, 0px, 240px, 150px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-ghost-image', );
+$retina-icon-info-name: 'retina_icon-info';
+$retina-icon-info-x: 0px;
+$retina-icon-info-y: 392px;
+$retina-icon-info-offset-x: 0px;
+$retina-icon-info-offset-y: -392px;
+$retina-icon-info-width: 34px;
+$retina-icon-info-height: 34px;
+$retina-icon-info-total-width: 480px;
+$retina-icon-info-total-height: 466px;
+$retina-icon-info-image: '../images/sprites/sprite@2x.png';
+$retina-icon-info: (0px, 392px, 0px, -392px, 34px, 34px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-info', );
+$retina-icon-legal-name: 'retina_icon-legal';
+$retina-icon-legal-x: 168px;
+$retina-icon-legal-y: 240px;
+$retina-icon-legal-offset-x: -168px;
+$retina-icon-legal-offset-y: -240px;
+$retina-icon-legal-width: 50px;
+$retina-icon-legal-height: 50px;
+$retina-icon-legal-total-width: 480px;
+$retina-icon-legal-total-height: 466px;
+$retina-icon-legal-image: '../images/sprites/sprite@2x.png';
+$retina-icon-legal: (168px, 240px, -168px, -240px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-legal', );
+$retina-icon-loc-name: 'retina_icon-loc';
+$retina-icon-loc-x: 430px;
+$retina-icon-loc-y: 318px;
+$retina-icon-loc-offset-x: -430px;
+$retina-icon-loc-offset-y: -318px;
+$retina-icon-loc-width: 30px;
+$retina-icon-loc-height: 42px;
+$retina-icon-loc-total-width: 480px;
+$retina-icon-loc-total-height: 466px;
+$retina-icon-loc-image: '../images/sprites/sprite@2x.png';
+$retina-icon-loc: (430px, 318px, -430px, -318px, 30px, 42px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-loc', );
+$retina-icon-logo-md-name: 'retina_icon-logo-md';
+$retina-icon-logo-md-x: 0px;
+$retina-icon-logo-md-y: 170px;
+$retina-icon-logo-md-offset-x: 0px;
+$retina-icon-logo-md-offset-y: -170px;
+$retina-icon-logo-md-width: 148px;
+$retina-icon-logo-md-height: 202px;
+$retina-icon-logo-md-total-width: 480px;
+$retina-icon-logo-md-total-height: 466px;
+$retina-icon-logo-md-image: '../images/sprites/sprite@2x.png';
+$retina-icon-logo-md: (0px, 170px, 0px, -170px, 148px, 202px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-logo-md', );
+$retina-icon-logo-name: 'retina_icon-logo';
+$retina-icon-logo-x: 260px;
+$retina-icon-logo-y: 0px;
+$retina-icon-logo-offset-x: -260px;
+$retina-icon-logo-offset-y: 0px;
+$retina-icon-logo-width: 80px;
+$retina-icon-logo-height: 80px;
+$retina-icon-logo-total-width: 480px;
+$retina-icon-logo-total-height: 466px;
+$retina-icon-logo-image: '../images/sprites/sprite@2x.png';
+$retina-icon-logo: (260px, 0px, -260px, 0px, 80px, 80px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-logo', );
+$retina-icon-orders-name: 'retina_icon-orders';
+$retina-icon-orders-x: 168px;
+$retina-icon-orders-y: 310px;
+$retina-icon-orders-offset-x: -168px;
+$retina-icon-orders-offset-y: -310px;
+$retina-icon-orders-width: 50px;
+$retina-icon-orders-height: 50px;
+$retina-icon-orders-total-width: 480px;
+$retina-icon-orders-total-height: 466px;
+$retina-icon-orders-image: '../images/sprites/sprite@2x.png';
+$retina-icon-orders: (168px, 310px, -168px, -310px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-orders', );
+$retina-icon-payments-name: 'retina_icon-payments';
+$retina-icon-payments-x: 360px;
+$retina-icon-payments-y: 0px;
+$retina-icon-payments-offset-x: -360px;
+$retina-icon-payments-offset-y: 0px;
+$retina-icon-payments-width: 50px;
+$retina-icon-payments-height: 50px;
+$retina-icon-payments-total-width: 480px;
+$retina-icon-payments-total-height: 466px;
+$retina-icon-payments-image: '../images/sprites/sprite@2x.png';
+$retina-icon-payments: (360px, 0px, -360px, 0px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-payments', );
+$retina-icon-plus-name: 'retina_icon-plus';
+$retina-icon-plus-x: 106px;
+$retina-icon-plus-y: 392px;
+$retina-icon-plus-offset-x: -106px;
+$retina-icon-plus-offset-y: -392px;
+$retina-icon-plus-width: 28px;
+$retina-icon-plus-height: 28px;
+$retina-icon-plus-total-width: 480px;
+$retina-icon-plus-total-height: 466px;
+$retina-icon-plus-image: '../images/sprites/sprite@2x.png';
+$retina-icon-plus: (106px, 392px, -106px, -392px, 28px, 28px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-plus', );
+$retina-icon-reviews-name: 'retina_icon-reviews';
+$retina-icon-reviews-x: 360px;
+$retina-icon-reviews-y: 70px;
+$retina-icon-reviews-offset-x: -360px;
+$retina-icon-reviews-offset-y: -70px;
+$retina-icon-reviews-width: 50px;
+$retina-icon-reviews-height: 50px;
+$retina-icon-reviews-total-width: 480px;
+$retina-icon-reviews-total-height: 466px;
+$retina-icon-reviews-image: '../images/sprites/sprite@2x.png';
+$retina-icon-reviews: (360px, 70px, -360px, -70px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-reviews', );
+$retina-icon-select-arrow-down-name: 'retina_icon-select-arrow-down';
+$retina-icon-select-arrow-down-x: 204px;
+$retina-icon-select-arrow-down-y: 392px;
+$retina-icon-select-arrow-down-offset-x: -204px;
+$retina-icon-select-arrow-down-offset-y: -392px;
+$retina-icon-select-arrow-down-width: 18px;
+$retina-icon-select-arrow-down-height: 14px;
+$retina-icon-select-arrow-down-total-width: 480px;
+$retina-icon-select-arrow-down-total-height: 466px;
+$retina-icon-select-arrow-down-image: '../images/sprites/sprite@2x.png';
+$retina-icon-select-arrow-down: (204px, 392px, -204px, -392px, 18px, 14px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-select-arrow-down', );
+$retina-icon-select-arrow-up-name: 'retina_icon-select-arrow-up';
+$retina-icon-select-arrow-up-x: 242px;
+$retina-icon-select-arrow-up-y: 392px;
+$retina-icon-select-arrow-up-offset-x: -242px;
+$retina-icon-select-arrow-up-offset-y: -392px;
+$retina-icon-select-arrow-up-width: 18px;
+$retina-icon-select-arrow-up-height: 14px;
+$retina-icon-select-arrow-up-total-width: 480px;
+$retina-icon-select-arrow-up-total-height: 466px;
+$retina-icon-select-arrow-up-image: '../images/sprites/sprite@2x.png';
+$retina-icon-select-arrow-up: (242px, 392px, -242px, -392px, 18px, 14px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-select-arrow-up', );
+$retina-icon-settings-name: 'retina_icon-settings';
+$retina-icon-settings-x: 360px;
+$retina-icon-settings-y: 140px;
+$retina-icon-settings-offset-x: -360px;
+$retina-icon-settings-offset-y: -140px;
+$retina-icon-settings-width: 50px;
+$retina-icon-settings-height: 50px;
+$retina-icon-settings-total-width: 480px;
+$retina-icon-settings-total-height: 466px;
+$retina-icon-settings-image: '../images/sprites/sprite@2x.png';
+$retina-icon-settings: (360px, 140px, -360px, -140px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-settings', );
+$retina-icon-singers-name: 'retina_icon-singers';
+$retina-icon-singers-x: 360px;
+$retina-icon-singers-y: 210px;
+$retina-icon-singers-offset-x: -360px;
+$retina-icon-singers-offset-y: -210px;
+$retina-icon-singers-width: 50px;
+$retina-icon-singers-height: 50px;
+$retina-icon-singers-total-width: 480px;
+$retina-icon-singers-total-height: 466px;
+$retina-icon-singers-image: '../images/sprites/sprite@2x.png';
+$retina-icon-singers: (360px, 210px, -360px, -210px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-singers', );
+$retina-icon-stat-name: 'retina_icon-stat';
+$retina-icon-stat-x: 360px;
+$retina-icon-stat-y: 280px;
+$retina-icon-stat-offset-x: -360px;
+$retina-icon-stat-offset-y: -280px;
+$retina-icon-stat-width: 50px;
+$retina-icon-stat-height: 50px;
+$retina-icon-stat-total-width: 480px;
+$retina-icon-stat-total-height: 466px;
+$retina-icon-stat-image: '../images/sprites/sprite@2x.png';
+$retina-icon-stat: (360px, 280px, -360px, -280px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-stat', );
+$retina-icon-toggle-down-name: 'retina_icon-toggle-down';
+$retina-icon-toggle-down-x: 360px;
+$retina-icon-toggle-down-y: 350px;
+$retina-icon-toggle-down-offset-x: -360px;
+$retina-icon-toggle-down-offset-y: -350px;
+$retina-icon-toggle-down-width: 30px;
+$retina-icon-toggle-down-height: 16px;
+$retina-icon-toggle-down-total-width: 480px;
+$retina-icon-toggle-down-total-height: 466px;
+$retina-icon-toggle-down-image: '../images/sprites/sprite@2x.png';
+$retina-icon-toggle-down: (360px, 350px, -360px, -350px, 30px, 16px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-toggle-down', );
+$retina-icon-toggle-up-name: 'retina_icon-toggle-up';
+$retina-icon-toggle-up-x: 154px;
+$retina-icon-toggle-up-y: 392px;
+$retina-icon-toggle-up-offset-x: -154px;
+$retina-icon-toggle-up-offset-y: -392px;
+$retina-icon-toggle-up-width: 30px;
+$retina-icon-toggle-up-height: 16px;
+$retina-icon-toggle-up-total-width: 480px;
+$retina-icon-toggle-up-total-height: 466px;
+$retina-icon-toggle-up-image: '../images/sprites/sprite@2x.png';
+$retina-icon-toggle-up: (154px, 392px, -154px, -392px, 30px, 16px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-toggle-up', );
+$retina-icon-user-2-name: 'retina_icon-user-2';
+$retina-icon-user-2-x: 430px;
+$retina-icon-user-2-y: 0px;
+$retina-icon-user-2-offset-x: -430px;
+$retina-icon-user-2-offset-y: 0px;
+$retina-icon-user-2-width: 50px;
+$retina-icon-user-2-height: 50px;
+$retina-icon-user-2-total-width: 480px;
+$retina-icon-user-2-total-height: 466px;
+$retina-icon-user-2-image: '../images/sprites/sprite@2x.png';
+$retina-icon-user-2: (430px, 0px, -430px, 0px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-user-2', );
+$retina-icon-users-name: 'retina_icon-users';
+$retina-icon-users-x: 430px;
+$retina-icon-users-y: 70px;
+$retina-icon-users-offset-x: -430px;
+$retina-icon-users-offset-y: -70px;
+$retina-icon-users-width: 50px;
+$retina-icon-users-height: 50px;
+$retina-icon-users-total-width: 480px;
+$retina-icon-users-total-height: 466px;
+$retina-icon-users-image: '../images/sprites/sprite@2x.png';
+$retina-icon-users: (430px, 70px, -430px, -70px, 50px, 50px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-users', );
+$retina-icon-warning-name: 'retina_icon-warning';
+$retina-icon-warning-x: 430px;
+$retina-icon-warning-y: 200px;
+$retina-icon-warning-offset-x: -430px;
+$retina-icon-warning-offset-y: -200px;
+$retina-icon-warning-width: 38px;
+$retina-icon-warning-height: 38px;
+$retina-icon-warning-total-width: 480px;
+$retina-icon-warning-total-height: 466px;
+$retina-icon-warning-image: '../images/sprites/sprite@2x.png';
+$retina-icon-warning: (430px, 200px, -430px, -200px, 38px, 38px, 480px, 466px, '../images/sprites/sprite@2x.png', 'retina_icon-warning', );
+$spritesheet-width: 240px;
+$spritesheet-height: 233px;
+$spritesheet-image: '../images/sprites/sprite.png';
+$spritesheet-sprites: ($icon-advert, $icon-albums, $icon-carwashes, $icon-companies, $icon-copy, $icon-dd-down, $icon-dd-up, $icon-del-round, $icon-delete, $icon-funnel-arrow, $icon-genres, $icon-ghost-image, $icon-info, $icon-legal, $icon-loc, $icon-logo-md, $icon-logo, $icon-orders, $icon-payments, $icon-plus, $icon-reviews, $icon-select-arrow-down, $icon-select-arrow-up, $icon-settings, $icon-singers, $icon-stat, $icon-toggle-down, $icon-toggle-up, $icon-user-2, $icon-users, $icon-warning, );
+$spritesheet: (240px, 233px, '../images/sprites/sprite.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 480px;
+$retina-spritesheet-height: 466px;
+$retina-spritesheet-image: '../images/sprites/sprite@2x.png';
+$retina-spritesheet-sprites: ($retina-icon-advert, $retina-icon-albums, $retina-icon-carwashes, $retina-icon-companies, $retina-icon-copy, $retina-icon-dd-down, $retina-icon-dd-up, $retina-icon-del-round, $retina-icon-delete, $retina-icon-funnel-arrow, $retina-icon-genres, $retina-icon-ghost-image, $retina-icon-info, $retina-icon-legal, $retina-icon-loc, $retina-icon-logo-md, $retina-icon-logo, $retina-icon-orders, $retina-icon-payments, $retina-icon-plus, $retina-icon-reviews, $retina-icon-select-arrow-down, $retina-icon-select-arrow-up, $retina-icon-settings, $retina-icon-singers, $retina-icon-stat, $retina-icon-toggle-down, $retina-icon-toggle-up, $retina-icon-user-2, $retina-icon-users, $retina-icon-warning, );
+$retina-spritesheet: (480px, 466px, '../images/sprites/sprite@2x.png', $retina-spritesheet-sprites, );
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$icon-advert-group-name: 'icon-advert';
+$icon-advert-group: ('icon-advert', $icon-advert, $retina-icon-advert, );
+$icon-albums-group-name: 'icon-albums';
+$icon-albums-group: ('icon-albums', $icon-albums, $retina-icon-albums, );
+$icon-carwashes-group-name: 'icon-carwashes';
+$icon-carwashes-group: ('icon-carwashes', $icon-carwashes, $retina-icon-carwashes, );
+$icon-companies-group-name: 'icon-companies';
+$icon-companies-group: ('icon-companies', $icon-companies, $retina-icon-companies, );
+$icon-copy-group-name: 'icon-copy';
+$icon-copy-group: ('icon-copy', $icon-copy, $retina-icon-copy, );
+$icon-dd-down-group-name: 'icon-dd-down';
+$icon-dd-down-group: ('icon-dd-down', $icon-dd-down, $retina-icon-dd-down, );
+$icon-dd-up-group-name: 'icon-dd-up';
+$icon-dd-up-group: ('icon-dd-up', $icon-dd-up, $retina-icon-dd-up, );
+$icon-del-round-group-name: 'icon-del-round';
+$icon-del-round-group: ('icon-del-round', $icon-del-round, $retina-icon-del-round, );
+$icon-delete-group-name: 'icon-delete';
+$icon-delete-group: ('icon-delete', $icon-delete, $retina-icon-delete, );
+$icon-funnel-arrow-group-name: 'icon-funnel-arrow';
+$icon-funnel-arrow-group: ('icon-funnel-arrow', $icon-funnel-arrow, $retina-icon-funnel-arrow, );
+$icon-genres-group-name: 'icon-genres';
+$icon-genres-group: ('icon-genres', $icon-genres, $retina-icon-genres, );
+$icon-ghost-image-group-name: 'icon-ghost-image';
+$icon-ghost-image-group: ('icon-ghost-image', $icon-ghost-image, $retina-icon-ghost-image, );
+$icon-info-group-name: 'icon-info';
+$icon-info-group: ('icon-info', $icon-info, $retina-icon-info, );
+$icon-legal-group-name: 'icon-legal';
+$icon-legal-group: ('icon-legal', $icon-legal, $retina-icon-legal, );
+$icon-loc-group-name: 'icon-loc';
+$icon-loc-group: ('icon-loc', $icon-loc, $retina-icon-loc, );
+$icon-logo-md-group-name: 'icon-logo-md';
+$icon-logo-md-group: ('icon-logo-md', $icon-logo-md, $retina-icon-logo-md, );
+$icon-logo-group-name: 'icon-logo';
+$icon-logo-group: ('icon-logo', $icon-logo, $retina-icon-logo, );
+$icon-orders-group-name: 'icon-orders';
+$icon-orders-group: ('icon-orders', $icon-orders, $retina-icon-orders, );
+$icon-payments-group-name: 'icon-payments';
+$icon-payments-group: ('icon-payments', $icon-payments, $retina-icon-payments, );
+$icon-plus-group-name: 'icon-plus';
+$icon-plus-group: ('icon-plus', $icon-plus, $retina-icon-plus, );
+$icon-reviews-group-name: 'icon-reviews';
+$icon-reviews-group: ('icon-reviews', $icon-reviews, $retina-icon-reviews, );
+$icon-select-arrow-down-group-name: 'icon-select-arrow-down';
+$icon-select-arrow-down-group: ('icon-select-arrow-down', $icon-select-arrow-down, $retina-icon-select-arrow-down, );
+$icon-select-arrow-up-group-name: 'icon-select-arrow-up';
+$icon-select-arrow-up-group: ('icon-select-arrow-up', $icon-select-arrow-up, $retina-icon-select-arrow-up, );
+$icon-settings-group-name: 'icon-settings';
+$icon-settings-group: ('icon-settings', $icon-settings, $retina-icon-settings, );
+$icon-singers-group-name: 'icon-singers';
+$icon-singers-group: ('icon-singers', $icon-singers, $retina-icon-singers, );
+$icon-stat-group-name: 'icon-stat';
+$icon-stat-group: ('icon-stat', $icon-stat, $retina-icon-stat, );
+$icon-toggle-down-group-name: 'icon-toggle-down';
+$icon-toggle-down-group: ('icon-toggle-down', $icon-toggle-down, $retina-icon-toggle-down, );
+$icon-toggle-up-group-name: 'icon-toggle-up';
+$icon-toggle-up-group: ('icon-toggle-up', $icon-toggle-up, $retina-icon-toggle-up, );
+$icon-user-2-group-name: 'icon-user-2';
+$icon-user-2-group: ('icon-user-2', $icon-user-2, $retina-icon-user-2, );
+$icon-users-group-name: 'icon-users';
+$icon-users-group: ('icon-users', $icon-users, $retina-icon-users, );
+$icon-warning-group-name: 'icon-warning';
+$icon-warning-group: ('icon-warning', $icon-warning, $retina-icon-warning, );
+$retina-groups: ($icon-advert-group, $icon-albums-group, $icon-carwashes-group, $icon-companies-group, $icon-copy-group, $icon-dd-down-group, $icon-dd-up-group, $icon-del-round-group, $icon-delete-group, $icon-funnel-arrow-group, $icon-genres-group, $icon-ghost-image-group, $icon-info-group, $icon-legal-group, $icon-loc-group, $icon-logo-md-group, $icon-logo-group, $icon-orders-group, $icon-payments-group, $icon-plus-group, $icon-reviews-group, $icon-select-arrow-down-group, $icon-select-arrow-up-group, $icon-settings-group, $icon-singers-group, $icon-stat-group, $icon-toggle-down-group, $icon-toggle-up-group, $icon-user-2-group, $icon-users-group, $icon-warning-group, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

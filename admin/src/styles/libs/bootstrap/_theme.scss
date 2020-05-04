@@ -1,0 +1,29 @@
+// Dropdown
+.dropdown {
+  &.show {
+    .dropdown-toggle {
+      &:after {
+        border-top: 0;
+        border-bottom: 0.3em solid;
+        border-bottom-color: $g-color-brand;
+        border-top-color: transparent;
+      }
+    }
+  }
+  .dropdown-toggle {
+    &:after {
+      border-top-color: $g-color-brand;
+    }
+  }
+  .dropdown-menu {
+    border: none;
+  }
+  .dropdown-item {
+    padding: .3rem 1.5rem;
+    &:hover {
+      text-decoration: none;
+      color: $g-color-brand;
+    }
+  }
+}
+

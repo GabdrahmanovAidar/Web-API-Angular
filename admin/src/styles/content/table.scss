@@ -1,0 +1,134 @@
+.table {
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+  thead {
+    th {
+      padding: .9rem 1.4rem;
+    }
+  }
+  tbody {
+    td {
+      padding: .9rem 1.4rem;
+      vertical-align: top;
+    }
+  }
+}
+
+.table-no-bg {
+  background-color: transparent;
+}
+
+.table-hovered {
+  & > tbody {
+    & > tr:not(.table-row-inner) {
+      cursor: pointer;
+      transition: background-color 80ms linear;
+      &:hover {
+        background-color: lighten($g-color-brand, 19);
+      }
+    }
+  }
+}
+
+.table-hovered-default {
+  & > tbody {
+    & > tr:not(.table-row-inner) {
+      transition: background-color 80ms linear;
+      &:hover {
+        background-color: lighten($g-color-brand, 19);
+      }
+    }
+  }
+}
+
+.table-default {
+  background-color: #fff;
+  border: solid 1px rgb(209, 209, 209);
+  thead {
+    background-color: #ebebeb;
+    th {
+      border: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: .8rem;
+      color: $g-text-color;
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border-bottom: solid 1px rgb(231, 231, 231);
+      }
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+    td {
+      border: none;
+    }
+  }
+}
+
+.table-transparent {
+  background-color: transparent;
+  border: none;
+  thead {
+    background-color: transparent;
+    th {
+      border: none;
+      font-weight: normal;
+      color: $g-text-color-gray;
+      border-bottom: solid 2px #e0e0e0;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        border-bottom: solid 1px #e0e0e0;
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+    td {
+      border: none;
+    }
+  }
+}
+
+.table-row--expanded {
+}
+
+.table-row--danger {
+  border-left: 10px solid $g-color-danger;
+}
+
+.table tbody .table-row-inner {
+  background-color: rgba(249, 249, 249, 0.5);
+  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.24);
+  & > td {
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+  }
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}

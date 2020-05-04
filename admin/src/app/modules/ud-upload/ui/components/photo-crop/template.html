@@ -1,0 +1,16 @@
+<div class="d-block text-center crop-wrap">
+  <img #image [src]="imageUrl" class="image">
+</div>
+
+<div class="mt-4 text-center">
+  <button type="button"
+          (click)="onCancelClicked($event)"
+          class="btn btn-clear p-0">
+    Отмена
+  </button>
+  <button type="button"
+          (click)="onSaveCropClicked($event)"
+          class="btn btn-round btn-primary ml-3">
+    Сохранить
+  </button>
+</div>

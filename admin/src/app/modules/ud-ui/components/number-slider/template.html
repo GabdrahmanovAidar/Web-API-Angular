@@ -1,0 +1,10 @@
+<div class="number-slider">
+  <input type="number"
+         [placeholder]="placeholder"
+         [ngModel]="value"
+         [disabled]="disableInput"
+         (blur)="onBlur($event)"
+         (ngModelChange)="onInputChange($event)"
+         class="form-control number-slider__input" />
+  <div #slider [ngClass]="{ 'number-slider--disabled': disableInput }" class="number-slider__slider"></div>
+</div>

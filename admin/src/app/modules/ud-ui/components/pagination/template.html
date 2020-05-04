@@ -1,0 +1,52 @@
+<span class="font-sm mr-2 vertical-middle">
+    Страница:
+</span>
+
+<div class="d-inline-block vertical-middle">
+    <ul class="pagination">
+        <li *ngIf="boundaryLinks" class="page-item" [class.disabled]="!hasPrevious() || disabled">
+            <a aria-label="First"
+               class="ud-link" href
+               (click)="!!selectPage(1)"
+               [attr.tabindex]="(hasPrevious() ? null : '-1')">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li *ngIf="directionLinks" class="page-item" [class.disabled]="!hasPrevious() || disabled">
+            <a aria-label="Previous"
+               class="ud-link" href
+               (click)="!!selectPage(page-1)"
+               [attr.tabindex]="(hasPrevious() ? null : '-1')">
+                <span aria-hidden="true">&lsaquo;</span>
+            </a>
+        </li>
+        <li *ngFor="let pageNumber of pages"
+            class="page-item"
+            [class.active]="pageNumber === page"
+            [class.disabled]="isEllipsis(pageNumber) || disabled">
+            <a *ngIf="isEllipsis(pageNumber)"
+               class="ud-link">...</a>
+            <a *ngIf="!isEllipsis(pageNumber)"
+               class="ud-link" href
+               (click)="!!selectPage(pageNumber)">
+                {{pageNumber}}
+            </a>
+        </li>
+        <li *ngIf="directionLinks" class="page-item" [class.disabled]="!hasNext() || disabled">
+            <a aria-label="Next"
+               class="ud-link" href
+               (click)="!!selectPage(page+1)"
+               [attr.tabindex]="(hasNext() ? null : '-1')">
+                <span aria-hidden="true">&rsaquo;</span>
+            </a>
+        </li>
+        <li *ngIf="boundaryLinks" class="page-item" [class.disabled]="!hasNext() || disabled">
+            <a aria-label="Last"
+               class="ud-link" href
+               (click)="!!selectPage(pageCount)"
+               [attr.tabindex]="(hasNext() ? null : '-1')">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</div>

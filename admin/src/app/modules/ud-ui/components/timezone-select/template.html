@@ -1,0 +1,9 @@
+<p-dropdown [autoWidth]="false"
+            [options]="timezones"
+            [disabled]="disabled"
+            [placeholder]="placeholder"
+            (onBlur)="onBlur($event)"
+            [ngModel]="value"
+            (ngModelChange)="onChange($event)"
+            class="d-block">
+</p-dropdown>

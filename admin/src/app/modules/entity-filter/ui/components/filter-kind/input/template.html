@@ -1,0 +1,6 @@
+<input
+  [(ngModel)]="value"
+  (ngModelChange)="valueChange.emit($event)"
+  class="form-control"
+  [type]="settings?.type"
+  [placeholder]="settings?.placeholder"/>

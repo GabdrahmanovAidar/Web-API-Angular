@@ -1,0 +1,39 @@
+.font-xs  { font-size: 0.7143rem; } // 10px
+.font-sm  { font-size: 0.8571rem; } // 12px
+.font-md  { font-size: 1rem; }      // 14px
+.font-lg  { font-size: 1.143rem; }  // 16px
+.font-xl  { font-size: 1.286rem; }  // 18px
+.font-xxl { font-size: 1.429rem; }  // 20px
+.font-xxxl { font-size: 1.714rem; }  // 24px
+.font-exlg { font-size: 2.571rem; }  // 36px
+
+.break-word { word-break: break-all; }
+.font-transform-none { text-transform: none; }
+.line-height-100 { line-height: 100%; }
+
+
+.text-uppercase { text-transform: uppercase; }
+.text-underline { text-decoration: underline; }
+.font-weight-bold { font-weight: bold; }
+.font-italic { font-style: italic; }
+
+.font-uppercase-bold {
+  @extend .text-uppercase;
+  @extend .font-weight-bold;
+}
+
+.text-brand { color: $g-color-brand; }
+.text-white { color: #fff; }
+.text-gray { color: $g-text-color-gray; }
+.text-gray-light { color: $g-text-color-gray-light; }
+.text-danger { color: $g-color-danger; }
+// .text-success { color: $g-color-primary; }
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-no-wrap { white-space: nowrap; }
+.text-highlight {
+  background-color: rgba(28, 119, 212, 0.81);
+  color: #fff;
+}

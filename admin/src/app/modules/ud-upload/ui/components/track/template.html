@@ -1,0 +1,19 @@
+<div *ngIf="value" class="track">
+    <audio controls class="track-audio">
+        <source [src]="value?.source">
+    </audio>
+    <div class="track-actions text-right">
+        <i (click)="onDeleteClicked($event)" class="icon icon-delete c-pointer"></i>
+    </div>
+</div>
+
+<ud-spinner [show]="uploading" type="relative" size="sm"></ud-spinner>
+
+<ud-file-select
+        *ngIf="!value && !uploading"
+        [accept]="acceptMimeTypes"
+        (select)="onFilesSelect($event)">
+    <span class="btn btn-sm btn-link">
+        {{ btnTitle || 'Выбрать файл' }}
+    </span>
+</ud-file-select>

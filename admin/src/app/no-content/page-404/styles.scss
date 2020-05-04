@@ -1,0 +1,15 @@
+.page-404 {
+  background-image: url('../../../images/404-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-404__inner {
+  background-color: #fff;
+  padding: 1rem;
+}

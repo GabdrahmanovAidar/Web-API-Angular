@@ -1,0 +1,18 @@
+<div [ngClass]="{ 'opened': isOpened, 'danger': theme === 'danger' }" class="accordion">
+    <div (click)="onHeaderClicked($event)"
+         [ngClass]="{ 'accordion-header--bordered': showBottomBorder }"
+         class="accordion-header">
+      <div [ngClass]="{ 'rotate-toggler--active': isOpened }"
+           class="accordion-toggle rotate-toggler icon-toggle-down"></div>
+      <div class="accordion-header__content">
+        <ng-content select="[ud-accordion-header],ud-accordion-header"></ng-content>
+      </div>
+    </div>
+    <div [@tabContent]="isOpened ? 'visible' : 'hidden'"
+         (@tabContent.done)="onToggleDone($event)"
+         class="accordion-body">
+      <div class="accordion-body__inner">
+        <ng-content select="[ud-accordion-content],ud-accordion-content"></ng-content>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div [ngClass]="{
+        'card--border': type === 'border',
+        'card--default': type === 'default'
+        }"
+     class="card">
+  <div class="card-inner">
+    <div [ngClass]="{
+            'card-header--gray': theme === 'gray',
+            'card-header--toggleable': allowToggle
+         }"
+         class="card-header">
+      <div *ngIf="allowToggle"
+           (click)="onToggleClicked($event)"
+           class="card-toggle-wrap">
+        <i [ngClass]="{ 'icon-toggle-down': !opened, 'icon-toggle-up': opened }"
+           class="icon card-toggle"></i>
+      </div>
+      <ng-content select="[ud-card-header],ud-card-header"></ng-content>
+    </div>
+    <div [ngClass]="{ 'p-0': noPadding, 'py-0': !opened }" class="card-body">
+      <ud-animate-roll
+              [opened]="opened"
+              (hide)="onToggleDone($event)"
+              (show)="onToggleDone($event)">
+        <ng-content select="[ud-card-content],ud-card-content"></ng-content>
+      </ud-animate-roll>
+    </div>
+  </div>
+</div>

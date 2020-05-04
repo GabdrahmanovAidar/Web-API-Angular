@@ -1,0 +1,29 @@
+.login-content {
+  width: 350px;
+  margin: auto;
+}
+
+.login-enter {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+.login-btn {
+  width: 80%;
+  display: block;
+  margin: auto;
+  background-color:  #007aff;
+}
+.login-tip {
+  opacity: .7;
+  color: #fff;
+}
+
+
+@media (max-width: 599px) {
+  .login-content {
+    width: 90%;
+    margin: auto;
+  }
+}

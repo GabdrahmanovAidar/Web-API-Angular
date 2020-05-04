@@ -1,0 +1,25 @@
+.actions-dd-btn {
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: rgb(68, 74, 80);
+  text-transform: uppercase;
+  border: none;
+  font-size: 12px;
+  padding: 4px 13px;
+}
+
+.actions-dd__it--default {
+  color: $g-color-brand;
+  &:hover {
+    background-color: #f7f7f7;
+    color: darken($g-color-brand, 10);
+  }
+}
+
+.actions-dd__it--danger {
+  color: $g-color-danger;
+  &:hover {
+    background-color: #f7f7f7;
+    color: darken($g-color-danger, 10);
+  }
+}

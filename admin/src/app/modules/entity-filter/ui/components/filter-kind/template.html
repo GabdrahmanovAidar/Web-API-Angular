@@ -1,0 +1,10 @@
+<div [ngSwitch]="type">
+
+  <entity-filter-kind-input
+    *ngSwitchCase="EntityFilterTypeEnum.Input"
+    [settings]="settings"
+    [value]="value"
+    (valueChange)="valueChange.emit($event)">
+  </entity-filter-kind-input>
+
+</div>

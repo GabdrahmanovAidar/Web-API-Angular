@@ -1,0 +1,28 @@
+.recovery-content {
+  width: 350px;
+  margin: auto;
+}
+
+.recovery-enter {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+.recovery-btn {
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+
+.recovery-tip {
+  opacity: .7;
+  color: #fff;
+}
+
+@media (max-width: 599px) {
+  .recovery-content {
+    width: 90%;
+    margin: auto;
+  }
+}

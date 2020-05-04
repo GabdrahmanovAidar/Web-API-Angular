@@ -1,0 +1,16 @@
+.value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid rgb(239, 239, 239);
+  &:last-child {
+    border-bottom: none;
+  }
+  .vr-label {}
+  .vr-value {
+    font-weight: bold;
+    text-align: right;
+    margin-left: 3rem;
+  }
+}

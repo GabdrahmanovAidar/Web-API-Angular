@@ -1,0 +1,10 @@
+<div *ngIf="showSpinner"
+     [ngClass]="{
+      'ud-preloader--abs': type === 'absolute',
+      'ud-preloader--rel': type === 'relative',
+      'ud-preloader--sm': size === 'sm',
+      'ud-preloader--xs': size === 'xs'
+      }"
+     class="ud-preloader">
+  <div class="ud-preloader__inner"></div>
+</div>

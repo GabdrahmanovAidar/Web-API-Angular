@@ -1,0 +1,32 @@
+<div class="dashboard-main">
+  <nav [ngClass]="{ 'db-nav--opened': isNavOpened }" (click)="onNavClicked($event)" class="db-nav">
+    <div class="db-nav__logo-wrap">
+      <div class="icon icon-logo"></div>
+    </div>
+    <div (click)="onNavToggleClicked($event)" class="db-nav__toggle"></div>
+    <a routerLink="/" [udRoutesActiveExact]="true" [udRoutesActive]="['./']" class="db-nav__it">
+      <i class="icon icon-stat"></i>
+      <div class="db-nav__it__label">Статистика</div>
+    </a>
+    <a routerLink="./companies" routerLinkActive="active" class="db-nav__it">
+      <i class="icon icon-companies"></i>
+      <div class="db-nav__it__label">Компании</div>
+    </a>
+    <a routerLink="./settings"
+       routerLinkActive="active" class="db-nav__it">
+      <i class="icon icon-settings"></i>
+      <div class="db-nav__it__label">Настройки</div>
+    </a>
+    <hr class="mt-0">
+    <div class="text-center">
+      <span class="ud-link font-sm" (click)="onLogoutClicked($event)">Выход</span>
+    </div>
+  </nav>
+
+  <div class="db-content">
+    <router-outlet></router-outlet>
+  </div>
+
+  <p-confirmDialog></p-confirmDialog>
+
+</div>

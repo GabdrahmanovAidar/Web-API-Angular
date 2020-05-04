@@ -1,0 +1,22 @@
+<div class="page">
+  <div class="page-header">
+    <div class="page-title">Настройки</div>
+  </div>
+
+  <ud-spinner [show]="loading"></ud-spinner>
+
+  <ud-card>
+    <ud-card-content>
+      <db-settings-components-settings-form
+              *ngIf="company && !loading"
+              [company]="company"
+              (cancel)="onDBSettingsCancel($event)"
+              (successSubmit)="onFormSuccessSubmit($event)">
+      </db-settings-components-settings-form>
+      <ng-template [ngIf]="!loading && !company">
+        Что то пошло не так. Настройки не загружены
+      </ng-template>
+    </ud-card-content>
+  </ud-card>
+
+</div>

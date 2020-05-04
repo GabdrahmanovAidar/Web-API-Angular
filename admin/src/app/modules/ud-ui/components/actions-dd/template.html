@@ -1,0 +1,29 @@
+<div ngbDropdown
+     ngbDropdownReposition
+     #dropdown="ngbDropdown"
+     [placement]="placement"
+     class="d-inline-block">
+  <button type="button"
+          ngbDropdownAnchor
+          [disabled]="!items?.length"
+          (click)="onToggleClicked($event, dropdown)"
+          class="actions-dd-btn">
+    Действия
+  </button>
+  <div ngbDropdownMenu>
+    <ng-template ngFor let-item [ngForOf]="items">
+      <a *ngIf="item.link != null; else button"
+         [routerLink]="item.link"
+         [ngClass]="'actions-dd__it--' + item.type"
+         class="dropdown-item">{{ item.label }}</a>
+      <ng-template #button>
+        <button type="button"
+                *ngIf="item.type"
+                (click)="onItemClicked($event, item, dropdown)"
+                [ngClass]="'actions-dd__it--' + item.type"
+                class="dropdown-item">{{ item.label }}
+        </button>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>
