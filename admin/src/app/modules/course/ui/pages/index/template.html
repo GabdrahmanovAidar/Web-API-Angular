@@ -1,6 +1,6 @@
 <div class="page">
     <div class="page-header">
-      <div class="page-title">Курс</div>
+      <div class="page-title">Курсы</div>
     </div>
   
   
@@ -22,6 +22,12 @@
             </div>
           </ud-forms-controls-wrap>
         </form>
+        <br>
+        <div class="col-md-4">
+          <a routerLink="./new" class="btn btn-sm btn-round btn-primary">
+            + Добавить курс
+          </a>
+        </div>
       </div>
     </div>
   
@@ -54,7 +60,7 @@
     <ud-spinner [show]="loading"></ud-spinner>
   
     <div *ngIf="!courses?.length && !loading" class="text-center">
-      Пользователи не найдены
+      Курсы не найдены
     </div>
   
     <div *ngIf="courses?.length" class="table-responsive">
@@ -80,7 +86,7 @@
             <course-components-course-actions
               [courses]="course"
               (action)="onCourseAction($event, course, i)"
-              [role]="course.status">
+              [status]="course.status">
             </course-components-course-actions>
           </td>
         </tr>

@@ -21,6 +21,12 @@ import { UDActionsDDModule } from "app/modules/ud-ui/components/actions-dd/modul
 import { UDUploadModule } from "app/modules/ud-upload/upload.module";
 import { DropdownModule } from "primeng/dropdown";
 import { UDTruncateModule } from "app/modules/ud-ui/pipes/truncate/module";
+import { CoursePagesNew } from './ui/pages/new/component';
+import { CoursePagesEdit } from './ui/pages/edit/component';
+import { CourseComponentsCourseForm } from './ui/components/course-form/component';
+import { CourseComponentsCourseFormCover } from './ui/components/course-form/cover/component';
+import { CourseFactory } from './domain/factories/CourseFactory';
+import { UploadFactory } from '../ud-upload/domain/factories/UploadFactory';
 
 
 
@@ -49,13 +55,18 @@ import { UDTruncateModule } from "app/modules/ud-ui/pipes/truncate/module";
     ],
    
  declarations: [
-
+    CourseComponentsCourseForm,
+    CoursePagesNew,
+    CoursePagesEdit,
     CoursePagesIndex,
-    CourseComponentsCourseActions
+    CourseComponentsCourseActions,
+    CourseComponentsCourseFormCover
   ],
   providers: [
     CourseResource,
-    CourseRepository
+    CourseRepository,
+    CourseFactory,
+    UploadFactory
   ]
 })
 export class CourseModule {
