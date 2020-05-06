@@ -1,0 +1,16 @@
+<div class="page">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Новый урок</div>
+        <ud-breadcrumbs [items]="breadcrumbs"></ud-breadcrumbs>
+      </div>
+    </div>
+
+    <lesson-components-lesson-form
+            [lesson]="lesson"
+            [loading]="saving"
+            (cancel)="onCancel()"
+            (successSubmit)="onFormSuccessSubmit($event)">
+    </lesson-components-lesson-form>
+  
+  </div>

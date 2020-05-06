@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Уроки</div>
+      <ud-breadcrumbs [items]="breadcrumbs"></ud-breadcrumbs>
+    </div>
+  </div>
+
+
+  <ud-spinner [show]="loading"></ud-spinner>
+
+  <ng-template [ngIf]="!loading">
+    <lesson-components-lesson-form
+      *ngIf="lesson; else notFound"
+      [lesson]="lesson"
+      (cancel)="onCancel()"
+      (successSubmit)="onFormSuccessSubmit($event)">
+    </lesson-components-lesson-form>
+
+    <ng-template #notFound>
+      <div class="text-center">Урок не найден</div>
+    </ng-template>
+  </ng-template>
+
+</div>
+  

@@ -1,0 +1,111 @@
+<div class="page">
+    <div class="page-header">
+      <div class="page-title">Уроки</div>
+    </div>
+  
+  
+  
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="filterForm" (submit)="onSubmit($event)">
+          <ud-forms-controls-wrap>
+            <div class="d-flex align-items-center mt-3">
+              <ud-forms-control [noMargin]="true"
+                                [control]="filterForm.get('lesson_name')" class="ml-4">
+                <div class="d-flex align-items-center">
+                  <ud-forms-label styleClass="d-block mr-2 mb-0">Название</ud-forms-label>
+                  <input placeholder="Укажите название урока" formControlName="lesson_name" type="text" class="form-control"/>
+                </div>
+              </ud-forms-control>
+  
+              <button type="submit" class="btn btn-round btn-primary ml-4">Показать</button>
+            </div>
+          </ud-forms-controls-wrap>
+        </form>
+        <br>
+        <div class="col-md-4">
+          <a routerLink="./new" class="btn btn-sm btn-round btn-primary">
+            + Добавить Урок 
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row my-4">
+      <div class="col-md-6">
+        <button type="button" [ngClass]="{ 'active': filters.type === '' }" (click)="onFiltersChange({ type: '' })"
+                class="btn btn-sm btn-link mr-2">
+          Все
+        </button>
+        <button type="button" [ngClass]="{ 'active': filters.type === LessonStatusEnum.Active }"
+                (click)="onFiltersChange({ type: LessonStatusEnum.Active })" class="btn btn-sm btn-link mr-2">
+          Активные
+        </button>
+        <button type="button" [ngClass]="{ 'active': filters.type === LessonStatusEnum.UnActive }"
+                (click)="onFiltersChange({ type: LessonStatusEnum.UnActive })" class="btn btn-sm btn-link mr-2">
+          Неактивные
+        </button>
+      </div>
+      <div *ngIf="lessons?.length" class="col-md-6 text-right mobile-hide">
+        <ud-per-page-pagination
+          #perPagePagination
+          [page]="filters.page"
+          [perPage]="filters.per_page"
+          [collectionSize]="lessonsItemTotal"
+          (paramsChange)="onPaginationChange($event)">
+        </ud-per-page-pagination>
+      </div>
+    </div>
+  
+    <ud-spinner [show]="loading"></ud-spinner>
+  
+    <div *ngIf="!lessons?.length && !loading" class="text-center">
+      Курсы не найдены
+    </div>
+  
+    <div *ngIf="lessons?.length" class="table-responsive">
+      <table class="table table-default">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Название</th>
+          <th>Сложность</th>
+          <th>Статус</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let lesson of lessons; let i = index; trackBy: lessonsTrackByFunc">
+          <td>{{ lesson.id }}</td>
+          <td>{{ lesson.name }}</td>
+          <td>{{ lesson.level }}</td>
+          <td>{{ lesson.status }}</td>
+          <td *ngIf="lesson.status === 'Active'">Активный</td>
+          <td *ngIf="lesson.status === 'UnActive'">Неактивный</td>
+          <td class="text-right">
+            <lesson-components-lesson-actions
+              [lessons]="lesson"
+              (action)="onLessonAction($event, lesson, i)"
+              [status]="lesson.status">
+            </lesson-components-lesson-actions>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="lessons?.length" class="mt-4 text-right">
+      <ud-per-page-pagination
+        #perPagePagination
+        [page]="filters.page"
+        [perPage]="filters.per_page"
+        [collectionSize]="lessonsItemTotal"
+        (paramsChange)="onPaginationChange($event)">
+      </ud-per-page-pagination>
+      <ud-keypress
+        (rightArrowPress)="nextPage(perPagePagination.hasNextPage())"
+        (leftArrowPress)="prevPage(perPagePagination.hasPrevPage())">
+      </ud-keypress>
+    </div>
+  
+  </div>
