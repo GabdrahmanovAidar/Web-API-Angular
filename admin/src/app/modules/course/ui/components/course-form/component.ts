@@ -30,9 +30,9 @@ export class CourseComponentsCourseForm implements OnInit {
   public courseForm: FormGroup;
   public validationMessages = validationMessages;
   private fieldsRequirement = {
-    title: true,
+    name: true,
     description: true,
-    duration: true,
+    courseDuration: true,
     level: true,
     covers: true
   };
@@ -57,11 +57,11 @@ export class CourseComponentsCourseForm implements OnInit {
     this.courseForm = this.courseFormBuilderService.buildForm(this.course);
   }
 
-  /*public onCoverUpload(cover: UploadImage): void {
+  public onCoverUpload(cover: UploadImage): void {
     const control = this.courseForm.get('covers');
-    control.setValue([...control.value, cover]);
+    control.setValue([control.value, cover]);
     this.uploadTempModel = null;
-  } */
+  }
 
   public onDeleteClicked($event, index: number): void {
     $event.preventDefault();
