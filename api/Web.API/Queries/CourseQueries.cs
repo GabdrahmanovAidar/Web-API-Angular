@@ -29,6 +29,10 @@ namespace Web.API.Queries
         public async Task<PageResultModel<CourseModel>> GetList(CourseFilter filter)
         {
             var query = _db.Courses.AsQueryable();
+            if (filter.Status != null)
+            {
+                query = query.Where(x => x.Status == filter.Status);
+            }
             if (filter.Level != null)
             {
                 query = query.Where(x => x.Level == filter.Level);
@@ -57,7 +61,19 @@ namespace Web.API.Queries
                 Name = x.Name,
                 Description = x.Description,
                 CourseDuration = x.CourseDuration,
-                Level = x.Level
+                Level = x.Level,
+                Status = x.Status,
+                Covers = _db.Uploads.Where(upload =>
+                _db.CourseUploads.Any(coursesUpload =>
+                            coursesUpload.PhotoUploadId == upload.Id && coursesUpload.CourseId == x.Id))
+                    .Select(p => new PhotoUploadModel
+                    {
+                        Extension = p.Extension,
+                        Height = p.Height,
+                        Id = p.Id,
+                        SizeInBytes = p.SizeInBytes,
+                        Width = p.Width
+                    }).ToList()                
             }); ;
         }
 

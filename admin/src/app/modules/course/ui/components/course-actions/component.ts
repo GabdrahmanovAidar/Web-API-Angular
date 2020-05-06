@@ -24,13 +24,10 @@ export class CourseComponentsCourseActions implements OnChanges {
   }
 
   private setupPossibleActions() {
+
     this.possibleActions = [
+      { label: 'Редактировать', type: 'default', value: 'edit' },
     ];
-    if (this.status == 'ACTIVE') {
-      this.possibleActions.push({ label: 'Активировать', type: 'default', value: 'Active' });
-    }
-    if (this.status == 'UNACTIVE') {
-        this.possibleActions.push({ label: 'Сделать не доступным', type: 'default', value: 'UnActive' });
-      }
+    this.possibleActions.push({ label: 'Удалить', type: 'danger', value: 'delete' });
   }
 }

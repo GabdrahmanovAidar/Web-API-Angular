@@ -5,9 +5,9 @@
         <div class="col-md-3">
           <ud-forms-control [control]="courseForm.get('name')" [errorMessages]="validationMessages.name"
             [disableInvalidClassName]="true">
-            <ud-forms-label [asRequired]="isRequired('name')" [attrFor]="'title'">Название
+            <ud-forms-label [asRequired]="isRequired('name')" [attrFor]="'name'">Название
             </ud-forms-label>
-            <input formControlName="title" id="title" type="text" placeholder="Введите название"
+            <input formControlName="name" id="name" type="text" placeholder="Введите название"
               class="form-control" />
           </ud-forms-control>
           <ud-forms-control [control]="courseForm.get('description')" [errorMessages]="validationMessages.description"
@@ -16,10 +16,10 @@
             <textarea formControlName="description" id="description" type="text" rows="12" placeholder="Описание"
               class="form-control"></textarea>
           </ud-forms-control>
-          <ud-forms-control [control]="courseForm.get('duration')" [errorMessages]="validationMessages.duration"
+          <ud-forms-control [control]="courseForm.get('courseDuration')" [errorMessages]="validationMessages.courseDuration"
             [disableInvalidClassName]="true">
-            <ud-forms-label [asRequired]="isRequired('duration')" [attrFor]="'duration'">Длительность</ud-forms-label>
-            <textarea formControlName="duration" id="duration" type="text" placeholder="Длительность"
+            <ud-forms-label [asRequired]="isRequired('courseDuration')" [attrFor]="'courseDuration'">Длительность</ud-forms-label>
+            <textarea formControlName="courseDuration" id="courseDuration" type="text" placeholder="Длительность"
               class="form-control"></textarea>
           </ud-forms-control>
           <ud-forms-control [control]="courseForm.get('level')" [errorMessages]="validationMessages.level"

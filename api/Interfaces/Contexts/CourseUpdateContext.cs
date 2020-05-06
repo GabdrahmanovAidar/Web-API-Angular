@@ -5,8 +5,9 @@ using System.Text;
 
 namespace Interfaces.Contexts
 {
-    public class CourseCreateContext : IContext
+    public class CourseUpdateContext : IContext
     {
+        public int Id { get; set; }
         public Course Course { get; set; }
         public List<Upload> Covers { get; set; }
     }

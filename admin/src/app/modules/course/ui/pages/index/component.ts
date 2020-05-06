@@ -96,73 +96,44 @@ export class CoursePagesIndex {
 
   public onCourseAction(actionType, course, index: number): void {
     switch (actionType) {
-      case 'ACTIVE':
-        this.showActiveConfirmationDialog(course, index);
+      case 'edit':
+        this.router.navigate(['./', course.id], { relativeTo: this.route });
         break;
-        case 'UNACTIVE':
-        this.showUnActiveConfirmationDialog(course, index);
+      case 'delete':
+        this.showDeleteConfirmationDialog(course, index);
         break;
     }
   }
 
   
 
-  private showActiveConfirmationDialog(course: Course, index: number) {
-    course.status = CourseStatusEnum.UnActive;
+  private showDeleteConfirmationDialog(course: Course, index: number): void {
     this.confirmationService.confirm({
-      header: 'Подтверждение изменения',
-      message: `Вы уверены что хотите активировать "${course.name}"?`,
-      acceptLabel: 'Активировать',
+      header: 'Подтверждение удаления',
+      message: `Вы уверены что хотите удалить курс "${course.name}"?`,
+      acceptLabel: 'Удалить',
       rejectLabel: 'Отмена',
       icon: 'fa fa-trash',
       accept: () => {
-        this.courseRepository.update(course)
+        this.courseRepository.delete(course)
           .subscribe(() => {
             this.messageService.add({
               severity: 'success',
               summary: 'Успешно',
-              detail: `${course.name} Активирован`
+              detail: `Новость ${course.name} удалена`
             });
+            this.courses = removeFromArray(this.courses, index);
           }, () => {
             this.messageService.add({
               severity: 'error',
               summary: 'Ошибка',
-              detail: `${course.name} не был активирован`
+              detail: `Курс ${course.name} не была удалена`
             });
           });
       }
     });
   }
-
-  private showUnActiveConfirmationDialog(course: Course, index: number) {
-    course.status = CourseStatusEnum.Active;
-    this.confirmationService.confirm({
-      header: 'Подтверждение изменения',
-      message: `Вы уверены что хотите деактивировать "${course.name}" ?`,
-      acceptLabel: 'Деактивировать',
-      rejectLabel: 'Отмена',
-      icon: 'fa fa-trash',
-      accept: () => {
-        this.courseRepository.update(course)
-          .subscribe(() => {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Успешно',
-              detail: `${course.name} деактивирован`
-            });
-          }, () => {
-            this.messageService.add({
-              severity: 'error',
-              summary: 'Ошибка',
-              detail: `${course.name} не получилось деактивировать`
-            });
-          });
-      }
-    });
-  }
-
   
-
   public onSubmit($event) {
     $event.preventDefault();
     this.loadCourses();
