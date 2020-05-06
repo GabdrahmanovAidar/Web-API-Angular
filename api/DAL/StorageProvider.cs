@@ -49,7 +49,9 @@
             var user = configSection["User"];
 
             var client = new SelectelClient();
-            await client.AuthorizeAsync(user, apiKey);
+
+            await client.AuthorizeAsync(user, apiKey); 
+            
             return client;
         }
     }
