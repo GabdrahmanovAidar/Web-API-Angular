@@ -32,20 +32,6 @@
     </div>
   
     <div class="row my-4">
-      <div class="col-md-6">
-        <button type="button" [ngClass]="{ 'active': filters.type === '' }" (click)="onFiltersChange({ type: '' })"
-                class="btn btn-sm btn-link mr-2">
-          Все
-        </button>
-        <button type="button" [ngClass]="{ 'active': filters.type === CourseStatusEnum.Active }"
-                (click)="onFiltersChange({ type: CourseStatusEnum.Active })" class="btn btn-sm btn-link mr-2">
-          Активные
-        </button>
-        <button type="button" [ngClass]="{ 'active': filters.type === CourseStatusEnum.UnActive }"
-                (click)="onFiltersChange({ type: CourseStatusEnum.UnActive })" class="btn btn-sm btn-link mr-2">
-          Неактивные
-        </button>
-      </div>
       <div *ngIf="courses?.length" class="col-md-6 text-right mobile-hide">
         <ud-per-page-pagination
           #perPagePagination

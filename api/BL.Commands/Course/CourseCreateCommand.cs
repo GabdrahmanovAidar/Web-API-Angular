@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BL.Commands.Course
 {
-    public class CourseCreateCommand : ICommand<CourseCreateContext>
+    public class CourseCreateCommand : CreateMediaBase, ICommand<CourseCreateContext>
     {
         private readonly EfContext _db;
 
-        public CourseCreateCommand(EfContext db)
+        public CourseCreateCommand(EfContext db) : base(db)
         {
             _db = db;
         }
@@ -28,6 +28,8 @@ namespace BL.Commands.Course
 
                 _db.Courses.Add(context.Course);
                 await _db.SaveChangesAsync();
+
+                await CreateUploads(context.Covers, context.Course.Id);
 
                 transaction.Commit();
             }

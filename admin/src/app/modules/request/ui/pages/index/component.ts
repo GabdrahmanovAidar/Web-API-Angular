@@ -93,6 +93,45 @@ export class RequestPagesIndex {
       });
   }
 
+  public onRequestAction(actionType, request, index: number): void {
+    switch (actionType) {
+      case 'accepted':
+        this.router.navigate(['./', request.id], { relativeTo: this.route });
+        break;
+      case 'unaccepted':
+        this.showDeleteConfirmationDialog(request, index);
+        break;
+    }
+  }
+
+  
+
+  private showDeleteConfirmationDialog(request: Request, index: number): void {
+    this.confirmationService.confirm({
+      header: 'Подтверждение отклонения заявки',
+      message: `Вы уверены что хотите откланить заявку "${request.Id}"?`,
+      acceptLabel: 'Отклонить',
+      rejectLabel: 'Отмена',
+      icon: 'fa fa-trash',
+      accept: () => {
+        this.requestRepository.delete(request)
+          .subscribe(() => {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Успешно',
+              detail: `Новость ${request.Id} отклонена`
+            });
+            this.requests = removeFromArray(this.requests, index);
+          }, () => {
+            this.messageService.add({
+              severity: 'error',
+              summary: 'Ошибка',
+              detail: `Заявка ${request.Id} не была отклонена`
+            });
+          });
+      }
+    });
+  }
   public onSubmit($event) {
     $event.preventDefault();
     this.loadRequests();

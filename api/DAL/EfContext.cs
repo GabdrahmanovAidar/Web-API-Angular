@@ -15,10 +15,10 @@ namespace DAL
         public DbSet<Upload> Uploads { get; set; }
         public DbSet<Entities.Login> Logins { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<QuestRecomendation> QuestRecomendations { get; set; }
         public DbSet<ProductHelper> ProductHelpers { get; set; }
         public DbSet<VideosUpload> VideosUpload { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<CourseUpload> CourseUploads { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
 

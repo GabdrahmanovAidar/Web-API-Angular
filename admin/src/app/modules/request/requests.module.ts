@@ -55,19 +55,14 @@ import { UploadFactory } from '../ud-upload/domain/factories/UploadFactory';
     ],
    
  declarations: [
-    RequestComponentsRequestForm,
-    RequestPagesNew,
-    RequestPagesEdit,
     RequestPagesIndex,
-    RequestComponentsRequestActions,
-    RequestComponentsRequestFormCover
+    RequestComponentsRequestActions
   ],
   providers: [
     RequestResource,
     RequestRepository,
-    RequestFactory,
     UploadFactory
   ]
 })
-export class CourseModule {
+export class RequestModule {
 }

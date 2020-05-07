@@ -24,13 +24,10 @@ export class RequestComponentsRequestActions implements OnChanges {
   }
 
   private setupPossibleActions() {
+
     this.possibleActions = [
+      { label: 'Принять', type: 'default', value: 'accepted' },
     ];
-    if (this.status == 'ACCEPTED') {
-      this.possibleActions.push({ label: 'Принять', type: 'default', value: 'Accepted' });
-    }
-    if (this.status == 'UNACCEPTED') {
-        this.possibleActions.push({ label: 'Отклонить', type: 'default', value: 'UnAccepted' });
-      }
+    this.possibleActions.push({ label: 'Отклонить', type: 'danger', value: 'unaccepted' });
   }
 }
