@@ -10,7 +10,8 @@ const routes: Routes = [
     children: [
     
       { path: 'users', loadChildren: '../users/users.module#UsersModule' },
-      { path: 'courses', loadChildren: '../course/courses.module#CourseModule' }
+      { path: 'courses', loadChildren: '../course/courses.module#CourseModule' },
+      { path: 'requests', loadChildren: '../request/requests.module#RequestModule' }
 
     ]
 

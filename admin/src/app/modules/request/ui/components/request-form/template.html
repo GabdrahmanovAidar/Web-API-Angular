@@ -1,0 +1,27 @@
+<form [formGroup]="requestForm" (submit)="onSubmit($event)">
+  <ud-card>
+    <ud-card-content>
+      <div class="row">
+        <div class="col-md-3">
+          <ud-forms-control [control]="requestForm.get('courseId')" [errorMessages]="validationMessages.courseId"
+            [disableInvalidClassName]="true">
+            <ud-forms-label [asRequired]="isRequired('courseId')" [attrFor]="'courseId'">CourseId
+            </ud-forms-label>
+            <input formControlName="courseId" id="courseId" type="number" placeholder="Введите id курса"
+              class="form-control" />
+          </ud-forms-control>
+          <ud-forms-control [control]="requestForm.get('lessonId')" [errorMessages]="validationMessages.lessonId"
+            [disableInvalidClassName]="true">
+            <ud-forms-label [asRequired]="isRequired('lessonId')" [attrFor]="'lessonId'">lessonId</ud-forms-label>
+            <input formControlName="lessonId" id="lessonId" type="number" rows="12" placeholder="Введите id урока"
+              class="form-control"></input>
+          </ud-forms-control>
+        </div>
+      </div>
+    </ud-card-content>
+  </ud-card>
+  <div class="mt-5">
+    <button type="button" (click)="onCancelClicked($event)" class="btn btn-clear p-0">Отмена</button>
+    <button type="submit" class="btn btn-round btn-primary ml-4">Сохранить</button>
+  </div>
+</form>

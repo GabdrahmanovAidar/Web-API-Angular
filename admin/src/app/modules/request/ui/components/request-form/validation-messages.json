@@ -1,0 +1,10 @@
+{
+  "courseId":{
+    "required":"CourseId обязательно",
+    "maxLength":"Максимально количество символов-200"
+  },
+  "lessonId":{
+    "required":"LessonId обязательно",
+    "maxLength":"Максимальное количество символов-200"
+  }
+}

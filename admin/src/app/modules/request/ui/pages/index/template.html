@@ -1,0 +1,100 @@
+<div class="page">
+  <div class="page-header">
+    <div class="page-title">Заявки</div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="filterForm" (submit)="onSubmit($event)">
+        <ud-forms-controls-wrap>
+          <div class="d-flex align-items-center mt-3">
+            <ud-forms-control [noMargin]="true"
+                              [control]="filterForm.get('request_name')" class="ml-4">
+              <div class="d-flex align-items-center">
+                <ud-forms-label styleClass="d-block mr-2 mb-0">CourseId</ud-forms-label>
+                <input placeholder="Укажите id курса" formControlName="request_name" type="text" class="form-control"/>
+              </div>
+              <div class="d-flex align-items-center">
+                <ud-forms-label styleClass="d-block mr-2 mb-0">LessonId</ud-forms-label>
+                <input placeholder="Укажите id урока" formControlName="request_name" type="text" class="form-control"/>
+              </div>
+            </ud-forms-control>
+
+            <button type="submit" class="btn btn-round btn-primary ml-4">Показать</button>
+          </div>
+        </ud-forms-controls-wrap>
+      </form>
+    </div>
+  </div>
+
+  <div class="row my-4">
+    <div class="col-md-6">
+      <button type="button" [ngClass]="{ 'active': filters.type === '' }" (click)="onFiltersChange({ type: '' })"
+              class="btn btn-sm btn-link mr-2">
+        Все
+      </button>
+      <button type="button" [ngClass]="{ 'active': filters.type === RequestStatusEnum.Accepted }"
+              (click)="onFiltersChange({ type: RequestStatusEnum.Accepted })" class="btn btn-sm btn-link mr-2">
+        Активные
+      </button>
+      <button type="button" [ngClass]="{ 'active': filters.type === RequestStatusEnum.UnAccepted }"
+              (click)="onFiltersChange({ type: RequestStatusEnum.UnAccepted })" class="btn btn-sm btn-link mr-2">
+        Неактивные
+      </button>
+    </div>
+  </div>
+
+  <ud-spinner [show]="loading"></ud-spinner>
+
+  <div *ngIf="!requests?.length && !loading" class="text-center">
+    Курсы не найдены
+  </div>
+
+  <div *ngIf="requests?.length" class="table-responsive">
+    <table class="table table-default">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>CourseId</th>
+        <th>LessonId</th>
+        <th>Статус</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let request of requests; let i = index; trackBy: requestsTrackByFunc">
+        <td>{{ request.id }}</td>
+        <td>{{ request.CourseId }}</td>
+        <td>{{ request.LessonId }}</td>
+        <td>{{ request.status }}</td>
+        <td *ngIf="request.status === 'Active'">Активный</td>
+        <td *ngIf="request.status === 'UnActive'">Неактивный</td>
+        <td class="text-right">
+          <request-components-request-actions
+            [requests]="request"
+            (action)="onRequestAction($event, request, i)"
+            [status]="request.status">
+          </request-components-request-actions>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="requests?.length" class="mt-4 text-right">
+    <ud-per-page-pagination
+      #perPagePagination
+      [page]="filters.page"
+      [perPage]="filters.per_page"
+      [collectionSize]="requestsItemTotal"
+      (paramsChange)="onPaginationChange($event)">
+    </ud-per-page-pagination>
+    <ud-keypress
+      (rightArrowPress)="nextPage(perPagePagination.hasNextPage())"
+      (leftArrowPress)="prevPage(perPagePagination.hasPrevPage())">
+    </ud-keypress>
+  </div>
+
+</div>
