@@ -6,11 +6,11 @@
       </div>
     </div>
 
-    <lesson-components-lesson-form
-            [lesson]="lesson"
+    <lesson-components-lesson-form [lesson]="lesson"
             [loading]="saving"
             (cancel)="onCancel()"
-            (successSubmit)="onFormSuccessSubmit($event)">
+            (successSubmit)="onFormSuccessSubmit($event)"
+            (getId)="getCourseId($event)">
     </lesson-components-lesson-form>
   
   </div>

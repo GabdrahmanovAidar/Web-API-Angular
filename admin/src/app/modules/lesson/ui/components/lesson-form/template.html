@@ -22,34 +22,14 @@
             <textarea formControlName="duration" id="duration" type="text" placeholder="Длительность"
               class="form-control"></textarea>
           </ud-forms-control>
-          <div ngbDropdown
-     ngbDropdownReposition
-     #dropdown="ngbDropdown"
-     [placement]="placement"
-     class="d-inline-block">
-  <button type="button"
-          ngbDropdownAnchor
-          [disabled]="!items?.length"
-          (click)="onToggleClicked($event, dropdown)"
-          class="actions-dd-btn">
-    Действия
-  </button>
-  <div ngbDropdownMenu>
-    <ng-template ngFor let-item [ngForOf]="items">
-      <a *ngIf="item.link != null; else button"
-         [routerLink]="item.link"
-         [ngClass]="'actions-dd__it--' + item.type"
-         class="dropdown-item">{{ item.label }}</a>
-      <ng-template #button>
-        <button type="button"
-                *ngIf="item.type"
-                (click)="onItemClicked($event, item, dropdown)"
-                [ngClass]="'actions-dd__it--' + item.type"
-                class="dropdown-item">{{ item.label }}
-        </button>
-      </ng-template>
-    </ng-template>
-  </div>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu" *ngFor = "let item of courses">
+              <li><button (click) = onClicked(item.id) >{{item.name}}</button></li>           
+            </ul>
+          </div>
+
 </div>
           
         </div>

@@ -13,19 +13,20 @@ import { LessonFactory } from "app/modules/lesson/domain/factories/LessonFactory
   templateUrl: './template.html'
 })
 
-export class LessonPagesNew implements OnInit{
+export class LessonPagesNew implements OnInit {
   public lesson: Lesson;
   public saving: boolean = false;
+  public courseId: number;
   public breadcrumbs: Array<{ label: string, link?: any }> = [
     { label: 'Уроки', link: '../' },
     { label: 'Новый' }
   ];
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private lessonRepository: LessonRepository,
-              private messageService: MessageService,
-              private lessonFactory: LessonFactory) {
+    private router: Router,
+    private lessonRepository: LessonRepository,
+    private messageService: MessageService,
+    private lessonFactory: LessonFactory) {
   }
 
   ngOnInit() {
@@ -34,16 +35,22 @@ export class LessonPagesNew implements OnInit{
 
   public onFormSuccessSubmit($event: Lesson): void {
     this.saving = true;
-    this.lessonRepository.save($event)
-      .finally(() => this.saving = false)
-      .subscribe((lesson: Lesson) => {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Сохранено'
+    $event.courseId = this.courseId ;
+      this.lessonRepository.save($event)
+        .finally(() => this.saving = false)
+        .subscribe((lesson: Lesson) => {
+          this.messageService.add({
+            severity: 'success',
+            summary: 'Сохранено'
+          });
+          this.navigateToList();
         });
-        this.navigateToList();
-      });
   }
+
+  public getCourseId($event) {
+    this.courseId = $event;
+  }
+
 
   public onCancel() {
     this.navigateToList();

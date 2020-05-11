@@ -11,6 +11,8 @@ import { UploadFileRepository } from 'app/modules/ud-upload/domain/repositories/
 import { LessonFormBuilderService } from 'app/modules/lesson/domain/service/LessonFormBuilderService';
 import { Lesson } from 'app/modules/lesson/domain/interfaces/Lesson';
 import { LessonRepository } from 'app/modules/lesson/domain/repositories/LessonRepository';
+import { HttpClient } from '@angular/common/http';
+import { Course } from 'app/modules/course/domain/interfaces/Course';
 
 @Component({
   selector: 'lesson-components-lesson-form',
@@ -25,6 +27,8 @@ export class LessonComponentsLessonForm implements OnInit {
   @Input() disabled: boolean = false;
   @Output() cancel = new EventEmitter<{ originalEvent: Event }>();
   @Output() successSubmit = new EventEmitter<Lesson>();
+  @Output() getId = new EventEmitter<number>();
+  public courses: Array<Course>;
 
   public showFormErrors: boolean = false;
   public lessonForm: FormGroup;
@@ -34,7 +38,7 @@ export class LessonComponentsLessonForm implements OnInit {
     description: true,
     duration: true,
     courseId: true
-    
+
   };
   public imageOptions = {
     size: { w: 200, h: 200 },
@@ -45,16 +49,18 @@ export class LessonComponentsLessonForm implements OnInit {
 
 
   constructor(private route: ActivatedRoute,
-              private router: Router,
-              private lessonRepository: LessonRepository,
-              private fb: FormBuilder,
-              private lessonFormBuilderService: LessonFormBuilderService,
-              private uploadFactory: UploadFactory,
-              private uploadFileRepository: UploadFileRepository) {
+    private router: Router,
+    private lessonRepository: LessonRepository,
+    private fb: FormBuilder,
+    private lessonFormBuilderService: LessonFormBuilderService,
+    private uploadFactory: UploadFactory,
+    private uploadFileRepository: UploadFileRepository,
+    private http: HttpClient) {
   }
 
   ngOnInit() {
     this.lessonForm = this.lessonFormBuilderService.buildForm(this.lesson);
+    this.getCourses();
   }
 
   /*public onCoverUpload(cover: UploadImage): void {
@@ -69,6 +75,13 @@ export class LessonComponentsLessonForm implements OnInit {
     const newValue = removeFromArray(control.value, index);
     control.setValue(newValue);
   }
+
+  public getCourses() {
+    this.http.get("localhost:8080/api/courses/get").subscribe(x => {
+      this.courses = x;
+    })
+  }
+
 
   public onCancelClicked($event): void {
     $event.preventDefault();
@@ -94,4 +107,7 @@ export class LessonComponentsLessonForm implements OnInit {
     return this.fieldsRequirement[fieldName];
   }
 
+  public onClicked(id) {
+    this.getId.emit(id);
+  }
 }
