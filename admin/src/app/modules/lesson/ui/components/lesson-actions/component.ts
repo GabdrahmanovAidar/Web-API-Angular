@@ -5,8 +5,8 @@ import { Lesson } from "../../../domain/interfaces/Lesson";
   selector: 'lesson-components-lesson-actions',
   templateUrl: './template.html'
 })
-export class LessonComponentsLessonourseActions implements OnChanges {
-  @Input() Lesson: Lesson;
+export class LessonComponentsLessonActions implements OnChanges {
+  @Input() lesson: Lesson;
   @Input() status: string;
   @Output() action = new EventEmitter<string>();
 

@@ -60,7 +60,7 @@
     <ud-spinner [show]="loading"></ud-spinner>
   
     <div *ngIf="!lessons?.length && !loading" class="text-center">
-      Курсы не найдены
+      Уроки не найдены
     </div>
   
     <div *ngIf="lessons?.length" class="table-responsive">
@@ -84,7 +84,7 @@
           <td *ngIf="lesson.status === 'UnActive'">Неактивный</td>
           <td class="text-right">
             <lesson-components-lesson-actions
-              [lessons]="lesson"
+              [lesson]="lesson"
               (action)="onLessonAction($event, lesson, i)"
               [status]="lesson.status">
             </lesson-components-lesson-actions>

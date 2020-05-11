@@ -22,12 +22,36 @@
             <textarea formControlName="duration" id="duration" type="text" placeholder="Длительность"
               class="form-control"></textarea>
           </ud-forms-control>
-          <ud-forms-control [control]="lessonForm.get('level')" [errorMessages]="validationMessages.level"
-            [disableInvalidClassName]="true">
-            <ud-forms-label [asRequired]="isRequired('level')" [attrFor]="'level'">Сложность</ud-forms-label>
-            <textarea formControlName="level" id="level" type="text" placeholder="Сложность"
-              class="form-control"></textarea>
-          </ud-forms-control>
+          <div ngbDropdown
+     ngbDropdownReposition
+     #dropdown="ngbDropdown"
+     [placement]="placement"
+     class="d-inline-block">
+  <button type="button"
+          ngbDropdownAnchor
+          [disabled]="!items?.length"
+          (click)="onToggleClicked($event, dropdown)"
+          class="actions-dd-btn">
+    Действия
+  </button>
+  <div ngbDropdownMenu>
+    <ng-template ngFor let-item [ngForOf]="items">
+      <a *ngIf="item.link != null; else button"
+         [routerLink]="item.link"
+         [ngClass]="'actions-dd__it--' + item.type"
+         class="dropdown-item">{{ item.label }}</a>
+      <ng-template #button>
+        <button type="button"
+                *ngIf="item.type"
+                (click)="onItemClicked($event, item, dropdown)"
+                [ngClass]="'actions-dd__it--' + item.type"
+                class="dropdown-item">{{ item.label }}
+        </button>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>
+          
         </div>
         <div class="col-md-3 col-lg-3">
           <ud-forms-label [asRequired]="isRequired('covers')" [attrFor]="'covers'">Фотография</ud-forms-label>

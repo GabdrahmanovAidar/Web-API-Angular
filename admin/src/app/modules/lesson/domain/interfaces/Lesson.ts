@@ -3,8 +3,8 @@ export interface Lesson{
    id?:number,
    name?:string,
    description?:string,
-   lessonDuration?:string,
-   level?:string,
+   duration?:string,
+   courseId?:number,
    status?:string,
    createdDate?:Date
 }

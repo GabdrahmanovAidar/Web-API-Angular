@@ -13,8 +13,8 @@ export class LessonFormBuilderService {
     return this.fb.group({
       name: [lesson.name, [Validators.required, Validators.maxLength(200)]],
       description: [lesson.description, [Validators.required, Validators.maxLength(10000)]],
-      level: [lesson.level, [Validators.required, Validators.maxLength(200)]],
-      lessonDuration: [lesson.lessonDuration, [Validators.required, Validators.maxLength(200)]]
+      courseId: [lesson.courseId, [Validators.required, Validators.maxLength(200)]],
+      duration: [lesson.duration, [Validators.required, Validators.maxLength(200)]]
     })
   }
 }

@@ -5,6 +5,6 @@ import { HttpResource } from "app/modules/core/infrastructure/HttpResource";
 @Injectable()
 export class LessonResource extends BaseRestResource {
   constructor(httpResource: HttpResource) {
-    super(httpResource, 'lessons');
+    super(httpResource, 'lesson');
   }
 }

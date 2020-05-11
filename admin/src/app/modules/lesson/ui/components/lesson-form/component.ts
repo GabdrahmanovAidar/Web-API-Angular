@@ -33,8 +33,8 @@ export class LessonComponentsLessonForm implements OnInit {
     title: true,
     description: true,
     duration: true,
-    level: true,
-    covers: true
+    courseId: true
+    
   };
   public imageOptions = {
     size: { w: 200, h: 200 },

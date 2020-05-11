@@ -30,15 +30,39 @@ namespace Web.API.Controllers
         public async Task<IActionResult> Post([FromBody] LessonModel model, int time_offset = 0)
         {
             var lesson = GetLesson(model);
-
+            
             // В этом месте происходит передача контекста в BL Commands
             var commandResult = await _commandHandler.Execute(new LessonCreateContext
             {
                 Lesson = lesson
+                
             });
 
-            return Ok();
+            if (commandResult.IsSuccess)
+            {
+                var newsModel = await _lessonQueries.GetById(lesson.Id);
+                model.SetOffset(time_offset);
+                return Ok(newsModel);
+            }
+            else
+            {
+                return BadRequest(new ApiResultCode(commandResult));
+            }
 
+        }
+
+        [HttpGet("")]
+        [ProducesResponseType(typeof(List<LessonModel>), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetList(int page = 1, int size = 1000, int time_offset = 0, string status = null)
+        {
+            var result = await _lessonQueries.GetList(new LessonFilter
+            {
+                Page = page,
+                Size = size,
+                Status = status
+            });
+            result.List.ForEach(x => x.SetOffset(time_offset));
+            return Ok(result);
         }
 
         private Lesson GetLesson(LessonModel lessonModel)

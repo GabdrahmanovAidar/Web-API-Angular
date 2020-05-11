@@ -16,7 +16,7 @@ import { UDBreadcrumbsModule } from "app/modules/ud-ui/components/breadcrumbs/mo
 import { UDDateTimeInputModule } from "app/modules/ud-ui/components/datetime/module";
 import { Ng2FlatpickrModule } from "ng2-flatpickr";
 import { UDMapModule } from "app/modules/ud-map/module";
-import { LessonComponentsActions } from './ui/components/lesson-actions/component';
+import { LessonComponentsLessonActions } from './ui/components/lesson-actions/component';
 import { UDActionsDDModule } from "app/modules/ud-ui/components/actions-dd/module";
 import { UDUploadModule } from "app/modules/ud-upload/upload.module";
 import { DropdownModule } from "primeng/dropdown";
