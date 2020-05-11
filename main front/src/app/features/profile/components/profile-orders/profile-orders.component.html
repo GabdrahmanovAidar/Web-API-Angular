@@ -1,0 +1,51 @@
+<div id="stepControlContainer">
+    <table class="table table-hover table-dark" *ngIf="checkIfNull && !isSelectRow">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Тип</th>
+                <th scope="col">Сумма</th>
+                <th scope="col">Дата</th>
+                <th scope="col">Статус</th>
+                <th scope="col">Отзыв</th>
+                <th scope="col">Оплата</th>
+            </tr>
+        </thead>
+        <tbody class="t-body">
+            <tr *ngFor="let order of orders.list">
+                <td>{{order.productId}}</td>
+                <td>
+                    <button class="order-type" (click)="onSelectRow(order.productId, order.type)">
+                        {{order.type}}
+                    </button>
+                </td>
+                <td>{{order.cost}}</td>
+                <td>{{order.createdDate}}</td>
+                <td>{{order.status}}</td>
+                <td>
+                    <button *ngIf="checkIsPay == false" (click)="onClickAccept(order.productId,order.type)" mat-stroked-button color="warn">Оставить</button>
+                    <td *ngIf="!order.isPay">
+                        <button class="button-payments" (click)="onPay(order.productId, order.cost, order.productModel.description)">Оплатить</button>
+                    </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="payments">
+        <app-payments class="payments-component" (onChange)="onChange($event)" *ngIf="checkIsPay" [cost]="cost" [description]="description" [timeToFinish]="delivelerTime" [comment]="comment">
+        </app-payments>
+    </div>
+</div>
+<app-profile-order *ngIf="isSelectRow" [order]="order" [type]="type" (closeWindow)="closeWindow($event)">
+
+</app-profile-order>
+
+<div class="review-container">
+    <app-review *ngIf="openReview" [product_id]="productId" [type_product]="type" (onChange)="onChang($event)">
+    </app-review>
+</div>
+<div *ngIf="loader == false && checkIfNull==false" class="loader">
+    <h4 style="padding-top:20px;">
+        <mat-spinner></mat-spinner>
+    </h4>
+</div>

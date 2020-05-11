@@ -1,0 +1,129 @@
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.stock-container {
+    border-radius: 20px;
+    opacity: 0.9;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    width: 100%;
+    height: 70%;
+}
+
+.stock {
+    opacity: 0.95;
+    padding: 10px;
+    width: 400px;
+    position: relative;
+    height: 400px;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: 10px;
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5em;
+    box-shadow: 0px 1px 9px 2px rgba(255, 255, 255, 0.57);
+    -webkit-box-shadow: 0px 1px 9px 2px rgba(255, 255, 255, 0.57);
+    -moz-box-shadow: 0px 1px 9px 2px rgba(255, 255, 255, 0.57);
+}
+
+.but {
+    width: 150px;
+    height: 30px;
+    background-color: brown;
+    border-radius: 7px;
+    border-color: brown;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
+
+.label {
+    color: #ccc;
+    display: flex;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 20px;
+    margin-top: 1em;
+}
+
+.until {
+    color: #ccc;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-top: 1.2em;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.percent {
+    color: #ccc;
+    display: flex;
+    font-size: 1.1em;
+    font-weight: 400;
+    margin-top: 10em;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.stock-icon {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.text-percent {
+    display: inline-block;
+    margin-top: 0.15em;
+}
+
+.until:hover {
+    color: white;
+}
+
+.percent:hover {
+    color: white;
+}
+
+.stock:hover .description {
+    display: block;
+}
+
+.desc {
+    margin-top: 8em;
+}
+
+.description {
+    color: white;
+    margin-top: 0em;
+    opacity: 0.7;
+    background: #222222;
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    width: 95%;
+    right: 10px;
+    position: absolute;
+    height: 70%;
+    top: 0px;
+}
+
+.description:hover {
+    display: inline;
+}
+
+.stockContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

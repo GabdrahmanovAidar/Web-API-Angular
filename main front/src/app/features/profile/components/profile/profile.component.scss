@@ -1,0 +1,81 @@
+.parent {
+    position: relative;
+    min-height: 500px;
+}
+
+.parent:before {
+    min-height: 500px;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.navigation {
+    position: relative;
+    min-height: 500px;
+}
+
+.navigation:before {
+    min-height: 500px;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(252, 51, 51, 0.3);
+}
+
+.child {
+    color: #FFF;
+    position: relative;
+}
+
+.button-close {
+    position: absolute;
+    top: -1px;
+    color: black;
+    border-radius: 20%;
+    background-color: brown;
+    border: none;
+    right: 1px;
+}
+
+.button-close:hover {
+    background-color: red;
+    color: black;
+}
+
+button {
+    font-size: medium
+}
+
+.mainTitle h2 {
+    margin-bottom: 50px;
+}
+
+.mainTitle h2 {
+    font-size: 50px;
+}
+
+.space {
+    height: 56px;
+}
+
+.imageUpload :hover {
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+}
+
+img {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10px;
+    width: 70%;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}

@@ -1,0 +1,14 @@
+<div class="logo"><img src="../../../assets/shadow-small.png"></div>
+<div class="mainContainer">
+    <div class="questContainer">
+        <img *ngIf="isVisibleQuest != true" src="../../../assets/newQuest.png">
+        <button *ngIf="isVisibleQuest != true" class="buyQuest" (click)="onBuyQuestClick()">Купить</button>
+        <quest-modal-window *ngIf="isVisibleQuest != false"></quest-modal-window>
+    </div>
+    <div class="boxContainer">
+        <img *ngIf="isVisibleBox != true" src="../../../assets/newBox.png">
+        <button *ngIf="isVisibleBox != true" class="buyBox" (click)="onBuyBoxClick()">Купить</button>
+        <box-modal-window *ngIf="isVisibleBox != false"></box-modal-window>
+    </div>
+</div>
+<div class="space"></div>

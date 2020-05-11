@@ -1,0 +1,14 @@
+<div class="questContainer">
+    <div *ngFor="let questItem of quests" class="quest" (click)="onBuyQuest(questItem.id)">
+        <img class="image" [src]="questItem.mainImage[0].source">
+        <p class="pName">{{questItem.name}}</p>
+        <div class="pCost">
+            <p [ngClass]="{newCostIsShow: questItem.isShowCSS}" class="newCostIsShow">{{questItem.cost}} руб.</p>
+        </div>
+        <div *ngIf="questItem.isShowCSS" class="newCost">
+            <span class="th">Акция!</span>
+            <p>{{questItem.newCost}} руб.</p>
+        </div>
+        <hr class="hr">
+    </div>
+</div>

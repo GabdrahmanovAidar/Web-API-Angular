@@ -1,0 +1,67 @@
+.modalWindow{
+    display: flex;
+    justify-content: center;
+}
+.form  {
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+}
+.title {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.message {
+    background-color: black;
+    border-radius: 10px;
+    padding: 25%;
+    opacity: 0.7;
+}
+.modal-container{
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+}
+.pUpdate {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 10px;
+    padding-bottom: 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.pUpdateTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.pUpdateContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .pUpdate {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        flex-wrap: wrap;
+        width: 85%;
+        border-radius: 10px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

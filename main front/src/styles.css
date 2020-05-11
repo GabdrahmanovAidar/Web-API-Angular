@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~ngx-toastr/toastr.css';
+
+body {
+    margin: 0;
+    background:linear-gradient( rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5) ), url('assets/fon-new2.jpg') fixed;
+    background-size: cover;
+}
+
+.mainTitle {
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    font-size: 70px;
+    color: white;
+}
+body { 
+    margin: 0; 
+    background:linear-gradient( rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5) ), url('assets/fon-new2.jpg') fixed; 
+    background-size: cover; 
+    background-color:rgba(0,0,0,0.5);
+    }
+    ::-webkit-scrollbar { 
+        width: 10px; 
+        height: 10px;
+        } 
+        
+        /* Track */ 
+        ::-webkit-scrollbar-track { 
+        box-shadow: inset 0 0 5px grey; 
+        border-radius: 10px; 
+        } 
+        
+        /* Handle */ 
+        ::-webkit-scrollbar-thumb { 
+        background:gray; 
+        border-radius: 10px; 
+        } 
+        
+        /* Handle on hover */ 
+        ::-webkit-scrollbar-thumb:hover { 
+        background: #b30000; 
+        }
+/* .mat-focused .mat-form-field-label {
+    color: green !important;
+}
+
+.mat-form-field-ripple {
+    background-color: green !important;
+} */

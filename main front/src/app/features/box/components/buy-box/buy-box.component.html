@@ -1,0 +1,27 @@
+<div class="buyBoxContainer" *ngIf="isPay != true">
+    <div class="buy">
+        <div class="back">
+            <button class="bt-bc" (click)='onBack()'><img class="icon-back"src="assets/back.png" /></button>
+        </div>
+        <div class="buyTitle">
+            <h2>Дополнительная информация</h2>
+        </div>
+        <form [formGroup]="buyForm" (ngSubmit)="submit()" class="form">
+            <formly-form [model]="model" [fields]="fields" [options]="options" [form]="buyForm"></formly-form>
+            <mat-grid-list cols="1" rowHeight="5:1">
+                <mat-grid-tile>
+                    <button type="submit" class="buyButton">
+                        Оплатить
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+        </form>
+    </div>
+</div>
+<div class="payments-container">
+    <div class="payments">
+        <app-payments *ngIf="isPay != false" [cost]="box.newCost" (onChange)="onChange($event)" [description]="box.description" [timeToFinish]="model.time" [comment]="model.comment">
+        </app-payments>
+    </div>
+</div>

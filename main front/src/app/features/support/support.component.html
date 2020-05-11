@@ -1,0 +1,69 @@
+<!-- <div class="mainContainer">
+  <div class="supportContainer">
+    <div class="supportTitle">
+      <h2>Обратная связь</h2>
+    </div>
+    <form [formGroup]="supportForm" (ngSubmit)="submit()">
+      <formly-form [model]="model" [fields]="fields" [options]="options" [form]="supportForm"></formly-form>
+      <div class="center">
+        <button type="submit" mat-flat-button color="primary" [disabled]="!supportForm.valid">
+          Отправить
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="supportMessageContainer">
+    <div class="supportTitle">
+      <h2>Text</h2>
+    </div>
+    asdawdasfj khk
+  </div>
+
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="form" style="min-height: 750px;">
+        <h2 class="title">Обратная связь</h2>
+        <form [formGroup]="supportForm" (ngSubmit)="submit()">
+          <formly-form [model]="model" [fields]="fields" [options]="options" [form]="supportForm"></formly-form>
+          <div class="center">
+            <button type="submit" mat-flat-button color="primary" [disabled]="!supportForm.valid">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm">
+      <!-- <div class="message" style="color: white">
+        <h4 class="title">Здесь Вы можете без регистрации задать любой интересующий Вас вопрос. Мы ответим Вам на
+          указанный e-mail.
+        </h4>
+        <h5>
+          Ваши данные не передаются третьим лицам и Ваш e-mail находится в полной безопасности.
+        </h5>
+      </div> -->
+
+      <div>
+        <div class="parent">
+          <div class="child">
+            <div class="card-body">
+              <h5 class="card-title" style="padding-top: 15%">
+                Здесь Вы можете без регистрации задать любой интересующий Вас вопрос. Мы ответим Вам на
+                указанный e-mail.
+              </h5>
+              <h5 class="card-text" style="padding-top: 20%">
+                Ваши данные не передаются третьим лицам и Ваш e-mail находится в полной
+                безопасности.
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

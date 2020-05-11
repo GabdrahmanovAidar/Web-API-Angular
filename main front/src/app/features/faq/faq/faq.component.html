@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="mainTitle">
+        <h2>
+            FAQ
+        </h2>
+    </div>
+    <div class="flex">
+        <div *ngIf="isLoad" class="questions">
+            <div *ngFor="let item of faq.list">
+                <mat-list role="list" style="color: inherit">
+                    <mat-list-item role="listitem">
+                        <button  (click)="onSelectRow(item.id)">
+                            {{item.question}}
+                        </button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </div>
+        <div class="answers">
+            <div *ngIf="isLoadSelectedRow" style="padding: 0 10%">
+                {{selectRow.answer}}
+            </div>
+        </div>
+    </div>
+</div>

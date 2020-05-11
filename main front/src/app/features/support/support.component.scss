@@ -1,0 +1,44 @@
+.form  {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25%;
+}
+.title {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.message {
+    background-color: black;
+    border-radius: 10px;
+    padding: 25%;
+    opacity: 0.7;
+}
+
+.text {
+    padding: 25%; color: white
+}
+
+.parent {
+    position: relative;
+    min-height: 750px;
+    
+    padding: 5%;
+}
+
+.parent:before {
+    border-radius: 10px;
+    min-height: 750px;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.child {
+    color: #FFF;
+    position: relative;
+}

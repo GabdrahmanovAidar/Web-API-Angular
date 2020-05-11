@@ -1,0 +1,39 @@
+.registration{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    width: 50%;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    padding-left: 130px;
+    padding-right: 130px; 
+}
+.registrationTitle{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.registrationContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:40em;
+}
+.space{
+    height: 34px;
+}
+
+@media screen and (max-width: 500px){
+    .registration{
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        flex-wrap: wrap;
+        width: 85%;
+        border-radius: 10px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px; 
+    }
+}

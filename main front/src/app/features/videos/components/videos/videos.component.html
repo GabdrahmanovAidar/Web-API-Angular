@@ -1,0 +1,15 @@
+<div class="logo"><img src="../../../assets/shadow-small.png"></div>
+
+<div *ngIf="videosItem" class='videosContainer'>
+  <div *ngFor="let item of videosItem.list" class='videos'>
+    <div class="card">
+      <video controls class="video">
+        <source [src]=item.videos[0].source [type]=item.videos[0].contentType>
+      </video>
+      <div class="container">
+        <h4><b>{{ item.title }}</b></h4>
+        <p>{{item.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>

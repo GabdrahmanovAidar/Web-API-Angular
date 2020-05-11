@@ -1,0 +1,35 @@
+<div class="mainTitle">
+        <h2>
+                Новости
+        </h2>
+</div>
+<div class="container">
+        <div *ngIf="news" class='newsContainer'>
+                <div *ngFor="let new of news.list" class='news' (click)="onParticipateClick(new.id)">
+                        <div class="containerText">
+                                <img class="image" [src]="new.covers[0].source">
+                                <p class="label"><b>{{ new.title }}</b></p>
+                        </div>
+                </div>
+        </div>
+        <div *ngIf="show === true" class='newsDetail'>
+
+                <img class="image1" [src]="newsShow.covers[0].source">
+                <div class="title"> {{newsShow.title}}</div>
+                <div class="description">{{newsShow.description}}</div>
+                <!-- <div >
+                        <img class="image2" [src]="cov.source">
+                </div> -->
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                        <div ngxSlickItem *ngFor="let cov of newsShow.covers" class="slide">
+                                <div *ngIf="newsShow.covers.length!=1">
+                                        <img class="image2" [src]="cov.source" width="50%">
+                                </div>
+                        </div>
+                </ngx-slick-carousel>
+
+                <div class="date"><b>{{newsShow.createdDate | date: 'dd/MM/yyyy'}}</b></div>
+
+        </div>
+</div>

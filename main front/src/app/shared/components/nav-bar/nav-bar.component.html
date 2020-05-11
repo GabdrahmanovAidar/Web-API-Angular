@@ -1,0 +1,61 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'">
+        <mat-toolbar>
+            DarkX
+        </mat-toolbar>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/home']">На главную</a>
+            <a mat-list-item [routerLink]="['/stocks']">Акции</a>
+            <a mat-list-item [routerLink]="['/news']">Новости</a>
+            <a mat-list-item [routerLink]="['/videos']">Видео</a>
+            <a mat-list-item [routerLink]="['/support']">Поддержка</a>
+            <a mat-list-item [routerLink]="['/faq']">FAQ</a>
+            <a mat-list-item [routerLink]="['/information']">О нас</a>
+            <div *ngIf="isAuth">
+            </div>
+            <div *ngIf="!isAuth">
+                <a mat-list-item [routerLink]="['account', 'login']">Войти</a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+            <a [routerLink]="['/home']">
+                <img src="../../../../assets/newLogo.png" class="logo" />
+            </a>
+            <a [routerLink]="['/home']">
+                <img src="../../../../assets/sity2.png" class="sity-icon" />
+            </a>
+            <button mat-button [matMenuTriggerFor]="belowMenu">
+                <div class="city" *ngIf="city===''">
+                    Выбор Города
+                </div>
+                <div *ngIf="city!==''">
+                    {{city}}
+                </div>
+            </button>
+
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+                <button (click)="onSelectCity('Сургут')" mat-menu-item>Сургут</button>
+                <button (click)="onSelectCity('Казань')" mat-menu-item>Казань</button>
+            </mat-menu>
+
+            <span class="spacer"></span>
+            <div *ngIf="!isAuth; else profile">
+                <a class="sign-in" [routerLink]="['account', 'login']">Войти</a>
+                <a class="sign-in" [routerLink]="['account', 'registration']">Регистрация</a>
+            </div>
+        </mat-toolbar>
+        <div class="center">
+            <ng-content></ng-content>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #profile>
+    <a [routerLink]="['profile']">Профиль</a>
+</ng-template>

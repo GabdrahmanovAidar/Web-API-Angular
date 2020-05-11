@@ -1,0 +1,14 @@
+<div class="registrationContainer">
+  <div class="registration">
+    <div class="registrationTitle">
+  <h2>Регистрация</h2>
+  </div>
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="registerForm"></formly-form>
+  <button type="submit" mat-flat-button color="primary" [disabled]="!registerForm.valid">
+    Зарегистрироваться
+  </button>
+</form>
+</div>
+</div>
+<div class="space"></div>

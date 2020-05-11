@@ -1,0 +1,21 @@
+
+    <div class="modal" *ngIf ="isError != true" >
+        <p>Введите код с телефона!</p>
+    
+        
+        <div class="field">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Код" name="codeInput" disabled="false" [value]="codeInput"
+                    [(ngModel)]="codeInput">
+                    <mat-hint *ngIf="isVisibleError != false && counter < 3" class="error">Ошибка! Неверный код.</mat-hint>
+                    <mat-hint *ngIf="isVisibleError != false && counter >= 3 && count !=0" class="error">Ошибка! Неверный код.{{counter$ | async}}</mat-hint>
+                    <mat-hint *ngIf="isVisibleError != false && count === 0" class="error">Ошибка! Неверный код. Попробуйте еще раз.</mat-hint>
+                    
+            </mat-form-field>
+           
+            <button mat-flat-button color="accent" (click)="onSubmit(false)" style="margin-top:15px;">Ввести код</button>
+           
+        </div>
+        
+    </div>
+    <mat-hint *ngIf ="isError != false" style="color:red;">Вы исчерпали лимит смен номера, попробуйте завтра!</mat-hint>

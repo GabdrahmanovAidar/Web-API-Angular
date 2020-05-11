@@ -1,0 +1,60 @@
+<div *ngIf="isModal != true" class="boxContainer">
+    <div class="box">
+        <div class="photoContainer" [ngStyle]="{'background-image': 'url(' + box?.mainImage[0].source + ')'}">
+            <h1 class="name">
+                {{box?.name}}
+            </h1>
+            <ul class="information-container">
+                <hr>
+                <li class="information1">
+                    <span class="th">Время</span>
+                    <span class="td">{{box?.timeToFinish}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Цена</span>
+                    <span *ngIf="!isActive" class="td">{{box?.cost}}</span>
+                    <span *ngIf="isActive" class="td">{{box?.newCost}}</span>
+                </li>
+                <li class="information">
+                    <span class="th"> Игроков</span>
+                    <span class="td">{{box?.playersCount}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Сложность</span>
+                    <span class="td">{{box?.checkpointsCount}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Добираться</span>
+                    <span class="td">{{box?.avaliability}}</span>
+                </li>
+                <hr>
+            </ul>
+            <div class="buttons">
+                <button class="buy" (click)="onBuyBox()">Купить</button>
+                <button class="present" (click)="onPresentBox(box.id)">Подарить</button>
+            </div>
+        </div>
+        <div class="stepper">
+            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+                <mat-tab label="Описание">
+                    <div class="description">
+                        <div class="description-text">
+                            {{box?.description}}
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Фотографии">
+                    <div class="large">
+                        <img class="image" [src]="box?.mainImage[1].source" />
+                        <img class="image" [src]="box?.mainImage[2].source" />
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+        </div>
+
+    </div>
+</div>
+<app-reviews *ngIf="isModal != true" [productId]="id" productType="BOX"></app-reviews>
+
+<app-modal-offer *ngIf="isModal != false" [id]="box.id" type="box" class="modalWindow"></app-modal-offer>

@@ -1,0 +1,18 @@
+<div class="logo"><img src="../../../assets/shadow-small.png"></div>
+
+<div *ngIf="stocks" class='stockContainer'>
+    <div *ngFor="let stock of stocks.list" class='stock'>
+        <div class="container" [ngStyle]="{'background-image': 'url(' + stock?.photo[0].source + ')'}">
+            <h4 class="percent">
+                <img class="stock-icon" src="assets/stock.png" />
+                <div class="text-percent"> {{ stock.amountPercent }}%</div>
+            </h4>
+            <h4 class="until">Действует до: {{ stock.end }}</h4>
+            <h4 class="label">{{ stock.title }}</h4>
+            <div class="description">
+                <div class="desc"> {{stock.description}} </div>
+            </div>
+            <button class="but" (click)="onParticipateClick(stock.id)">Участвовать</button>
+        </div>
+    </div>
+</div>

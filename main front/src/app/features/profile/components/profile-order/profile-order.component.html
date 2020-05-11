@@ -1,0 +1,130 @@
+<div class="order">
+
+    <div id="stepControlContainer" class="order-container">
+        <div class="button-container">
+            <button class="button-close" (click)="close()">Х</button>
+        </div>
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+
+            <div class="button-order">
+                <button class="button-ord" (click)="onClickOverview()">Основная информация</button>
+                <button class="button-ord" (click)="onClickCheckpoionts()">Этапы прохождения</button>
+            </div>
+            <mat-step [stepControl]="firstFormGroup">
+                <div class="overview" *ngIf="isClickOverview">
+                    <div class="main-images">
+                        <img class="main-image" [src]="order?.mainImage[0].source" width="30%" height="30%" />
+                        <img class="main-image" [src]="order?.mainImage[1].source" width="30%" height="30%" />
+                        <img class="main-image" [src]="order?.mainImage[2].source" width="30%" height="30%" />
+                    </div>
+                    <div class="text">
+                        <mat-grid-list cols="1" rowHeight="10:1">
+                            <mat-grid-tile>{{order.name}}</mat-grid-tile>
+                            <mat-grid-tile>{{order.description}}</mat-grid-tile>
+                        </mat-grid-list>
+                        <mat-grid-list class="icon-list" cols="3" rowHeight="3:1">
+                            <mat-grid-tile>
+                                <div class="icon-overview">
+                                    <img src="assets/ruble.png" />
+                                </div>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <div class="icon-overview">
+                                    <img src="assets/address.png" />
+                                </div>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                <div *ngIf="isWayWalking" class="icon-overview-walking">
+                                    <img src="assets/people.png" />
+                                </div>
+                                <div *ngIf="!isWayWalking" class="icon-overview">
+                                    <img src="assets/car.png" />
+                                </div>
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                {{order.cost}}
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                {{order.address}}
+                            </mat-grid-tile>
+                            <mat-grid-tile>
+                                {{order.avaliability}}
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </div>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup">
+                <mat-accordion>
+                    <div class="checkpoints" *ngFor="let item of order.checkpoints;let i = index ">
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header *ngIf="!isClickCheckpionts">
+                                <mat-panel-title>
+                                    <p>Чекпоинт: </p>{{i+1}}
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                    Описание чекпоинта
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Координаты
+                            </mat-panel-title>
+                            <mat-panel-description>
+                                <p>координаты {{i+1}} чекпоинта </p>
+                            </mat-panel-description>
+                            <div class="icons">
+                                <div class="icon-1">
+                                    <img width="50%" height="95%" src="assets/icons8-долгота-50.png" />
+                                    {{item.longtitude}}
+                                </div>
+                                <div class="icon-2">
+                                    <img width="50%" height="92%" src="assets/icons8-широта-50.png" />{{item.latitude}}
+                                </div>
+                                <div class="media">
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <mat-card-title>Локация {{i+1}}</mat-card-title>
+                                            <mat-card-subtitle>Осмотрите все детали</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <img mat-card-image [src]="item?.photoUpload.source" alt="Photo of a Shiba Inu">
+                                    </mat-card>
+                                    <mat-card class="example-card">
+                                        <mat-card-header>
+                                            <mat-card-title>Локация {{i+1}}</mat-card-title>
+                                            <mat-card-subtitle>Посмотрите видео</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <video class="media-checkpoint" controls mat-card-image
+                                            alt="Photo of a Shiba Inu">
+                                            <source [src]=item.videoUpload.source [type]=item.videoUpload.contentType>
+                                        </video>
+                                    </mat-card>
+                                </div>
+                            </div>
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Инвентарь
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        <p>Инвентарь для прохождения {{i+1}} чекпоинта </p>
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <mat-grid-list cols="1" rowHeight="10:1">
+                                    <div class="inventory" *ngFor="let item of item.inventory;let i = index ">
+
+                                        <mat-grid-tile>
+                                            <img class="icon-check" src="assets/icons8-ракетка-50.png" />
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            {{item}}
+                                        </mat-grid-tile>
+                                    </div>
+                                </mat-grid-list>
+                            </mat-expansion-panel>
+                        </mat-expansion-panel>
+                    </div>
+                </mat-accordion>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>

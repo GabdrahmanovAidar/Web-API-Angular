@@ -1,0 +1,62 @@
+<div *ngIf="isModal != true" class="questContainer">
+    <div class="quest">
+        <div class="photoContainer" [ngStyle]="{'background-image': 'url(' + quest?.mainImage[0].source + ')'}">
+            <h1 class="name">
+                {{quest?.name}}
+            </h1>
+            <ul class="information-container">
+                <hr>
+                <li class="information1">
+                    <span class="th">Время</span>
+                    <span class="td">{{quest?.timeToFinish}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Цена</span>
+                    <span *ngIf="!isActive" class="td">{{quest?.cost}}</span>
+                    <span *ngIf="isActive" class="td">{{quest?.newCost}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Игроков</span>
+                    <span class="td">{{quest?.playersCount}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Сложность</span>
+                    <span class="td">{{quest?.checkpointsCount}}</span>
+                </li>
+                <li class="information">
+                    <span class="th">Добираться</span>
+                    <span class="td">{{quest?.avaliability}}</span>
+                </li>
+                <hr>
+            </ul>
+
+            <div class="buttons">
+                <button class="buy" (click)="onBuyQuest(quest.id)">Купить</button>
+                <button class="present" (click)="onPresentQuest(quest.id)">Подарить</button>
+            </div>
+        </div>
+
+        <div class="stepper">
+            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+                <mat-tab label="Описание">
+                    <div class="description">
+                        <div class="description-text">
+                            {{quest?.description}}
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Фотографии">
+                    <div class="large">
+                        <img class="image" [src]="quest?.mainImage[1].source" />
+                        <img class="image" [src]="quest?.mainImage[2].source" />
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+        </div>
+
+    </div>
+</div>
+<app-reviews *ngIf="isModal != true" [productId]="id" productType="QUEST"></app-reviews>
+
+<app-modal-offer *ngIf="isModal != false" [id]="quest.id" type="quest" class="modalWindow"></app-modal-offer>

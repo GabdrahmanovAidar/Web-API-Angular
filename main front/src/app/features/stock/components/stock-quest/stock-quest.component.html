@@ -1,0 +1,50 @@
+<div class="logo"><img src="../../../assets/shadow-small.png"></div>
+<div class="productContainer">
+    <div class="boxContainer" *ngIf="boxes !== null">
+        <div *ngFor="let box of boxes" class="box">
+            <div class="container" [ngStyle]="{'background-image': 'url(' + box?.mainImage[0].source + ')'}">
+
+                <div class="name">
+                    <h4>{{box.name}}</h4>
+                </div>
+                <div class="type">
+                    <p>Посылка</p>
+                </div>
+                <p class="rat">Средний рейтинг: </p>
+                <p class="rat" *ngIf="box.rating===0">Никто пока не оценил </p>
+                <div class="rating" *ngFor="let item of [].constructor(box.rating)">
+                    <img class="icon-star" src="assets/star-red.png" />
+                </div>
+                <p class="ratt" *ngIf="box.rating!==0">({{box.rating}})</p>
+                <div class="button-container">
+                    <button class="but" (click)="onClickBox(box.id)">Перейти к товару</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="boxContainer" *ngIf="quests !== null ">
+        <div *ngFor="let quest of quests" class="box">
+            <div class="container" [ngStyle]="{'background-image': 'url(' + quest?.mainImage[0].source + ')'}">
+                <div class="name">
+                    <h4>{{quest.name}}</h4>
+                </div>
+                <div class="type">
+                    <p>Квест</p>
+                </div>
+                <p class="rat" *ngIf="quest.rating!==0">Средний рейтинг: </p>
+                <p class="rat" *ngIf="quest.rating===0">Никто пока не оценил, будьте первым! </p>
+                <div class="rating" *ngFor="let item of [].constructor(quest.rating)">
+                    <img class="icon-star" src="assets/star-red.png" />
+                </div>
+                <p class="ratt" *ngIf="quest.rating!==0">({{quest.rating}})</p>
+                <div class="button-container">
+                    <button class="but" (click)="onClickQuest(quest.id)">Перейти к товару</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
