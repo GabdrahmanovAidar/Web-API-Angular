@@ -13,6 +13,7 @@ import { Lesson } from 'app/modules/lesson/domain/interfaces/Lesson';
 import { LessonRepository } from 'app/modules/lesson/domain/repositories/LessonRepository';
 import { HttpClient } from '@angular/common/http';
 import { Course } from 'app/modules/course/domain/interfaces/Course';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'lesson-components-lesson-form',
@@ -28,7 +29,7 @@ export class LessonComponentsLessonForm implements OnInit {
   @Output() cancel = new EventEmitter<{ originalEvent: Event }>();
   @Output() successSubmit = new EventEmitter<Lesson>();
   @Output() getId = new EventEmitter<number>();
-  public courses: Array<Course>;
+  public courses: Observable<Course[]>;
 
   public showFormErrors: boolean = false;
   public lessonForm: FormGroup;
@@ -77,9 +78,7 @@ export class LessonComponentsLessonForm implements OnInit {
   }
 
   public getCourses() {
-    this.http.get("localhost:8080/api/courses/get").subscribe(x => {
-      this.courses = x;
-    })
+    this.courses = this.http.get<Course[]>("localhost:8080/api/courses/get")
   }
 
 

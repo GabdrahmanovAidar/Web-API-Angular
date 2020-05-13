@@ -25,7 +25,7 @@
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
             <span class="caret"></span></button>
-            <ul class="dropdown-menu" *ngFor = "let item of courses">
+            <ul class="dropdown-menu" *ngFor = "let item of courses | async">
               <li><button (click) = onClicked(item.id) >{{item.name}}</button></li>           
             </ul>
           </div>
