@@ -1,0 +1,56 @@
+<form [formGroup]="LessonForm" (submit)="onSubmit($event)">
+  <ud-card>
+    <ud-card-content>
+      <div class="row">
+        <div class="col-md-3">
+          <ud-forms-control [control]="LessonForm.get('name')" [errorMessages]="validationMessages.name"
+            [disableInvalidClassName]="true">
+            <ud-forms-label [asRequired]="isRequired('name')" [attrFor]="'title'">Название
+            </ud-forms-label>
+            <input formControlName="title" id="title" type="text" placeholder="Введите название" class="form-control" />
+          </ud-forms-control>
+          <ud-forms-control [control]="lessonForm.get('description')" [errorMessages]="validationMessages.description"
+            [disableInvalidClassName]="true">
+            <ud-forms-label [asRequired]="isRequired('description')" [attrFor]="'description'">Описание</ud-forms-label>
+            <textarea formControlName="description" id="description" type="text" rows="12" placeholder="Описание"
+              class="form-control"></textarea>
+          </ud-forms-control>
+          <ud-forms-control [control]="lessonForm.get('duration')" [errorMessages]="validationMessages.duration"
+            [disableInvalidClassName]="true">
+            <ud-forms-label [asRequired]="isRequired('duration')" [attrFor]="'duration'">Длительность</ud-forms-label>
+            <textarea formControlName="duration" id="duration" type="text" placeholder="Длительность"
+              class="form-control"></textarea>
+          </ud-forms-control>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+              <span class="caret"></span></button>
+            <ul class="dropdown-menu" *ngFor="let item of courses | async">
+              <li><button (click)=onClicked(item.id)>{{item.name}}</button></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-md-3 col-lg-3">
+        <ud-forms-label [asRequired]="isRequired('covers')" [attrFor]="'covers'">Фотография</ud-forms-label>
+        <ud-forms-control [control]="lessonForm.get('covers')" [errorMessages]="validationMessages.covers"
+          [disableInvalidClassName]="true">
+          <div *ngFor="let image of lessonForm.get('covers').value; let i = index;">
+            <img [src]="image.source" height="200px" width="200px" class="image">
+            <button type="button" class="delete-button" (click)="onDeleteClicked($event, i)">X</button>
+          </div>
+          <ud-upload-photo [ngModel]="uploadTempModel" [ngModelOptions]="{standalone: true}" [showOnUpload]="false"
+            [height]="imageOptions.size.h + 'px'" [width]="imageOptions.size.w + 'px'" [cropOptions]="imageOptions.crop"
+            (ngModelChange)="onCoverUpload($event)">
+          </ud-upload-photo>
+        </ud-forms-control>
+      </div>
+      </div>
+    </ud-card-content>
+  </ud-card>
+  <div class="mt-5">
+    <button type="button" (click)="onCancelClicked($event)" class="btn btn-clear p-0">Отмена</button>
+    <button type="submit" class="btn btn-round btn-primary ml-4">Сохранить</button>
+  </div>
+</form>

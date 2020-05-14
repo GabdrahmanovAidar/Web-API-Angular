@@ -31,14 +31,6 @@
                 class="btn btn-sm btn-link mr-2">
           Все
         </button>
-        <button type="button" [ngClass]="{ 'active': filters.type === UserRoleEnum.User }"
-                (click)="onFiltersChange({ type: UserRoleEnum.User })" class="btn btn-sm btn-link mr-2">
-          Пользователи
-        </button>
-        <button type="button" [ngClass]="{ 'active': filters.type === UserRoleEnum.Deliveler }"
-                (click)="onFiltersChange({ type: UserRoleEnum.Deliveler })" class="btn btn-sm btn-link mr-2">
-          Доставщики
-        </button>
       </div>
       <div *ngIf="users?.length" class="col-md-6 text-right mobile-hide">
         <ud-per-page-pagination
@@ -64,7 +56,6 @@
           <th>ID</th>
           <th>Ник</th>
           <th>Телефон</th>
-          <th>Тип</th>
           <th></th>
         </tr>
         </thead>
@@ -73,8 +64,6 @@
           <td>{{ user.id }}</td>
           <td>{{ user.username }}</td>
           <td>{{ user.phone }}</td>
-          <td *ngIf="user.type === 'USER'">Пользователь</td>
-          <td *ngIf="user.type === 'DELIVELER'">Доставщик</td>
           <td class="text-right">
             <user-components-user-actions
               [users]="user"

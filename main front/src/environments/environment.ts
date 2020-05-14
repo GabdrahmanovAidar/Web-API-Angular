@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.darkx.ru/api'
+  apiUrl: 'https://localhost:44325/api'
 };
 
 

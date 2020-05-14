@@ -15,7 +15,7 @@ window.MyNamespace = window.MyNamespace || {};
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'DarkX';
+  title = 'RANStudy';
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
