@@ -6,12 +6,10 @@
         <mat-divider></mat-divider>
         <mat-nav-list>
             <a mat-list-item [routerLink]="['/home']">На главную</a>
-
+            <a mat-list-item [routerLink]="['/course']">Курсы</a>
             <a mat-list-item [routerLink]="['/support']">Поддержка</a>
             <a mat-list-item [routerLink]="['/faq']">FAQ</a>
             <a mat-list-item [routerLink]="['/information']">О нас</a>
-            <div *ngIf="isAuth">
-            </div>
             <div *ngIf="!isAuth">
                 <a mat-list-item [routerLink]="['account', 'login']">Войти</a>
             </div>

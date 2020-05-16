@@ -46,7 +46,7 @@ export class AuthPagesLogin implements OnInit {
     this.loginService.login(credentials)
       .finally(() => this.loading = false)
       .subscribe((sessionData) => {
-        this.router.navigate(['/dashboard/statistics'])
+        this.router.navigate(['/dashboard'])
       });
   }
 

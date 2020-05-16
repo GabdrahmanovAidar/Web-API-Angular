@@ -7,20 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public isVisibleQuest:boolean=false;
-  public isVisibleBox:boolean=false;
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-  public onBuyQuestClick(){
-    this.isVisibleQuest = true;
-  }
-
-  public onBuyBoxClick(){
-    this.isVisibleBox = true;
   }
 
 }
