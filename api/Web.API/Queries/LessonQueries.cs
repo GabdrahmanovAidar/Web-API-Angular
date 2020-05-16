@@ -85,8 +85,22 @@ namespace Web.API.Queries
                 Name = x.Name,
                 Description = x.Description,
                 Duration = x.Duration,
-                CourseId = x.CourseId
-            });;
+                CourseId = x.CourseId,
+                Videos = _db
+                    .LessonUploads
+                    .Where(q => q.LessonId == x.Id)
+                    .Join(_db.Uploads, q => q.VideoUploadId, u => u.Id, (q, u) => new VideoUploadModel
+                    {
+                        Extension = u.Extension,
+                        Height = u.Height,
+                        Id = u.Id,
+                        SizeInBytes = u.SizeInBytes,
+                        Width = u.Width,
+                        Duration = u.Duration,
+                        ContentType = u.ContentType
+                    })
+                    .ToList()
+            });
         }
     }
 }

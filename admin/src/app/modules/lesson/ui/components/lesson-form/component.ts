@@ -14,6 +14,7 @@ import { LessonRepository } from 'app/modules/lesson/domain/repositories/LessonR
 import { HttpClient } from '@angular/common/http';
 import { Course } from 'app/modules/course/domain/interfaces/Course';
 import { Observable } from 'rxjs';
+import { UploadVideo } from 'app/modules/ud-upload/domain/interfaces/UploadVideo';
 
 @Component({
   selector: 'lesson-components-lesson-form',
@@ -29,13 +30,15 @@ export class LessonComponentsLessonForm implements OnInit {
   @Output() cancel = new EventEmitter<{ originalEvent: Event }>();
   @Output() successSubmit = new EventEmitter<Lesson>();
   @Output() getId = new EventEmitter<number>();
-  public courses: Observable<Course[]>;
+  public courses: ArrayMeta<Course>;
+  
+  
 
   public showFormErrors: boolean = false;
   public lessonForm: FormGroup;
   public validationMessages = validationMessages;
   private fieldsRequirement = {
-    title: true,
+    name: true,
     description: true,
     duration: true,
     courseId: true
@@ -46,7 +49,12 @@ export class LessonComponentsLessonForm implements OnInit {
     crop: { aspectRatio: 1 }
   };
 
+  public videoOptions = {
+    size: {w: 200, h: 200}
+  }
+
   public uploadTempModel: any;
+  public uploadVideoModel: any;
 
 
   constructor(private route: ActivatedRoute,
@@ -61,14 +69,16 @@ export class LessonComponentsLessonForm implements OnInit {
 
   ngOnInit() {
     this.lessonForm = this.lessonFormBuilderService.buildForm(this.lesson);
-    this.getCourses();
+    this.http.get<any>("https://localhost:44325/api/course").subscribe(x => {
+      this.courses = x.list
+    })
   }
 
-  /*public onCoverUpload(cover: UploadImage): void {
+  public onCoverUpload(cover: UploadImage): void {
     const control = this.lessonForm.get('covers');
-    control.setValue([...control.value, cover]);
+    control.setValue([control.value, cover]);
     this.uploadTempModel = null;
-  } */
+  } 
 
   public onDeleteClicked($event, index: number): void {
     $event.preventDefault();
@@ -77,10 +87,18 @@ export class LessonComponentsLessonForm implements OnInit {
     control.setValue(newValue);
   }
 
-  public getCourses() {
-    this.courses = this.http.get<Course[]>("localhost:8080/api/courses/get")
+  public onVideoUpload(video: UploadVideo): void {
+    const control = this.lessonForm.get('videos');
+    control.setValue([control.value, video]);
+    this.uploadVideoModel = null;
   }
 
+  public deleteVideo($event, index: number) {
+    $event.preventDefault();
+    const control = this.lessonForm.get('videos');
+    const newValue = removeFromArray(control.value, index);
+    control.setValue(newValue);
+  }
 
   public onCancelClicked($event): void {
     $event.preventDefault();
@@ -90,6 +108,7 @@ export class LessonComponentsLessonForm implements OnInit {
   public onSubmit($event): void {
     $event.preventDefault();
     this.sendSubmitEvent();
+    
   }
   public get uploadForms(): AbstractControl[] {
     return (this.lessonForm.get('covers') as FormArray).controls;
@@ -100,13 +119,15 @@ export class LessonComponentsLessonForm implements OnInit {
       this.successSubmit.emit(lesson);
     } else {
       this.showFormErrors = true;
+      
     }
   }
   public isRequired(fieldName): boolean {
     return this.fieldsRequirement[fieldName];
   }
 
-  public onClicked(id) {
+  public onClicked(id:number){
     this.getId.emit(id);
+    
   }
 }

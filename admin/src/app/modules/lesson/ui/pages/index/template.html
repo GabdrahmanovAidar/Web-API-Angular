@@ -69,7 +69,7 @@
         <tr>
           <th>ID</th>
           <th>Название</th>
-          <th>Сложность</th>
+          <th>Id курса</th>
           <th>Статус</th>
           <th></th>
         </tr>
@@ -78,7 +78,6 @@
         <tr *ngFor="let lesson of lessons; let i = index; trackBy: lessonsTrackByFunc">
           <td>{{ lesson.id }}</td>
           <td>{{ lesson.name }}</td>
-          <td>{{ lesson.level }}</td>
           <td>{{ lesson.status }}</td>
           <td *ngIf="lesson.status === 'Active'">Активный</td>
           <td *ngIf="lesson.status === 'UnActive'">Неактивный</td>

@@ -27,6 +27,7 @@ import { LessonComponentsLessonForm } from './ui/components/lesson-form/componen
 import { LessonComponentsLessonFormCover } from './ui/components/lesson-form/cover/component';
 import { LessonFactory } from './domain/factories/LessonFactory';
 import { UploadFactory } from '../ud-upload/domain/factories/UploadFactory';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -51,7 +52,9 @@ import { UploadFactory } from '../ud-upload/domain/factories/UploadFactory';
       UDActionsDDModule,
       UDUploadModule,
       DropdownModule,
-      UDTruncateModule
+      UDTruncateModule,
+      HttpClientModule,
+      FormsModule
     ],
    
  declarations: [

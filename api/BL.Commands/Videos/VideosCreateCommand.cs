@@ -7,30 +7,33 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL.Commands.Lesson
+namespace BL.Commands.Videos
 {
-    public class LessonCreateCommand : CreateMediaBase, ICommand<LessonCreateContext>
+    public class VideosCreateCommand : CreateMediaBase, ICommand<VideoCreateContext>
     {
         private readonly EfContext _db;
 
-        public LessonCreateCommand(EfContext db) : base(db)
+        public VideosCreateCommand(EfContext db) : base(db)
         {
             _db = db;
         }
 
-
-        public async Task<CommandResult> ExecuteAsync(LessonCreateContext context)
+        public async Task<CommandResult> ExecuteAsync(VideoCreateContext context)
         {
-
             using (var transaction = await _db.Database.BeginTransactionAsync())
             {
-                
+                context.Video.Status = DAL.Entities.VideosItem.Statuses.Active;
+                context.Video.CreatedDate = DateTime.UtcNow;
 
-                _db.Lessons.Add(context.Lesson);
+                _db.Videos.Add(context.Video);
                 await _db.SaveChangesAsync();
-                await CreateVideos(context.Videos, context.Lesson.Id);
+
+
+                await CreateVideos(context.Videos, context.Video.Id);
+
                 transaction.Commit();
             }
+
             return CommandResult.Success();
         }
     }

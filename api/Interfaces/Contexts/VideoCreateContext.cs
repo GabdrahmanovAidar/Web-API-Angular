@@ -8,5 +8,6 @@ namespace Interfaces.Contexts
     public class VideoCreateContext : IContext
     {
         public List<Upload> Videos { get; set; }
+        public VideosItem Video { get; set; }
     }
 }

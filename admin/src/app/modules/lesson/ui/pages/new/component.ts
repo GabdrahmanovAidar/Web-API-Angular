@@ -36,6 +36,7 @@ export class LessonPagesNew implements OnInit {
   public onFormSuccessSubmit($event: Lesson): void {
     this.saving = true;
     $event.courseId = this.courseId ;
+    console.log($event.courseId)
       this.lessonRepository.save($event)
         .finally(() => this.saving = false)
         .subscribe((lesson: Lesson) => {
@@ -49,6 +50,7 @@ export class LessonPagesNew implements OnInit {
 
   public getCourseId($event) {
     this.courseId = $event;
+    console.log(this.courseId)
   }
 
 

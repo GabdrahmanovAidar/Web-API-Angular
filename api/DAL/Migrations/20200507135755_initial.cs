@@ -196,6 +196,7 @@ namespace DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Lessons");
+            
 
             migrationBuilder.DropTable(
                 name: "ProductHelpers");

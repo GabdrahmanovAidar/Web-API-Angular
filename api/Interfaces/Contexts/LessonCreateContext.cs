@@ -8,5 +8,6 @@ namespace Interfaces.Contexts
     public class LessonCreateContext : IContext
     {
         public Lesson Lesson { get; set; }
+        public List<Upload> Videos { get; set; }
     }
 }

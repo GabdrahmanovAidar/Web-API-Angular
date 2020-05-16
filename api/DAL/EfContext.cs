@@ -18,6 +18,9 @@ namespace DAL
         public DbSet<ProductHelper> ProductHelpers { get; set; }
         public DbSet<VideosUpload> VideosUpload { get; set; }
         public DbSet<Course> Courses { get; set; }
+       
+        public DbSet<LessonUploads> LessonUploads { get; set; }
+        public DbSet<VideosItem> Videos { get; set; }
         public DbSet<CourseUpload> CourseUploads { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Lesson> Lessons { get; set; }
@@ -31,6 +34,7 @@ namespace DAL
             modelBuilder.ApplyConfiguration(new CourseEntityConfiguration());
             modelBuilder.ApplyConfiguration(new LessonEntityConfiguration());
             modelBuilder.ApplyConfiguration(new RequestEntityConfiguration());
+            modelBuilder.ApplyConfiguration(new VideoEntitiesConfiguration());
         }
     }
 }

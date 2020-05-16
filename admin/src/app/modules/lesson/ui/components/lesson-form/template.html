@@ -1,14 +1,13 @@
-<form [formGroup]="LessonForm" (submit)="onSubmit($event)">
+<form [formGroup]="lessonForm" (submit)="onSubmit($event)">
   <ud-card>
     <ud-card-content>
       <div class="row">
         <div class="col-md-3">
-          <ud-forms-control [control]="LessonForm.get('name')" [errorMessages]="validationMessages.name"
+          <ud-forms-control [control]="lessonForm.get('name')" [errorMessages]="validationMessages.name"
             [disableInvalidClassName]="true">
-            <ud-forms-label [asRequired]="isRequired('name')" [attrFor]="'title'">Название
+            <ud-forms-label [asRequired]="isRequired('name')" [attrFor]="'name'">Название
             </ud-forms-label>
-            <input formControlName="title" id="title" type="text" placeholder="Введите название"
-              class="form-control" />
+            <input formControlName="name" id="name" type="text" placeholder="Введите название" class="form-control" />
           </ud-forms-control>
           <ud-forms-control [control]="lessonForm.get('description')" [errorMessages]="validationMessages.description"
             [disableInvalidClassName]="true">
@@ -22,30 +21,27 @@
             <textarea formControlName="duration" id="duration" type="text" placeholder="Длительность"
               class="form-control"></textarea>
           </ud-forms-control>
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-            <span class="caret"></span></button>
-            <ul class="dropdown-menu" *ngFor = "let item of courses | async">
-              <li><button (click) = onClicked(item.id) >{{item.name}}</button></li>           
-            </ul>
+          <label for="course">Выберите курс</label>
+          <select class="form-control" id="course" (change)="onClicked($event.target.value)">
+            <option selected>Выберите курс</option>
+            <option *ngFor="let course of courses" [value]="course.id">{{course.name}}</option>
+          </select>
+          <div class="col-md-6 col-lg-6">
+            <ud-forms-label [asRequired]="isRequired('videos')" [attrFor]="'videos'">Видео</ud-forms-label>
+            <ud-forms-control [control]="lessonForm.get('videos')" [errorMessages]="validationMessages.videos"
+              [disableInvalidClassName]="true">
+              <div *ngFor="let video of lessonForm.get('videos').value; let i = index;">
+                <video width="400px" controls class="video">
+                  <source [src]="video.source" [type]="video.contentType">
+                </video>
+                <button type="button" class="delete-button" (click)="deleteVideo($event, i)">X</button>
+              </div>
+              <ud-upload-video [ngModel]="uploadVideoModel" [ngModelOptions]="{standalone: true}" [showOnUpload]="false"
+                [height]="videoOptions.size.h + 'px'" [width]="videoOptions.size.w + 'px'"
+                (ngModelChange)="onVideoUpload($event)">
+              </ud-upload-video>
+            </ud-forms-control>
           </div>
-
-</div>
-          
-        </div>
-        <div class="col-md-3 col-lg-3">
-          <ud-forms-label [asRequired]="isRequired('covers')" [attrFor]="'covers'">Фотография</ud-forms-label>
-          <ud-forms-control [control]="lessonForm.get('covers')" [errorMessages]="validationMessages.covers"
-            [disableInvalidClassName]="true">
-            <div *ngFor="let image of lessonForm.get('covers').value; let i = index;">
-              <img [src]="image.source" height="200px" width="200px" class="image">
-              <button type="button" class="delete-button" (click)="onDeleteClicked($event, i)">X</button>
-            </div>
-            <ud-upload-photo [ngModel]="uploadTempModel" [ngModelOptions]="{standalone: true}" [showOnUpload]="false"
-              [height]="imageOptions.size.h + 'px'" [width]="imageOptions.size.w + 'px'"
-              [cropOptions]="imageOptions.crop" (ngModelChange)="onCoverUpload($event)">
-            </ud-upload-photo>
-          </ud-forms-control>
         </div>
       </div>
     </ud-card-content>

@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Interfaces.Contexts
 {
-    public class VideoUpdateContext : IContext
+    public class LessonUpdateContext : IContext
     {
         public int Id { get; set; }
+        public Lesson Lesson { get; set; }
         public List<Upload> Videos { get; set; }
-        public VideosItem VideosItem { get; set; }
     }
 }
+

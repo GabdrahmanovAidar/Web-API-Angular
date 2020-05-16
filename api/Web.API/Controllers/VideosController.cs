@@ -60,20 +60,20 @@ namespace Web.API.Controllers
         {
             model.SetOffset((-1) * time_offset);
 
-            //var video = GetVideo(model);
+            var video = GetVideo(model);
             var videos = GetVideos(model.Videos);
 
             var commandResult = await _commandHandler.Execute(new VideoCreateContext
             {
-                //Video = video,
+                Video = video,
                 Videos = videos
             });
 
             if (commandResult.IsSuccess)
             {
-              //  var videoModel = await _videosQueries.GetById(video.Id);
+                var videoModel = await _videosQueries.GetById(video.Id);
                 model.SetOffset(time_offset);
-                return Ok(/*videoModel*/);
+                return Ok(videoModel);
             }
             else
             {
@@ -89,10 +89,11 @@ namespace Web.API.Controllers
             model.SetOffset((-1) * time_offset);
 
             var videos = GetVideos(model.Videos);
+            var video = GetVideo(model);
 
             var commandResult = await _commandHandler.Execute(new VideoUpdateContext
             {
-                
+                VideosItem = video,
                 Id = id,
                 Videos = videos
             });
@@ -126,7 +127,17 @@ namespace Web.API.Controllers
             return model.Select(x => new Upload { Id = x.Id }).ToList();
         }
 
-        
+        private VideosItem GetVideo(VideoModel videoModel)
+        {
+            return new VideosItem
+            {
+                Title = videoModel.Title,
+                Description = videoModel.Description,
+                Id = videoModel.Id
+            };
+        }
+
+
 
     }
 }
