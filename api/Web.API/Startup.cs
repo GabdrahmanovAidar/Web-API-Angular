@@ -28,6 +28,8 @@ using Microsoft.AspNetCore.Identity;
 //using Web.API.Services;
 //using Web.API.Services.Models;
 using Web.API.Utils;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Web
 {
@@ -110,7 +112,9 @@ namespace Web
             
             services.AddQueries();
             services.AddCommands();
+            services.AddMemoryCache();
 
+            services.TryAdd(ServiceDescriptor.Singleton<IMemoryCache, MemoryCache>());
             services.AddTransient<IStorageProvider, StorageProvider>();
             services.AddScoped<ICurrentUser, CurrentUser>();
             //services.AddTransient(typeof(ILog<>), typeof(DAL.Log<>));

@@ -1,6 +1,7 @@
 ﻿using DAL;
 using Interfaces;
 using Interfaces.Contexts;
+using Microsoft.Extensions.Caching.Memory;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,10 +12,12 @@ namespace BL.Commands.Course
     public class CourseCreateCommand : CreateMediaBase, ICommand<CourseCreateContext>
     {
         private readonly EfContext _db;
+        private IMemoryCache cache;
 
-        public CourseCreateCommand(EfContext db) : base(db)
+        public CourseCreateCommand(EfContext db, IMemoryCache memoryCache) : base(db)
         {
             _db = db;
+            cache = memoryCache;
         }
 
         public async Task<CommandResult> ExecuteAsync(CourseCreateContext context)
@@ -27,6 +30,14 @@ namespace BL.Commands.Course
             {
 
                 _db.Courses.Add(context.Course);
+                int n = _db.SaveChanges();
+                if (n > 0)
+                {
+                    cache.Set(context.Course.Id, context.Course, new MemoryCacheEntryOptions
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+                    });
+                }
                 await _db.SaveChangesAsync();
 
                 await CreateUploads(context.Covers, context.Course.Id);
