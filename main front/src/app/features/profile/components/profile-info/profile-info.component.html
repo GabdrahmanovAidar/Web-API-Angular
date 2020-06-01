@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>
+    ФИО: {{info?.firstName}} {{info?.lastName}} {{info?.patronymicName}}
+  </h3>
+  <h5>
+    Email: {{info?.email}}
+  </h5>
+  <h5>
+    Номер телефона {{info?.phone}}
+  </h5>
+  <h5>
+    Дата рождения {{info?.birthDate | date:
+    'dd/MM/yyyy' }}
+  </h5>
+  <div *ngIf="!info?.isEmailConfirmed">
+    <button (click)="confirmEmail()" mat-flat-button color="warn">
+      Подтвердить почту
+    </button>
+  </div>
+</div>

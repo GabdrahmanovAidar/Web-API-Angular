@@ -1,0 +1,106 @@
+.mainContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.questContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: auto;
+}
+.questContainer img{
+    margin-top:10px;
+    width: 580px;
+    height: 450px;
+}
+.boxContainer img{
+    width: 580px;
+    height: 450px;
+}
+
+.boxContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: auto;
+}
+.center{
+    background: url('../../../assets/background.png') fixed;
+    background-size: cover;
+}
+.buyQuest{
+    position: absolute;
+    left: 175px;
+    bottom: 90px;
+    width: 245px;
+    height: 45px;
+    background-color: brown;
+    border-radius: 30px;
+    border-color: brown;
+    color: white;
+    font-size: 20px;
+}
+.buyBox{
+    position: absolute;
+    left: 175px;
+    bottom: 90px;
+    width: 245px;
+    height: 45px;
+    background-color: brown;
+    border-radius: 30px;
+    border-color: brown;
+    color: white;
+    font-size: 20px;
+}
+
+.logo{
+    display:flex;
+    justify-content: center;
+}
+.space{
+    height: 34px;
+}
+
+@media screen and (max-width: 450px){
+    .logo img{
+        width:200px;
+        height: 120px;
+    }
+
+    .questContainer img{
+        width:350px;
+        height: 300px;
+    }
+
+    .buyQuest{
+        position: absolute;
+        left: 100px;
+        bottom: 55px;
+        width: 150px;
+        height: 30px;
+        background-color: brown;
+        border-radius: 30px;
+        border-color: brown;
+        color: white;
+        font-size: 15px;
+    }
+
+    .boxContainer img{
+        width:350px;
+        height: 300px;
+    }
+
+    .buyBox{
+        position: absolute;
+        left: 100px;
+        bottom: 55px;
+        width: 150px;
+        height: 30px;
+        background-color: brown;
+        border-radius: 30px;
+        border-color: brown;
+        color: white;
+        font-size: 15px;
+    }
+}

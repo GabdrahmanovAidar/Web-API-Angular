@@ -1,0 +1,15 @@
+<div [formGroup]="uploadForm">
+    <div class="upload">
+        <div class="upload-index">{{ index + 1 }}</div>
+        <div *ngIf="index !== 0" class="cover-actions text-right">
+            <i (click)="onDeleteClicked($event)" class="icon icon-delete c-pointer"></i>
+        </div>
+    </div>
+    <div class="cover-file-wrap">
+        <ud-forms-control
+                [control]="uploadForm.get('upload')"
+                [errorMessages]="validationMessages.upload" [noMargin]="true">
+            <ud-upload-photo formControlName="upload"></ud-upload-photo>
+        </ud-forms-control>
+    </div>
+</div>

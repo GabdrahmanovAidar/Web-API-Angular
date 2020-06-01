@@ -1,0 +1,61 @@
+.kek {
+  height: 200px;
+}
+.table table-hover table-dark {
+  height: 10em;
+  overflow: scroll;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.button-payments {
+  width: 80px;
+  height: 25px;
+  background-color: brown;
+  border-radius: 15px;
+  border-color: brown;
+  color: white;
+  font-size: 10px;
+  margin-bottom: 3em;
+}
+.order-type{
+  color:brown
+}
+
+.close-button{
+  display: inline-block;
+}
+.t-body{
+  max-height: 100px;
+}
+.table table-hover table-dark{
+  max-height: 100px;
+  overflow: scroll;
+}
+#stepControlContainer {
+  max-height: 500px;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+.loader{
+  margin-top: 12em; 
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.payments{
+  margin-top: 0em;
+}
+.review-container{
+  margin-top: 7em;
+}

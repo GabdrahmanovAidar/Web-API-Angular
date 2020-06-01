@@ -1,0 +1,170 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+}
+.social_network {
+  padding-left: 50px;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.telegram{
+  width: 25px;
+  height: 25px;
+}
+.support {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.instagram {
+  width: 30px;
+  height: 30px;
+}
+.social_network2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 15px;
+}
+.phone {
+  width: -webkit-fill-available;
+}
+.description span {
+  display: block;
+  width: -webkit-fill-available;
+}
+.description {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.payment {
+  padding-top: 30px;
+  width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+img {
+  margin: 6px;
+}
+
+.payments-logo {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+}
+
+.payments-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.payments-logo-2 {
+  display: inline-block;
+  width: 260px;
+  height: 35px;
+  margin-left: 1em;
+}
+
+.payments-logo-2 img {
+  width: 100%;
+  height: 100%;
+}
+.vk {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1300px) {
+  .payment {
+    padding-top: 30px;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .description > h6 > span {
+    display: block;
+  }
+  a.phone {
+    display: block;
+  }
+  .description {
+    justify-content: space-evenly;
+    //justify-content: space-between;
+  }
+}
+@media screen and (max-width: 500px) {
+  .footer {
+    color: #fff;
+    flex: 0 0 auto;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .description h2 {
+    font-size: 20px;
+  }
+  .description h6 {
+    font-size: 15px;
+  }
+
+  .payments-logo-2 {
+    display: inline-block;
+    width: 150px;
+    height: 30px;
+    margin-left: 0px;
+  }
+
+  .payments-logo {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+  }
+
+  .description {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .social_network {
+    padding-left: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .payment {
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}

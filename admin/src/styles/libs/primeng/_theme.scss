@@ -1,0 +1,434 @@
+$fontFamily:  "Roboto", "Trebuchet MS", Arial, Helvetica, sans-serif;
+$fontSize: 1em;
+$borderRadius: $g-input-radius;
+$disabledOpacity: $g-input-disabled-opacity;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: #d9d9d9;
+$headerBgColor: #f6f7f9;
+$headerTextColor: #1b1d1f;
+$headerFontWeight: normal;
+$headerIconTextColor: #1b1d1f;
+
+//Content
+$contentBorderWidth: 1px;
+$contentBorderColor: #D5D5D5;
+$contentBgColor: #ffffff;
+$contentTextColor: #222222;
+
+//Default State
+$stateDefaultBorderWidth: $g-input-border-width;
+$stateDefaultBorderColor: $g-input-border-color;
+$stateDefaultBgColor: #ffffff;
+$stateDefaultTextColor: #555555;
+
+//Active State
+$stateActiveBorderColor: #bebebe;
+$stateActiveBgColor: #d6d6d6;
+$stateActiveTextColor: #212121;
+
+//Highlight State
+$stateHighlightBorderColor: $g-color-brand;
+$stateHighlightBgColor: $g-color-brand;
+$stateHighlightTextColor: #FFFFFF;
+
+//Focus State
+$stateFocusBorderColor: #c0c0c0;
+$stateFocusBgColor: #eeeeee;
+$stateFocusTextColor: #212121;
+
+//Error State
+$stateErrorBorderColor: #f44336;
+$stateErrorBgColor: #f5554a;
+$stateErrorTextColor: #cd0a0a;
+
+//Hover State
+$stateHoverBorderColor: #c0c0c0;
+$stateHoverBgColor: #eeeeee;
+$stateHoverTextColor: #212121;
+
+//Forms
+$inputBgColor: #ffffff;
+$inputTextColor: #222222;
+$invalidInputBorderColor: #f44336;
+$inputGroupTextColor: #222222;
+
+@import "~primeng/resources/themes/theme";
+
+  // Autocomplete panel
+.ui-autocomplete {
+  width: 100%;
+  transition: all 150ms ease-out;
+
+  .ui-button-icon-only, .ui-button-icon-only:hover {
+    border-left: $stateDefaultBorderWidth solid $stateDefaultBorderColor !important;
+  }
+
+  .ui-autocomplete-dropdown {
+    height: 30px;
+    .fa {
+      @include retina-sprite($icon-select-arrow-down-group);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      &:before {
+        content: none;
+      }
+    }
+  }
+  &.with-dropdown {
+    display: flex;
+    //.ui-autocomplete-input {
+    //  //width: auto;
+    //}
+  }
+}
+.ui-autocomplete-input {
+  @extend .form-control;
+  margin-right: 2px;
+}
+
+.ui-autocomplete-multiple.with-dropdown {
+  .ui-autocomplete-multiple-container {
+    margin-right: 2px;
+  }
+}
+.ui-autocomplete-multiple-container {
+  @extend .form-control;
+  padding: 0.21rem 1rem !important;
+  &.ui-state-focus {
+    @extend .form-control:focus;
+  }
+  .ui-autocomplete-input-token {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Dropdown panel
+.ui-dropdown {
+  width: 100%;
+  transition: all 150ms ease-out;
+
+  .ui-dropdown-trigger {
+    border-left: none;
+    .fa {
+      @include retina-sprite($icon-select-arrow-down-group);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  &.ui-dropdown-open {
+    outline: none;
+    border-color: $g-input-color-border-focus;
+    box-shadow: 0 0 0 2px transparentize($g-input-color-border-focus, .35);
+    .ui-dropdown-trigger .fa {
+      @include retina-sprite($icon-select-arrow-up-group);
+    }
+    &:hover {
+      border-color: $g-input-color-border-focus;
+    }
+  }
+}
+.ui-dropdown-label {
+  color: $g-text-color;
+  padding-left: 1rem;
+}
+.ui-dropdown-panel {
+  .ui-dropdown-item {
+    margin: 0;
+    border-radius: 0;
+    padding: .5rem .7rem;
+  }
+  .ui-dropdown-list {
+    padding: 0;
+    border: 0 none;
+    border-radius: 0;
+  }
+}
+
+// Multiselect
+.ui-multiselect {
+  width: 100%;
+  transition: all 150ms ease-out;
+
+  .ui-multiselect-trigger {
+    border-left: none;
+    .fa {
+      @include retina-sprite($icon-select-arrow-down-group);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  &.ui-state-focus {
+    outline: none;
+    border-color: $g-input-color-border-focus;
+    box-shadow: 0 0 0 2px transparentize($g-input-color-border-focus, .35);
+    .ui-multiselect-trigger .fa {
+      @include retina-sprite($icon-select-arrow-up-group);
+    }
+  }
+  &:hover, &:focus, &.ui-state-focus {
+    background-color: #fff !important;
+  }
+}
+.ui-multiselect-header {
+  margin-bottom: 0;
+  .ui-multiselect-filter-container .fa {
+    top: .4em;
+  }
+}
+.ui-multiselect-label,
+.ui-multiselect-items-wrapper {
+  margin: 0;
+}
+.ui-multiselect-label {
+  color: $g-text-color;
+  padding-left: 1rem !important;
+}
+.ui-multiselect-panel {
+  .ui-multiselect-item {
+    margin: 0;
+    border-radius: 0;
+    padding: .5rem .7rem;
+    label {
+      margin: 0;
+    }
+    &.ui-state-highlight {
+      background-color: #fff;
+    }
+  }
+  .ui-multiselect-list {
+    padding: 0;
+    border: 0 none;
+    border-radius: 0;
+  }
+}
+
+/* Checkbox and Radio */
+.ui-chkbox-label,
+.ui-radiobutton-label {
+  user-select: none;
+  margin: 0;
+  cursor: pointer;
+  color: $g-text-color;
+  &.ui-label-disabled {
+    cursor: not-allowed;
+    color: #c7c7c7;
+  }
+}
+.ui-radiobutton-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ui-radiobutton-icon {
+    font-size: 0;
+    margin-top: 1px;
+    vertical-align: middle;
+    transition: font-size 80ms linear;
+  }
+  &.ui-state-active {
+    border: 1px solid $g-color-brand;
+    background: #fff;
+    color: $g-color-brand;
+    .ui-radiobutton-icon {
+      font-size: 11px;
+    }
+  }
+}
+.font-xl {
+  .ui-radiobutton-box {
+    &.ui-state-active {
+      .ui-radiobutton-icon {
+        font-size: 15px;
+      }
+    }
+  }
+}
+.ui-chkbox-box {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  .ui-chkbox-icon {
+    font-size: 0;
+    transition: font-size 80ms linear;
+  }
+  &.ui-state-active {
+    border: 1px solid $g-color-brand;
+    background: #fff;
+    color: $g-color-brand;
+    .ui-chkbox-icon {
+      font-size: 14px;
+    }
+  }
+}
+
+// Growl
+.ui-growl .ui-growl-message-error {
+  background-color: $g-color-danger;
+}
+
+// Tooltip
+.ui-tooltip {
+  max-width: 20rem;
+  .ui-tooltip-text {
+    color: $g-text-color;
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: $g-default-shadow;
+    padding: .5rem 1rem;
+  }
+}
+
+.ui-tooltip-right .ui-tooltip-arrow {
+  border-right-color: #fff;
+}
+.ui-tooltip-bottom .ui-tooltip-arrow {
+  border-bottom-color: #fff;
+}
+.ui-tooltip-left .ui-tooltip-arrow {
+  border-left-color: #fff;
+}
+.ui-tooltip-top .ui-tooltip-arrow {
+  border-top-color: #fff;
+}
+
+
+// Calendar
+.ui-calendar, .ui-calendar .ui-inputtext {
+  width: 100%;
+}
+
+// Sidebar
+.ui-sidebar {
+  overflow-y: auto;
+}
+@media screen and (max-width: 64em) {
+  .ui-sidebar-left.ui-sidebar-lg,
+  .ui-sidebar-left.ui-sidebar-md,
+  .ui-sidebar-right.ui-sidebar-lg,
+  .ui-sidebar-right.ui-sidebar-md {
+    width: 61%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .ui-sidebar-left.ui-sidebar-lg,
+  .ui-sidebar-left.ui-sidebar-md,
+  .ui-sidebar-right.ui-sidebar-lg,
+  .ui-sidebar-right.ui-sidebar-md {
+    width: 100%;
+  }
+}
+
+
+.ui-state-disabled {
+  opacity: .7;
+}
+
+// Dialog
+.ui-dialog-footer {
+  border: none;
+}
+.ui-dialog-content {
+  display: flex;
+}
+
+// Rating
+.ui-rating {
+  a {
+    display: inline-block;
+    transition: transform 100ms ease-out;
+    margin-right: 5px;
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .fa {
+    font-size: 1.9rem;
+    color: $g-color-brand;
+  }
+}
+
+// todo refactor
+// Table
+body .ui-treetable-tablewrapper table {
+  background-color: #fff;
+  thead {
+    .ui-state-default {
+      background-color: #ebebeb;
+      color: $g-text-color;
+      font-weight: bold;
+    }
+    th {
+      padding: .9rem 1.4rem;
+    }
+    .ui-column-title {
+      border: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: .8rem;
+    }
+  }
+  tbody {
+    td {
+      padding: .9rem 1.4rem;
+    }
+  }
+}
+.ui-treetable thead th {
+  border-width: 0;
+}
+
+// Tabs
+.ui-tabview {
+  padding: 0;
+  border: none;
+}
+.ui-tabview-nav {
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #dbdbdb;
+}
+.ui-tabview .ui-tabview-panel {
+  padding: 1rem 0;
+}
+
+// Listbox
+.ui-listbox {
+  width: auto;
+}
+.ui-listbox {
+  .ui-listbox-filter-icon {
+    bottom: 0 !important;
+    top: 0 !important;
+    margin: auto !important;
+    height: 1rem !important;
+    left: 6px !important;
+  }
+}

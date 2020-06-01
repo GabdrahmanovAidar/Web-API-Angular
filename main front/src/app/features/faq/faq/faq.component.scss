@@ -1,0 +1,32 @@
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px red;
+    font-size: 17px;
+    color: white;
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.questions {
+    flex: 1;
+    flex-basis: 20%;
+    background: rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 1px red;
+    font-size: 17px;
+    color: white;
+}
+
+.answers {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    text-shadow: 1px 1px 1px red;
+    font-size: 17px;
+    color: white;
+}

@@ -1,0 +1,57 @@
+.noUi-target {
+  height: 2px;
+  position: relative;
+  background-color: #aaa;
+}
+
+.noUi-connect {
+  background-color: $g-color-brand;
+}
+
+.noUi-horizontal .noUi-handle {
+  right: -6px;
+  top: -5px;
+  left: auto;
+}
+
+.noUi-handle {
+  border: 2px solid #949cff;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  transition: all 100ms ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.noUi-base, .noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+.noUi-connect, .noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: 0 0;
+}
+
+.noUi-handle {
+  position: absolute;
+  &:focus {
+    outline: none;
+  }
+}

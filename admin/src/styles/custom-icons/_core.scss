@@ -1,0 +1,8 @@
+@import "generated-sprite";
+
+@include retina-sprites($retina-groups);
+
+.icon { display: inline-block; }
+
+.icon-toggle-down { @include retina-sprite($icon-toggle-down-group); }
+.icon-toggle-up { @include retina-sprite($icon-toggle-up-group); }

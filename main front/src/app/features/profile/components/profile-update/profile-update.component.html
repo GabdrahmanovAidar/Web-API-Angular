@@ -1,0 +1,24 @@
+<div class="pUpdateContainer">
+  <div class="pUpdate">
+    <div class="form">
+        
+      <div class="title">
+        <h2>Настройки профиля</h2>
+      </div>
+      <form [formGroup]="pUpdateForm" >
+        <formly-form [model]="model" [fields]="fields" [options]="options" [form]="pUpdateForm"></formly-form>
+        <div class="modal-container">
+            <app-modal-phone *ngIf="isModal != true" [code]="code" (onChange)="onChange($event)" class="modalWindow">
+            </app-modal-phone>
+          </div>
+        <div *ngIf ="isError != false" style="color:red">Вы исчерпали лимит смен номера, попробуйте завтра!</div>
+        <button type="submit" (click) = "submit()" mat-flat-button color="primary" [disabled]="!pUpdateForm.valid">
+          Обновить данные
+        </button>
+        <br />
+        <button type="button" mat-flat-button color="accent" [routerLink]="['change-password']">Изменить пароль</button>
+        
+      </form>
+    </div>
+  </div>
+</div>

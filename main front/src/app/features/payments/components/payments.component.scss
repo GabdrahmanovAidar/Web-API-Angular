@@ -1,0 +1,87 @@
+.result {
+    //width: 30%;
+}
+
+.card {
+    border: none;
+    overflow-y: auto;
+    position: relative;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bt-bc {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.back {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.button-back {
+    width: 30px;
+    height: 30px;
+}
+
+.tinkoffPay {
+    width: 245px;
+    height: 45px;
+    background-color: brown;
+    border-radius: 30px;
+    border-color: brown;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.field {
+    width: 100%;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.payment-container {
+    //margin-top: 6em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 450px) {
+    .tinkoffPay {
+        width: 100px;
+        height: 25px;
+        background-color: brown;
+        border-radius: 30px;
+        border-color: brown;
+        color: white;
+        font-size: 15px;
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-height: 900px) {
+    .space {
+        height: 79px;
+    }
+}

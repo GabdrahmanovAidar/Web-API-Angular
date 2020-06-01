@@ -1,0 +1,36 @@
+<div class="recovery-content">
+  <div class="recovery-enter ">Восстановление пароля</div>
+
+  <ud-card>
+    <ud-card-content>
+      <form [formGroup]="form" (submit)="onSubmit($event)">
+        <ud-forms-controls-wrap [showErrors]="showFormErrors" class="d-block width-100">
+          <ud-forms-control
+            [noMargin]="true"
+            [control]="form.get('email')"
+            [errorMessages]="validationMessages.email">
+            <input formControlName="email"
+                   type="email"
+                   placeholder="Email"
+                   class="form-control-round form-control-lg"/>
+          </ud-forms-control>
+
+          <button type="submit"
+                  [disabled]="form.invalid || loading"
+                  class="mt-4 btn btn-primary btn-round recovery-btn">
+            Отправить письмо
+          </button>
+
+          <ud-spinner type="absolute"
+                      [show]="loading || !form"></ud-spinner>
+        </ud-forms-controls-wrap>
+      </form>
+    </ud-card-content>
+  </ud-card>
+
+  <div class="mt-4 text-center">
+    <span class="recovery-tip">Зарегистрированы?</span>
+    <a [routerLink]="['../login']" class="ud-link-light ml-4">Вход</a>
+  </div>
+
+</div>

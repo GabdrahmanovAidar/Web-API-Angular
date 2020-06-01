@@ -1,0 +1,22 @@
+.c-pointer { cursor: pointer; }
+.vertical-middle { vertical-align: middle; }
+.width-100 { width: 100%; }
+.text-nowrap { white-space: nowrap; }
+.overflow-hidden { overflow: hidden; }
+.p-relative { position: relative; }
+.vertical-middle { vertical-align: middle !important; }
+
+.block-100 {
+  @extend .width-100;
+  @extend .d-block;
+}
+.expand-content {
+  overflow: visible;
+  zoom: 1;
+}
+
+@media (max-width: 599px) {
+  .mobile-hide {
+    display: none;
+  }
+}

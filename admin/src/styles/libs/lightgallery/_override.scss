@@ -1,0 +1,32 @@
+.lg-actions .lg-icon {
+  top: 0;
+  bottom: 0;
+  width: 65px;
+}
+
+.lg-actions .lg-prev::after,
+.lg-actions .lg-next::before {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.lg-actions .lg-icon.lg-prev {
+  left: 0;
+}
+.lg-actions .lg-icon.lg-next {
+  right: 0;
+}
+
+.lg-object.lg-image {
+  padding-bottom: 100px;
+  padding-top: 47px;
+}
+
+.lg-thumb.group { display: inline-block; }
+.lg-thumb-outer.lg-grab { text-align: center; }

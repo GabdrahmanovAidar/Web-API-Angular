@@ -1,0 +1,15 @@
+<div class="boxContainer">
+    <div *ngFor="let boxItem of boxes" class="box" (click)="onBuyBox(boxItem.id, boxItem.newCost)">
+        <img class="image" [src]="boxItem.mainImage[0].source">
+        <p class="pName">{{boxItem.name}}</p>
+        <div class="pCost">
+            <p [ngClass]="{newCostIsShow: boxItem.isShowCSS}" class="newCostIsShow">{{boxItem.cost}} руб.</p>
+        </div>
+        <div *ngIf="boxItem.isShowCSS" class="newCost">
+            <span class="th">Акция!</span>
+            <p>{{boxItem.newCost}} руб.</p>
+        </div>
+        <!-- <span class="timer">{{counter$ | async}}</span> -->
+        <hr class="hr">
+    </div>
+</div>

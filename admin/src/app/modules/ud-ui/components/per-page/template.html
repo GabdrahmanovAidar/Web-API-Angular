@@ -1,0 +1,11 @@
+<div *ngIf="perPageValues?.length" class="text-nowrap">
+    <span class="font-sm mr-2">
+        Показывать:
+    </span>
+    <span *ngFor="let perPageValue of perPageValues"
+          (click)="onPerPageClicked($event, perPageValue)"
+          [ngClass]="{'active': isPerPageActive(perPageValue)}"
+          class="ud-link">
+        {{perPageValue}}
+    </span>
+</div>

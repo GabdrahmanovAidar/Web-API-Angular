@@ -1,0 +1,61 @@
+.photo {
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  margin-right: 15px;
+}
+.photo-select {
+  transition: transform 150ms ease-out;
+  width: 100%;
+  border: 1px dashed $g-color-brand;
+  position: relative;
+  &:hover {
+    transform: scale(1.03);
+  }
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 30px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: $g-color-brand;
+  }
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+.photo-delete {
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  right: -15px;
+  top: -17px;
+  cursor: pointer;
+  opacity: .85;
+  &:hover {
+    opacity: 1;
+  }
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: $g-color-danger;
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+  &::after {
+    transform: rotate(45deg);
+  }
+}

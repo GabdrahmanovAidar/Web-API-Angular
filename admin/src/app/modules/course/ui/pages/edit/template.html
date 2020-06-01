@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Курсы</div>
+      <ud-breadcrumbs [items]="breadcrumbs"></ud-breadcrumbs>
+    </div>
+  </div>
+
+
+  <ud-spinner [show]="loading"></ud-spinner>
+
+  <ng-template [ngIf]="!loading">
+    <course-components-course-form
+      *ngIf="course; else notFound"
+      [course]="course"
+      (cancel)="onCancel()"
+      (successSubmit)="onFormSuccessSubmit($event)">
+    </course-components-course-form>
+
+    <ng-template #notFound>
+      <div class="text-center">Курс не найдена</div>
+    </ng-template>
+  </ng-template>
+
+</div>
+  

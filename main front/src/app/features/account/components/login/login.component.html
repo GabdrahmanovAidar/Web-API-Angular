@@ -1,0 +1,18 @@
+<div class="loginContainer">
+    <div class="login">
+        <div class="loginTitle">
+            <h2>Вход</h2>
+        </div>
+        <form class="form" [formGroup]="loginForm" (ngSubmit)="submit()">
+            <formly-form [model]="model" [fields]="fields" [options]="options" [form]="loginForm"></formly-form>
+            <button type="submit" mat-flat-button color="primary" [disabled]="!loginForm.valid">
+                Войти
+            </button>
+            <button class="forgot" (click)="forgotPassword()" mat-flat-button color="warn">
+                Забыли пароль?
+            </button>
+        </form>
+
+    </div>
+</div>
+<div class="space"></div>

@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4 col-xl-2 d-flex align-items-center">
+    <i (click)="onDeleteClicked($event)" class="icon icon-delete c-pointer mr-3"></i>
+    <p-dropdown [autoWidth]="false"
+                [options]="itemAvailableFiltersList"
+                [placeholder]="'Поиск по'"
+                [(ngModel)]="filter.key"
+                (ngModelChange)="onFilterChange($event)"
+                class="d-block width-100">
+    </p-dropdown>
+  </div>
+  <div class="col-md-8 col-xl-6">
+    <entity-filter-kind
+      [type]="filter?.type"
+      [settings]="filter?.settings"
+      [value]="value"
+      (valueChange)="onValueChange($event)">
+    </entity-filter-kind>
+  </div>
+</div>

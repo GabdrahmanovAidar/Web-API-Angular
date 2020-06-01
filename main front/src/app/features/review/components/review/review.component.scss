@@ -1,0 +1,83 @@
+.result {
+  
+  background-color: rgba(44, 43, 43, 0.7);
+}
+
+.example-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.field {
+  width: 90%;
+}
+
+#reviewStars-input input:checked ~ label,
+#reviewStars-input label,
+#reviewStars-input label:hover,
+#reviewStars-input label:hover ~ label {
+  background: url("https://327517.selcdn.ru/darkxx/stars.png") no-repeat;
+}
+
+#reviewStars-input {
+  overflow: hidden;
+  *zoom: 1;
+  float: left;
+}
+
+#reviewStars-input input {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+#reviewStars-input input:checked ~ label {
+  background-position: 0 -50px;
+  height: 50px;
+  width: 50px;
+}
+
+#reviewStars-input label {
+  background-position: 0 0;
+  height: 50px;
+  width: 50px;
+  float: right;
+  cursor: pointer;
+  margin-right: 10px;
+  z-index: 1;
+}
+
+#reviewStars-input label:hover,
+#reviewStars-input label:hover ~ label {
+  background-position: 0 -50px;
+  height: 50px;
+  width: 50px;
+}
+.click {
+  width: 245px;
+  height: 35px;
+  background-color: brown;
+  border-radius: 30px;
+  border-color: brown;
+  color: white;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

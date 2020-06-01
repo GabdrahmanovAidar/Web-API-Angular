@@ -1,0 +1,54 @@
+<div class="payment-container">
+    <mat-card class="result">
+        <mat-card-content class="card">
+            <div class="back">
+                <button class="bt-bc" (click)='onBack()'><img class="button-back"src="assets/back.png" /></button>
+            </div>
+            <h2 class="example-h2">Введите данные для оплаты</h2>
+            <section class="example-section">
+                <mat-slide-toggle class="example-margin" (change)="useCurrenrUserData()" [color]="color" [checked]="false" [disabled]="false">
+                    Использовать данные профиля
+                </mat-slide-toggle>
+            </section>
+            <form cellspacing="0" class="form-container" name="TinkoffPayForm" onsubmit="pay(this); return false;">
+                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="TinkoffBankTest">
+                <input class="tinkoffPayRow" type="hidden" name="frame" value="true">
+                <input class="tinkoffPayRow" type="hidden" name="language" value="ru">
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Цена" name="amount" disabled="true" [value]="cost">
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="Описание" [value]="description" disabled="false" [name]="description"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="ФИО плательщика" [name]="name" [value]="fIO">
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Email" type="text" [name]="email" [value]="email">
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Телефон" type="text" [name]="phone" [value]="phoneNumber">
+                    </mat-form-field>
+                </div>
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Промокод" type="text" [name]="code" [value]="code" (change)="onChangeCode($event)">
+                    </mat-form-field>
+                </div>
+                <input class="tinkoffPay" type="submit" value="Оплатить">
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div class="space">
+
+</div>

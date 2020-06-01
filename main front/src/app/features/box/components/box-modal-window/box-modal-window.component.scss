@@ -1,0 +1,126 @@
+.boxContainer {
+    background-color: black;
+    padding: 15px;
+    border-radius: 10px;
+    width: 500px;
+    height: 380px;
+    margin-top: 30px;
+    margin-left: 30px;
+    overflow-y: scroll;
+}
+
+.pName {
+    color: white;
+    font-size: 20px;
+    display: inline;
+    margin-left: 1em;
+}
+
+.box {
+    position: relative;
+}
+
+.image {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 4px rgba(233, 230, 230, 0.55);
+}
+
+.pCost {
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+    top: 15px;
+}
+
+.newCostIsShow {
+    text-decoration: line-through;
+    color: brown;
+}
+
+.hr {
+    background-color: white;
+}
+
+.box:hover {
+    cursor: pointer;
+}
+
+.newCost {
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+    top: 40px;
+}
+
+.th {
+    display: block;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+}
+
+.timer {
+    color: white;
+    font-size: 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .boxContainer {
+        background-color: black;
+        padding: 15px;
+        border-radius: 10px;
+        width: 320px;
+        height: 300px;
+        margin-top: 30px;
+        overflow-y: scroll;
+        margin-right: 35px;
+    }
+    .pName {
+        color: white;
+        font-size: 12px;
+        display: inline-block;
+        width: 65%;
+    }
+    p {
+        font-size: 15px;
+        right: 15px;
+    }
+    .pCost {
+        right: 15px;
+    }
+    .newCost {
+        right: 15px;
+    }
+    .pCost {
+        color: white;
+        font-size: 12px;
+        display: inline-block;
+        margin-left: 15%;
+    }
+     ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    /* Track */
+     ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+    /* Handle */
+     ::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 10px;
+    }
+    /* Handle on hover */
+     ::-webkit-scrollbar-thumb:hover {
+        background: #b30000;
+    }
+}

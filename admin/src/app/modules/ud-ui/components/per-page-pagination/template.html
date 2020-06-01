@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-12">
+    <div [ngClass]="containerClassNames" class="d-flex align-items-center">
+      <ud-per-page
+        [total]="collectionSize"
+        [perPage]="perPage"
+        [values]="perPageValues"
+        (perPageChange)="onPerPageChange($event)"
+        class="align-middle d-inline-block">
+      </ud-per-page>
+      <span *ngIf="perPage < collectionSize"
+            (click)="showAllClicked($event)"
+            [ngClass]="{ 'active': perPage === collectionSize }"
+            class="ud-link ml-2">все</span>
+      <div class="mx-4 d-flex align-items-center">
+        <span class="font-sm vertical-middle mr-2">
+            Всего:
+        </span>
+        <span class="vertical-middle font-weight-bold">{{collectionSize}}</span>
+      </div>
+      <ud-pagination
+        [page]="page"
+        [pageSize]="perPage"
+        [collectionSize]="collectionSize"
+        (pageChange)="onPageChange($event)"
+        class="align-middle ml-1">
+      </ud-pagination>
+    </div>
+  </div>
+</div>

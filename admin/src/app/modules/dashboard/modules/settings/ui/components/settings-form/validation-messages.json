@@ -1,0 +1,42 @@
+{
+  "individual_taxpayer_number": {
+    "required": "Укажите ИНН",
+    "pattern": "ИНН должно содержать 12 цифр"
+  },
+  "email": {
+    "required": "Введите email",
+    "email": "Проверьте правильность email"
+  },
+  "name": {
+    "required": "Укажите ФИО",
+    "maxLength": "Максимальная длина 200 символов"
+  },
+  "company_name": {
+    "required": "Укажите нименование компании",
+    "maxLength": "Максимальная длина 200 символов"
+  },
+  "phone": {
+    "required": "Укажите телефон",
+    "mobilePhone": "Проверьте правильность номера телефона"
+  },
+  "password": {
+    "required": "Придумайте пароль",
+    "minLength": "Минимальная длина 6 символов"
+  },
+  "repassword": {
+    "required": "Повторите пароль",
+    "matchPassword": "Пароли не совпадают"
+  },
+  "description": {
+    "maxLength": "Максимальная длина 2000 символов"
+  },
+  "primary_state_registration_number": {
+    "required": "Заполните поле"
+  },
+  "legal_address": {
+    "required": "Укажите адрес"
+  },
+  "city": {
+    "required": "Укажите город"
+  }
+}

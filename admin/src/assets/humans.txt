@@ -1,0 +1,16 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+  https://uniqlab.ru
+
+# THANKS
+
+  <name>
+  UniqLab developers - https://uqlab.ru
+
+# TECHNOLOGY COLOPHON
+
+  HTML5, CSS3
+  Angular2, TypeScript, Webpack

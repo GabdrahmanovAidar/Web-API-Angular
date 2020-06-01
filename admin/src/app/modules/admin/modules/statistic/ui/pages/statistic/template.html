@@ -1,0 +1,54 @@
+<div class="page">
+  <div class="page-header">
+    <div class="page-title">Статистика</div>
+  </div>
+
+  <ud-card>
+    <ud-card-content>
+      <div>Количественная статистика</div>
+
+      <form [formGroup]="filterForm" (submit)="onSubmit($event)">
+        <ud-forms-controls-wrap [showErrors]="showFormErrors">
+          <div class="d-flex align-items-center mt-3">
+            <ud-forms-control
+                    [control]="filterForm.get('from')"
+                    [errorMessages]="validationMessages.from" [noMargin]="true" class="mr-4">
+              <div class="d-flex align-items-center">
+                <ud-forms-label [asRequired]="isRequired('from')" styleClass="d-block mr-2 mb-0">С</ud-forms-label>
+                <ng2-flatpickr
+                        *ngIf="calendarOptionsFrom"
+                        placeholder="Выберите дату"
+                        [config]="calendarOptionsFrom"
+                        formControlName="from" class="datetime-control">
+                </ng2-flatpickr>
+              </div>
+            </ud-forms-control>
+            <ud-forms-control
+                    [control]="filterForm.get('until')"
+                    [errorMessages]="validationMessages.until" [noMargin]="true">
+              <div class="d-flex align-items-center">
+                <ud-forms-label [asRequired]="isRequired('until')" styleClass="d-block mr-2 mb-0">По</ud-forms-label>
+                <ng2-flatpickr
+                        *ngIf="calendarOptionsUntil"
+                        placeholder="Выберите дату"
+                        [config]="calendarOptionsUntil"
+                        formControlName="until" class="datetime-control">
+                </ng2-flatpickr>
+              </div>
+            </ud-forms-control>
+            <button type="submit" class="btn btn-round btn-primary ml-4">Показать</button>
+          </div>
+        </ud-forms-controls-wrap>
+      </form>
+
+      <div class="mt-5">
+        <p-chart type="line" [data]="chartData"></p-chart>
+      </div>
+    </ud-card-content>
+  </ud-card>
+
+  <!--<div>Раздел в разработке</div>-->
+
+  <ud-spinner [show]="loading"></ud-spinner>
+
+</div>

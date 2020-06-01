@@ -1,0 +1,7 @@
+<div [@content]="isOpened ? 'visible' : 'hidden'"
+     (@content.done)="onToggleDone($event)"
+     class="rollup-body">
+  <div class="rollup-body__inner">
+    <ng-content></ng-content>
+  </div>
+</div>

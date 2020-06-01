@@ -1,0 +1,4 @@
+<ud-forms-error *ngFor="let errorMessage of control.errors | udFormsErrorMessages:messages"
+                [styles]="styles" [classNames]="classNames">
+  {{ errorMessage }}
+</ud-forms-error>

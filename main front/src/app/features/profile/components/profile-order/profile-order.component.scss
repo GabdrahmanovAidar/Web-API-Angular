@@ -1,0 +1,110 @@
+.order {
+  background: white;
+  z-index: 4;
+  height: 500px;
+}
+.order-container {
+  color: black;
+}
+
+.photo-checkpoint {
+  width: 250px;
+  height: 270px;
+  border-radius: 5px;
+}
+
+.button-order {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.button-ord {
+  margin-top: 0.1em;
+  width: 364px;
+  height: 35px;
+  background-color: brown;
+  border-radius: 5px;
+  border-color: brown;
+  color: white;
+  font-size: 15px;
+}
+p {
+  font-size: 15px;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 1em;
+}
+h6 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-right: 1em;
+}
+.main-images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.main-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin-left: 1em;
+}
+#stepControlContainer {
+  max-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.media-checkpoint {
+  width: 240px;
+  height: 240px;
+}
+.example-card {
+  max-width: 250px;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.inventory {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.icon-list {
+  margin-top: 5em;
+}
+.text {
+  margin-top: 2em;
+}
+
+.icon-check{
+  width: 35px;
+  height: 35px;
+}
+.button-close{
+  width: 25px;
+  height: 25px;
+  background-color: brown;
+  border-radius: 2px;
+  border-color: brown;
+  color: white;
+  font-size: 12px;
+}
+.button-container{
+  display: flex;
+  justify-content: flex-end;
+  
+}

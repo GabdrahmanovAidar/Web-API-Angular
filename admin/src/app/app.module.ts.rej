@@ -1,0 +1,10 @@
+diff a/admin/src/app/app.module.ts b/admin/src/app/app.module.ts	(rejected hunks)
+@@ -1,7 +1,7 @@
+ import { ErrorHandler, LOCALE_ID, NgModule } from '@angular/core';
+ import { BrowserModule } from '@angular/platform-browser';
+ import { FormsModule } from '@angular/forms';
+-import { HttpClientModule } from '@angular/common/http';
++import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+ import { RouterModule, PreloadAllModules } from '@angular/router';
+ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ import 'chart.js';

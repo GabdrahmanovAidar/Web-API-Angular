@@ -1,0 +1,6 @@
+.rotate-toggler {
+  transition: transform 150ms ease-in-out;
+}
+.rotate-toggler--active {
+  transform: rotate(-180deg);
+}

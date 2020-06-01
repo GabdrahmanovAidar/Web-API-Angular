@@ -1,0 +1,54 @@
+<div class="d-flex align-items-center">
+  <span>Фильтры ({{selectedFilters.length}})</span>
+  <button type="button"
+          *ngIf="filters.length > 0 && selectedFilters.length === 0"
+          (click)="addFilterClicked($event)"
+          class="btn btn-link btn-sm ml-3">
+    <i class="icon icon-plus mr-2"></i>
+    <span>Добавить фильтр</span>
+  </button>
+  <button type="button"
+          *ngIf="selectedFilters.length !== 0"
+          (click)="isOpened = !isOpened" class="btn btn-link btn-sm ml-3">
+    <i class="icon" [ngClass]="{ 'icon-toggle-down': !isOpened, 'icon-toggle-up': isOpened }"></i>
+    <span *ngIf="isOpened; else hide">Скрыть</span>
+    <ng-template #hide>
+      <span>Показать</span>
+    </ng-template>
+  </button>
+</div>
+<ud-card [opened]="isOpened" class="mt-3 d-block">
+  <ud-card-content>
+    <div class="mb-4">
+      <entity-filter-item
+        *ngFor="let selectedFilter of selectedFilters; let i = index; trackBy: trackByFunc;"
+        [availableFiltersList]="availableFiltersList"
+        [filters]="filters"
+        [(filter)]="selectedFilter.filter"
+        [(value)]="selectedFilter.value"
+        (deleteClicked)="onFilterDeleteClicked(selectedFilter, i)"
+        (filterChange)="setupAvailableFilters()" class="d-block mb-1">
+      </entity-filter-item>
+    </div>
+    <div class="mt-4">
+      <button type="button"
+              *ngIf="filters.length !== selectedFilters.length"
+              (click)="addFilterClicked($event)"
+              class="btn btn-link btn-sm pl-0 mr-2">
+        <i class="icon icon-plus mr-2"></i>
+        <span>Добавить фильтр</span>
+      </button>
+      <button type="button"
+              *ngIf="selectedFilters?.length > 0"
+              (click)="onClearClicked($event)"
+              class="btn btn-link btn-sm mx-2">
+        Очистить
+      </button>
+      <button type="button"
+              (click)="onApplyClicked($event)"
+              class="btn btn-sm btn-round btn-primary ml-2">
+        Применить
+      </button>
+    </div>
+  </ud-card-content>
+</ud-card>

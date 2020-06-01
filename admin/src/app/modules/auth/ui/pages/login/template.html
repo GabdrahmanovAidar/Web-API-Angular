@@ -1,0 +1,40 @@
+<div class="login-content">
+  <div class="login-enter">Вход</div>
+
+  <ud-card>
+    <ud-card-content>
+      <form *ngIf="form" [formGroup]="form" (submit)="onSubmit($event)">
+        <ud-forms-control
+          [control]="form.get('username')"
+          [errorMessages]="validationMessages.email">
+          <input formControlName="username"
+                 type="text"
+                 placeholder="Логин"
+                 class="form-control-round form-control-lg"/>
+        </ud-forms-control>
+
+        <ud-forms-control
+                [control]="form.get('password')"
+                [errorMessages]="validationMessages.password"
+                class="d-block mt-3">
+          <input formControlName="password"
+                 type="password"
+                 placeholder="Пароль"
+                 class="form-control-round form-control-lg"/>
+        </ud-forms-control>
+        <button type="submit"
+                [disabled]="form.invalid || loading"
+                class="btn btn-primary btn-round mt-4 login-btn">Войти</button>
+      </form>
+
+      <ud-spinner type="absolute"
+                  [show]="loading || !form"></ud-spinner>
+    </ud-card-content>
+  </ud-card>
+
+  <!--<div class="mt-4 text-center">-->
+    <!--<span class="login-tip">Забыли пароль?</span>-->
+    <!--<a [routerLink]="['../recovery']" class="ud-link-light ml-4">Восстановить</a>-->
+  <!--</div>-->
+
+</div>

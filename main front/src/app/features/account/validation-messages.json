@@ -1,0 +1,30 @@
+[
+    {
+        "name": "email",
+        "message": "неверный формат"
+    },
+    {
+        "name": "required",
+        "message": "Это поле обязательно для заполнения"
+    },
+    {
+        "name": "minlength",
+        "message": "Длина не меньше 8ми символов"
+    },
+    {
+        "name": "maxlength",
+        "message": "Длина не больше 20ти символов"
+    },
+    {
+        "name": "passwordDifferent",
+        "message": "Пароли должны совпадать"
+    },
+    {
+        "name": "phoneFormat",
+        "message": "Неверный формат номера телефона"
+    },
+    {
+        "name" : "birthDateFormat",
+        "message": "Дата рождения должна быть в фомате ДД/ММ/ГГГГ"
+    }
+]

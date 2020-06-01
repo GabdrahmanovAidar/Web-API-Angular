@@ -1,0 +1,49 @@
+.login {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    flex-wrap: wrap;
+    width: 35%;
+    border-radius: 10px;
+    padding-bottom: 20px;
+}
+
+.loginTitle {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.form{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40em;
+}
+
+.space {
+    height: 34px;
+}
+
+.forgot {
+    margin-left: 1em;
+}
+
+@media screen and (max-width: 1300px) {}
+
+@media screen and (max-width: 500px) {
+    .login {
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        flex-wrap: wrap;
+        width: 85%;
+        border-radius: 10px;
+        padding-bottom: 20px;
+        padding: 10px;
+    }
+}

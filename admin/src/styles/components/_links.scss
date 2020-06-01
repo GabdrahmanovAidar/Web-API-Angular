@@ -1,0 +1,32 @@
+.ud-link {
+  color: $g-color-brand;
+  cursor: pointer;
+  &:hover {
+    color: darken($g-color-brand, 10);
+    text-decoration: none;
+  }
+  &.active {
+    color: $g-text-color;
+    cursor: default;
+  }
+}
+
+.ud-link-danger {
+  color: $g-color-danger;
+  cursor: pointer;
+  &:hover {
+    color: darken($g-color-danger, 10);
+    text-decoration: none;
+  }
+  &.active {
+    color: $g-text-color;
+    cursor: default;
+  }
+}
+
+.ud-link-light {
+  color: darken(#fff, 10);
+  &:hover {
+    color: #fff;
+  }
+}

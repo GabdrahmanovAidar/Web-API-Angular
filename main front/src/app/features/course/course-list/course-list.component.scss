@@ -1,0 +1,162 @@
+
+   .slick-slider {  
+    width: 90%;  
+    margin: auto;  
+  }  
+.course {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.5);
+    transition: 0.3s;
+    margin-top: 25px;
+    background-color: rgba(0,0 ,0 , 0.4) ;
+    //position: relative;
+    width: 90%;
+    margin-bottom: 30px;
+    height: 300px;
+    //background-color: white;
+    border-radius: 10px;
+    opacity: 0.6;
+    text-align: center;
+    
+}
+
+/* On mouse-over, add a deeper shadow */
+.course:hover {
+    box-shadow: 0 8px 16px 0 rgba(250, 1, 1, 0.4);
+    opacity: 1;
+}
+
+/* Add some padding inside the card container */
+.containerText {
+    padding: 2px 16px;
+  
+    height: 100%;
+    
+}
+.courseContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    height: 600px;
+    overflow-y: auto;
+    background: rgba(0, 0,0,0.8);
+    padding-left: 20px;
+    padding-top: 20px;
+    
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+.image{
+    width: 100%;
+    height: 70%;
+    //border-radius: 10px;
+}
+.label{
+    margin-top: 15px;
+    left: 0px;
+    bottom: 0px;
+    color: rgb(212, 202, 202);
+    font-size: 18px;
+    text-align: left;
+    height: 90px;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+.course:hover{
+ opacity: 1;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left:0;
+    margin-right:0; 
+}
+
+.courseDetail{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 65%;
+    background-color: rgba(0, 0, 0,0.5);
+    //opacity: 0.5;
+    height: 600px;
+    margin-top:10px;
+    overflow-y: auto;
+    
+}
+.description{
+    color:white;
+    opacity: 1;
+    z-index: 1;
+    width: 80%;
+    //overflow-y: auto;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+
+
+.image1{
+    width: 60%;
+    height: 60%;
+    //border-radius: 20px; 
+}
+.image2{
+    //display: flex;
+    margin-left: 25%;
+    justify-content: center;
+
+}
+
+.title{
+    display: inline-block;
+    color:white;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style:bold;
+}
+
+.date{
+    display: flex;
+    flex-wrap: wrap;
+    color:white;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+    position:relative;
+    margin-left:100%;
+    margin-right: 25%;
+    
+   
+}
+@media screen and (max-width : 450px)
+{
+  .description{
+      font-size: 15px;
+  }
+  .title{
+      font-size: 19px;
+  }
+  .image1{
+      height: 40%;
+      width: 100%;
+  }
+  .containerText{
+      height: 30%;
+  }
+  .course{
+      height: 200px;
+      width: 90%;
+  }
+  .label{
+      font-size: 10px;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="buyQuestContainer" *ngIf="isPay != true">
+    <div class="buy">
+        <div class="back">
+            <button class="bt-bc" (click)='onBack()'><img class="icon-back"src="assets/back.png" /></button>
+        </div>
+        <div class="buyTitle">
+            <h2>Дополнительная информация</h2>
+        </div>
+        <form [formGroup]="buyForm" (ngSubmit)="submit()" class="form">
+            <formly-form [model]="model" [fields]="fields" [options]="options" [form]="buyForm"></formly-form>
+            <button type="submit" class="buyButton">
+        Оплатить
+      </button>
+        </form>
+    </div>
+</div>
+<div class="payments-container">
+    <div class="payments">
+        <app-payments *ngIf="isPay != false" [cost]="quest.cost" (onChange)="onChange($event)" [description]="quest.description" [timeToFinish]="model.time" [comment]="model.comment">
+        </app-payments>
+    </div>
+</div>

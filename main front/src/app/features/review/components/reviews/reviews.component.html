@@ -1,0 +1,13 @@
+<div class="reviews">
+    <h2>Отзывы</h2>
+    <div class="reviewsContainer">
+        <div *ngFor="let reviewItem of reviews" class="review">
+            <p>{{reviewItem.userName}}</p>
+            <p>{{reviewItem.comment}}</p>
+            <div class="icons" *ngFor="let item of [].constructor(reviewItem.rating)">
+                <img class="icon-star" src="assets/star-red.png" />
+            </div>
+
+        </div>
+    </div>
+</div>

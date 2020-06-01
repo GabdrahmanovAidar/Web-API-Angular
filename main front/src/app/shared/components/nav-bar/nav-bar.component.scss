@@ -1,0 +1,92 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.sidenav {
+    width: 200px;
+}
+
+.sidenav .mat-toolbar {
+    background: inherit;
+}
+
+.logo {
+    width: 140px;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar a {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    min-height: 600px;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url("../../../../assets/fon-new2.jpg") fixed;
+    background-size: cover;
+}
+
+.sity-icon {
+    z-index: 1;
+    width: 37px;
+    height: 37px;
+}
+
+@media (max-width: 1000px) {
+    .center {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .center {
+        width: 100%;
+    }
+    .logo {
+        width: 90px;
+    }
+    .mat-toolbar a {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    .sign-in {
+        font-size: 15px;
+        margin-left: -1.5em;
+    }
+    .spacer {
+        margin-left: 1.5em;
+    }
+    .city {
+        font-size: 12px;
+        margin-right: -3em;
+    }
+    .sity-icon {
+        z-index: 1;
+        width: 34px;
+        height: 34px;
+        margin-right: -2.5em;
+        margin-left: -1.5em;
+    }
+}
+
+.mat-toolbar.mat-primary {
+    background: black;
+    color: #fff;
+    opacity: 0.8;
+}

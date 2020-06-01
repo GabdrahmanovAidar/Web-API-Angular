@@ -1,0 +1,53 @@
+.ud-colored-label {
+  position: relative;
+  width: 2.143rem;
+  height: 2.143rem;
+  border-radius: 50%;
+  border: 1px solid #e0f0fb;
+  display: inline-block;
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1.143rem;
+    width: 1.143rem;
+    border-radius: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+.ud-colored-label--sm {
+  width: .5rem;
+  height: .5rem;
+  border: none;
+  margin-right: .4rem;
+  &:after {
+    width: .5rem;
+    height: .5rem;
+  }
+}
+
+
+.ud-colored-label--REJECTED {
+  &:after {
+    background-color: $g-color-rejected;
+  }
+}
+
+.ud-colored-label--NEW {
+  &:after {
+    background-color: $g-color-new;
+  }
+}
+
+.ud-colored-label--PUBLISHED {
+  &:after {
+    background-color: $g-color-published;
+  }
+}
+

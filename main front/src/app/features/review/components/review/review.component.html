@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-card class="result">
+        <mat-card-content class="card">
+            <div class="example-form">
+                <div class="field">
+                    <mat-form-field class="example-full-width">
+                        <textarea id="comment" matInput placeholder="Комментарий" name="description"
+                            [(ngModel)]="comment"></textarea>
+                    </mat-form-field>
+                </div>
+                <div id="reviewStars-input">
+                    <input id="star-4" type="radio" value="star4" name="reviewStars"
+                        [checked]="selectedRadioButtonValue === 'star4'"
+                        (change)='selectedRadioButtonValue=$event.target.value' />
+                    <label title="Отлично" for="star-4"></label>
+
+                    <input id="star-3" type="radio" value="star3" name="reviewStars"
+                        [checked]="selectedRadioButtonValue === 'star3'"
+                        (change)='selectedRadioButtonValue=$event.target.value' />
+                    <label title="Хорошо" for="star-3"></label>
+
+                    <input id="star-2" type="radio" value="star2" name="reviewStars"
+                        [checked]="selectedRadioButtonValue === 'star2'"
+                        (change)='selectedRadioButtonValue=$event.target.value' />
+                    <label title="Удовлетворительно" for="star-2"></label>
+
+                    <input id="star-1" type="radio" value="star1" name="reviewStars"
+                        [checked]="selectedRadioButtonValue === 'star1'"
+                        (change)='selectedRadioButtonValue=$event.target.value' />
+                    <label title="Плохо" for="star-1"></label>
+
+                    <input id="star-0" type="radio" value="star0" name="reviewStars"
+                        [checked]="selectedRadioButtonValue === 'star0'"
+                        (change)='selectedRadioButtonValue=$event.target.value' />
+                    <label title="Очень плохо" for="star-0"></label>
+                </div>
+            </div>
+            <div class="button">
+                <button class="click" (click)="onClick()">
+                    Оставить отзыв
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

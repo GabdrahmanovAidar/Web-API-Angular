@@ -1,0 +1,19 @@
+.modal{
+  position: inherit;
+  z-index: 1050;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+  background: white;
+  width: 100%;
+  height: 120px;
+
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+.error{
+  
+  color: red;
+}

@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+  border-radius: $g-card-border-radius;
+}
+.card--default {
+  background-color: $g-card-color-bg;
+  box-shadow: $g-card-shadow;
+}
+.card--border {
+  border: solid 1px #ececec;
+  margin-top: 10px;
+  .card-header {
+    color: #b3b3b3;
+    font-size: 12px;
+    background-color: #fff;
+    position: absolute;
+    top: -10px;
+    left: 4px;
+    padding: 0 10px;
+  }
+  .card-header--gray {
+    background-color: #fcfcfc;
+  }
+}
+.card-header--toggleable {
+  padding-left: 3rem !important;
+  position: relative;
+}
+.card-toggle-wrap {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+.card-toggle {
+  cursor: pointer;
+  opacity: .8;
+  &:hover {
+    opacity: 1;
+  }
+}
+.card-body {
+  padding: $g-card-padding;
+  transition: padding 200ms linear;
+}
+.card-header {
+  padding: $g-card-padding;
+  font-weight: bold;
+}
+.card-inner {
+  overflow: visible;
+  zoom: 1;
+}

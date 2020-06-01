@@ -1,0 +1,11 @@
+<div class="buyBoxContainer">
+  <div class="buy">
+<div class="buyTitle"><h2>Подарок</h2></div>
+  <form [formGroup]="buyForm" (ngSubmit)="submit()" class="form">
+    <formly-form [model]="model" [fields]="fields" [options]="options" [form]="buyForm" ></formly-form>
+    <button type="submit" class="buyButton">
+      Оплатить
+    </button>
+  </form>
+</div>
+</div>

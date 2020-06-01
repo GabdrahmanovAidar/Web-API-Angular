@@ -1,0 +1,23 @@
+<div class="page">
+  <div class="page-header">
+    <div class="page-title">Настройки</div>
+  </div>
+
+  <ud-spinner [show]="loading"></ud-spinner>
+  <ud-empty-table [show]="!settings && loading"></ud-empty-table>
+
+  <ud-card>
+    <ud-card-content>
+      <settings-components-settings-form
+              *ngIf="settings && !loading; else blank"
+              [settings]="settings"
+              (cancel)="onAdminSettingsCancel($event)"
+              (successSubmit)="onFormSuccessSubmit($event)">
+      </settings-components-settings-form>
+      <ng-template #blank>
+        Что то пошло не так. Настройки не загружены
+      </ng-template>
+    </ud-card-content>
+  </ud-card>
+
+</div>

@@ -1,0 +1,12 @@
+<div *ngIf="value; else selectVideo" class="video" [style.background-image]="'url(' + value.source + ')'"
+    [style.width]="width" [style.height]="height">
+    <span (click)="onDeleteVideoClicked($event)" class="video-delete"></span>
+</div>
+<ng-template #selectVideo>
+    <label>
+        <input [attr.accept]="acceptMimeTypes" (change)="onFilesSelect($event)" type="file">
+        <div [style.width]="width" [style.height]="height" class="c-pointer p-relative video-select">
+            <ud-spinner size="sm" [delayMS]="0" [show]="uploading" type="absolute"></ud-spinner>
+        </div>
+    </label>
+</ng-template>

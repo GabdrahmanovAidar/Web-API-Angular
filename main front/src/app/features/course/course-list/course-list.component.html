@@ -1,0 +1,35 @@
+<div class="mainTitle">
+        <h2>
+                КУРСЫ
+        </h2>
+</div>
+<div class="container">
+        <div *ngIf="course" class='courseContainer'>
+                <div *ngFor="let item of course.list" class='course' (click)="onParticipateClick(item.id)">
+                        <div class="containerText">
+                                <img class="image" [src]="item.covers[0].source">
+                                <p class="label"><b>{{ item.name }}</b></p>
+                        </div>
+                </div>
+        </div>
+        <div *ngIf="show === true" class='courseDetail'>
+
+                <img class="image1" [src]="courseShow.covers[0].source">
+                <div class="title"> {{courseShow.name}}</div>
+                <div class="description">{{courseShow.description}}</div>
+                <!-- <div >
+                        <img class="image2" [src]="cov.source">
+                </div> -->
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                        <div ngxSlickItem *ngFor="let cov of courseShow.covers" class="slide">
+                                <div *ngIf="courseShow.covers.length!=1">
+                                        <img class="image2" [src]="cov.source" width="50%">
+                                </div>
+                        </div>
+                </ngx-slick-carousel>
+
+                <div class="date"><b>{{courseShow.createdDate | date: 'dd/MM/yyyy'}}</b></div>
+
+        </div>
+</div>

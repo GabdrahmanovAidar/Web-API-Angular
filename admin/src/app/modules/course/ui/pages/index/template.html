@@ -1,0 +1,97 @@
+<div class="page">
+    <div class="page-header">
+      <div class="page-title">Курсы</div>
+    </div>
+  
+  
+  
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="filterForm" (submit)="onSubmit($event)">
+          <ud-forms-controls-wrap>
+            <div class="d-flex align-items-center mt-3">
+              <ud-forms-control [noMargin]="true"
+                                [control]="filterForm.get('course_name')" class="ml-4">
+                <div class="d-flex align-items-center">
+                  <ud-forms-label styleClass="d-block mr-2 mb-0">Название</ud-forms-label>
+                  <input placeholder="Укажите название курса" formControlName="course_name" type="text" class="form-control"/>
+                </div>
+              </ud-forms-control>
+  
+              <button type="submit" class="btn btn-round btn-primary ml-4">Показать</button>
+            </div>
+          </ud-forms-controls-wrap>
+        </form>
+        <br>
+        <div class="col-md-4">
+          <a routerLink="./new" class="btn btn-sm btn-round btn-primary">
+            + Добавить курс
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row my-4">
+      <div *ngIf="courses?.length" class="col-md-6 text-right mobile-hide">
+        <ud-per-page-pagination
+          #perPagePagination
+          [page]="filters.page"
+          [perPage]="filters.per_page"
+          [collectionSize]="coursesItemTotal"
+          (paramsChange)="onPaginationChange($event)">
+        </ud-per-page-pagination>
+      </div>
+    </div>
+  
+    <ud-spinner [show]="loading"></ud-spinner>
+  
+    <div *ngIf="!courses?.length && !loading" class="text-center">
+      Курсы не найдены
+    </div>
+  
+    <div *ngIf="courses?.length" class="table-responsive">
+      <table class="table table-default">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Название</th>
+          <th>Сложность</th>
+          <th>Статус</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let course of courses; let i = index; trackBy: coursesTrackByFunc">
+          <td>{{ course.id }}</td>
+          <td>{{ course.name }}</td>
+          <td>{{ course.level }}</td>
+          <td>{{ course.status }}</td>
+          <td *ngIf="course.status === 'Active'">Активный</td>
+          <td *ngIf="course.status === 'UnActive'">Неактивный</td>
+          <td class="text-right">
+            <course-components-course-actions
+              [courses]="course"
+              (action)="onCourseAction($event, course, i)"
+              [status]="course.status">
+            </course-components-course-actions>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div *ngIf="courses?.length" class="mt-4 text-right">
+      <ud-per-page-pagination
+        #perPagePagination
+        [page]="filters.page"
+        [perPage]="filters.per_page"
+        [collectionSize]="coursesItemTotal"
+        (paramsChange)="onPaginationChange($event)">
+      </ud-per-page-pagination>
+      <ud-keypress
+        (rightArrowPress)="nextPage(perPagePagination.hasNextPage())"
+        (leftArrowPress)="prevPage(perPagePagination.hasPrevPage())">
+      </ud-keypress>
+    </div>
+  
+  </div>

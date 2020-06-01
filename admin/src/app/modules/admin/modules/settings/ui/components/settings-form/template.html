@@ -1,0 +1,59 @@
+<form [formGroup]="settingsForm" (submit)="onSubmit($event)">
+  <ud-forms-controls-wrap [showErrors]="showFormErrors">
+
+    <div class="row">
+      <div class="col-md-3">
+        <ud-forms-control
+                [control]="settingsForm.get('limit')"
+                [errorMessages]="validationMessages.limit">
+          <ud-forms-label
+                  [asRequired]="isRequired('limit')"
+                  [attrFor]="'limit'">
+            Лимит по умолчанию (руб.)
+          </ud-forms-label>
+          <input formControlName="limit"
+                 id="limit"
+                 type="number"
+                 placeholder="0"
+                 [disableControl]="inputDisabled"
+                 class="form-control"/>
+        </ud-forms-control>
+        <ud-forms-control
+                [control]="settingsForm.get('commission')"
+                [errorMessages]="validationMessages.commission">
+          <ud-forms-label
+                  [asRequired]="isRequired('commission')"
+                  [attrFor]="'commission'">
+            Комиссия (%)
+          </ud-forms-label>
+          <input formControlName="commission"
+                 id="commission"
+                 type="number"
+                 placeholder="0"
+                 [disableControl]="inputDisabled"
+                 class="form-control"/>
+        </ud-forms-control>
+        <ud-forms-control
+                [control]="settingsForm.get('time_to_cancel')"
+                [errorMessages]="validationMessages.time_to_cancel">
+          <ud-forms-label
+                  [asRequired]="isRequired('time_to_cancel')"
+                  [attrFor]="'time_to_cancel'">
+            Время отмены(min)
+          </ud-forms-label>
+          <input formControlName="time_to_cancel"
+                 id="time_to_cancel"
+                 type="number"
+                 placeholder="0"
+                 [disableControl]="inputDisabled"
+                 class="form-control"/>
+        </ud-forms-control>
+      </div>
+    </div>
+  </ud-forms-controls-wrap>
+
+  <div class="mt-5">
+    <button type="button" (click)="onCancelClicked($event)" class="btn btn-clear p-0">Отмена</button>
+    <button type="submit" class="btn btn-round btn-primary ml-4">Сохранить</button>
+  </div>
+</form>

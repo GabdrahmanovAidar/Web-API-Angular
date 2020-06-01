@@ -1,0 +1,11 @@
+.ng2-flatpickr-input {
+  @extend .form-control;
+}
+
+.flatpickr-day {
+  &.selected:hover,
+  &.selected, &:hover {
+    background-color: $g-color-brand;
+    border-color: $g-color-brand;
+  }
+}

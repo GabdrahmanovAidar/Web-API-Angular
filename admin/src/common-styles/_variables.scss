@@ -1,0 +1,50 @@
+$x-color-red: #d27171;
+$x-color-gray:#444A50;
+$x-color-gray2: #8E8E8E;
+$x-color-gray3: #AAAAAA;
+$x-color-gray4: #E7E7E7;
+$x-color-yellow: #ff9000;
+$x-color-purple: #6165c1;
+
+$g-color-brand: #007aff;
+$g-color-new: #46bb5a;
+$g-color-rejected: $x-color-red;
+$g-color-published: #0a6ae9;
+$g-color-paid: $x-color-yellow;
+$g-color-danger: $x-color-red;
+
+// Fonts
+$g-text-color: $x-color-gray;
+$g-text-color-gray: $x-color-gray2;
+$g-text-color-gray-light: $x-color-gray3;
+
+// Cards
+$g-card-color-bg: #fff;
+$g-card-padding: 1rem;
+$g-card-border-radius: 2px;
+$g-card-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.12);
+
+// Forms
+$g-input-radius: 2px;
+$g-input-round-radius: 20px;
+$g-input-color-bg: #fff;
+$g-input-border-width: 1px;
+$g-input-border-color: #d1d1d1;
+$g-input-border-style: solid;
+$g-input-padding: 0.25rem 1rem;
+$g-input-padding-lg: .4rem 1rem;
+$g-input-font-lg: 1.1rem;
+$g-input-padding-xl: .7rem;
+$g-input-color-border-focus: $g-color-brand;
+$g-input-disabled-opacity: .55;
+
+// Accordion
+$g-accordion-border: 1px solid $x-color-gray4;
+$g-accordion-border-danger: 1px solid $x-color-red;
+$g-accordion-header-padding: .7rem .7rem .7rem 0;
+$g-accordion-body-bg-color: rgba(249, 249, 249, 0.5);
+
+// Common
+$g-default-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+
+

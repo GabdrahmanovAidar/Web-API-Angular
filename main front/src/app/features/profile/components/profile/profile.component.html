@@ -1,0 +1,77 @@
+<div *ngIf="!isPayCheck" class="container">
+
+    <div class="mainTitle">
+        <h2>
+            Профиль
+        </h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+
+            <div>
+
+                <div class="navigation">
+                    <div class="child">
+                        <label for="upload" class="imageUpload">
+              <img [src]="info?.photoUpload?.source" alt="...">
+              <div *ngIf="showUpdates">
+                <input type="file" id="upload" style="display: none" (change)="uploadPhoto($event)" accept="image/*">
+              </div>
+            </label>
+                        <div class="card-body">
+
+                            <mat-list>
+                                <mat-list-item>
+                                    <div class="child">
+                                        <button mat-button (click)="showInformation()">
+                      Инфо
+                    </button>
+                                    </div>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <div class="child">
+                                        <span [matBadge]="count" matBadgeColor="warn"><button mat-button (click)="showOrder()">
+                        Мои заказы
+                      </button></span>
+                                    </div>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <div class="child">
+                                        <button mat-button (click)="showUpdate()">
+                      Настройки
+                    </button>
+                                    </div>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <div class="child">
+                                        <button mat-button (click)="logout()">
+                      Выйти
+                    </button>
+                                    </div>
+                                </mat-list-item>
+                                <mat-list-item>
+                                    <div class="child">
+                                        <button mat-button (click)="close()">
+                                    Закрыть
+                                  </button>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="parent">
+                <div class="child">
+                    <!-- <button class="button-close">X</button> -->
+                    <app-profile-info *ngIf="showInfo" [info]="info"></app-profile-info>
+                    <app-profile-orders *ngIf="showOrders" (isPay)="isPayChecked($event)"></app-profile-orders>
+                    <app-profile-update *ngIf="showUpdates" [info]="info"></app-profile-update>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="space"></div>
