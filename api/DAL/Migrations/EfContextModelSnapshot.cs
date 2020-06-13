@@ -79,6 +79,20 @@ namespace DAL.Migrations
                     b.ToTable("Lessons");
                 });
 
+            modelBuilder.Entity("DAL.Entities.LessonUploads", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("LessonId");
+
+                    b.Property<string>("VideoUploadId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LessonUploads");
+                });
+
             modelBuilder.Entity("DAL.Entities.Login", b =>
                 {
                     b.Property<int>("Id")
@@ -203,6 +217,29 @@ namespace DAL.Migrations
                     b.HasIndex("PhotoUploadId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DAL.Entities.VideosItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000);
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Videos");
                 });
 
             modelBuilder.Entity("DAL.Entities.VideosUpload", b =>

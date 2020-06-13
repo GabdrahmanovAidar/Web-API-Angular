@@ -10,15 +10,15 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DAL.Migrations
 {
     [DbContext(typeof(EfContext))]
-    [Migration("20200507135755_initial")]
-    partial class initial
+    [Migration("20200517141127_Jopa")]
+    partial class Jopa
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("DAL.Entities.Course", b =>
@@ -79,6 +79,20 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Lessons");
+                });
+
+            modelBuilder.Entity("DAL.Entities.LessonUploads", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("LessonId");
+
+                    b.Property<string>("VideoUploadId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LessonUploads");
                 });
 
             modelBuilder.Entity("DAL.Entities.Login", b =>
@@ -205,6 +219,29 @@ namespace DAL.Migrations
                     b.HasIndex("PhotoUploadId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("DAL.Entities.VideosItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(1000);
+
+                    b.Property<string>("Status")
+                        .IsRequired();
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Videos");
                 });
 
             modelBuilder.Entity("DAL.Entities.VideosUpload", b =>
