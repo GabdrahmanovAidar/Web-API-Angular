@@ -110,7 +110,7 @@
     "lg-fullscreen.js": "^1.0.0",
     "lg-thumbnail.js": "^1.0.0",
     "lightgallery.js": "^1.0.3",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "moment": "^2.22.2",
     "ng2-flatpickr": "^6.0.2",
     "nouislider": "^11.1.0",
