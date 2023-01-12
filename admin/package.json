@@ -129,7 +129,7 @@
     "@angular/cli": "^7.3.7",
     "@angular/compiler-cli": "^5.2.7",
     "@angular/language-service": "^5.2.7",
-    "@compodoc/compodoc": "^1.0.7",
+    "@compodoc/compodoc": "^1.1.19",
     "@ngtools/webpack": "1.10.0",
     "@sentry/webpack-plugin": "^1.5.2",
     "@types/hammerjs": "^2.0.35",
